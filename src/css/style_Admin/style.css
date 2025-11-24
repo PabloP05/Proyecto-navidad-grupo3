@@ -24,9 +24,8 @@ html{
 }
 
 
-/* BODY AJUSTADO A 1366 PX DE ANCHO */
 body {
-    width: 1366px;           
+    width: 1366px; /* Referencia de inicio al crear la páfina : 1366px */
     margin: 0 auto;
     position: relative;
     justify-items: center;
@@ -36,65 +35,78 @@ body {
     padding-top: 100px;
 }
 
-
-/* ---------- ESTILOS DE LA PÁGINA ---------- */
 #adminInicio {
 
-    h1 {
-        color: white;
-        font-size: 3em;
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-rows: 0.5fr 1fr 2fr; /* ajistando el flex a dos fracciones de la pantalla logro posicionar el cuadro donde necesito */
+    grid-template-areas:
+        ". header header ."
+        ". main main ."
+        "footer footer footer footer";
+    width: 100%;
+    margin: 0 auto;
+    div{
+        grid-area: header;
+        justify-items: center;
+        h1 {
+            color: white;
+            font-size: 3em;
+        }
+
+        h3 {
+            color: #fff;
+        }
     }
-
-    h3{
-        color: #fff;
-
-    }
-
-    form {
-        width: 600px;                        
-        height: 30vh;                        
-        margin: 50px auto 0 auto;            
+    
+ 
+    #inicio_de_sesicon {
+        grid-area: main;
+        width: 43.920105485232066%; /* 600 / 1366 * 100 = 43.920105485232066% */
+        height: 30vh;
+        margin: 0 auto 0 auto;
         border-radius: 20px;
         background-color: #a6a5a568;
         align-items: center;
         justify-content: center;
+       
+        /* ajustes del display flex */
         display: flex;
         flex-direction: column;
         gap: 30px;
-        flex-basis: 400px;                   
-        
+        flex-basis: 400px;
+
+        /* estilos de los input del formulario de inicio de sesión del administradoe */
         input[type="text"], input[type="password"] {
             display: block;
-            height: 3vh;                    
-            width: 500px;                   
+            height: 3vh;
+            width: 36.59234870620139%; /* 500 / 1366 * 100 = 36.59234870620139% */
             padding-left: 10px;
             border-radius: 20px;
             border: none;
             background-color: #74747480;
             color: white;
-            
-            &::placeholder{
+
+            /* color del placeholder de los inputs para que aparezca blanco */
+            &::placeholder {
                 color: white;
                 opacity: 1;
             }
         }
 
         input[type="submit"] {
-            width: 520px;                    
-            height: 3vh;                     
+            width: 38.06228373702421%; /* 520 / 1366 * 100 = 38.06228373702421% */
+            height: 3vh;
             border-radius: 10px;
             border: 1px solid var(--clr-neon2);
             background-color: transparent;
             font-size: 1.3em;
-            transition: background-color 1s ease;
-
+            transition: background-color 1s ease; /* hace que ek background cambie de una forma mas suave */
 
             &:hover {
                 background-color: var(--clr-neon2);
                 color: #fff;
             }
-
         }
-
     }
 }
