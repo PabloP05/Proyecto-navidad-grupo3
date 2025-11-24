@@ -1,0 +1,61 @@
+:root{
+     /* Paleta principal (rojo neón) */
+   --clr-neon: #EA0000; /* rojo brillante */
+   --clr-bg: #261717;    /* rojo muy oscuro para fondo */
+   --clr-white: #fff;
+   --clr-neon2: rgb(255, 213, 75);
+
+
+
+
+   /* Tipografías */
+   --font-fam-heading: 'Poppins', sans-serif;
+   --font-fam-body: 'Roboto', sans-serif;
+
+
+   /* Gradiente principal en rojos */
+    --gradiente: linear-gradient(135deg, 
+        #0EF5DD 0%,       /* tono más oscuro del fondo */
+        var(--clr-bg) 50%,        /* fondo base */
+        #B30000 80%,    /* rojo suavizado */
+        var(--clr-neon) 100%      /* rojo brillante */
+    );
+
+}
+
+
+/* layout de la web  */
+
+#adminInicio{
+      font-family: var(--font-fam-body);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: var(--gradiente);
+
+    /* estructura del grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    grid-template-areas: 
+    'header' 'header' 'header' 'header',
+    'main' 'main' 'main' 'main',
+    'footer' 'footer' 'footer' 'footer'
+    ;
+}
+
+
+
+
+h1{ 
+   color: white;
+    font-size: 3em;
+}
+
+
+
+
+
