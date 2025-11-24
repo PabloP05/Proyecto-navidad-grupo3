@@ -1,1 +1,90 @@
-a
+:root {
+    --clr-neon: #00FF88;
+    --clr-bg: #3c5744c7; /* #243729 */
+    --clr-white: #FFFFFF;
+    --fuente_de_lasCabeceras: 'Poppins', sans-serif;
+    --fuente_de_texto_base: 'Roboto', sans-serif;
+    --gradiente: linear-gradient(135deg, 
+        #00ffdd 0%,    
+        var(--clr-bg) 50%, /* en el medio de la pantalla se adapta al color nogro de fondo */       
+        #00B359 80%, 
+        var(--clr-neon) 100%     
+    );
+    --clr-neon2: #F6FF00;
+}
+
+body {
+    font-family: var(--fuente_de_texto_base);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1512px;   /* ancho máximo lógico en MacBook Pro 14" */
+    min-height: 100vh; /* altura completa del viewport */
+    margin: 0;
+    overflow: hidden;
+    background: var(--clr-bg);
+}
+
+.container {
+    width: 90%;      /* se adapta proporcionalmente → ~1360px dentro de 1512px */
+    max-width: 550px; /* límite si reduces viewport */
+    padding: 48px 64px;
+    border-radius: 30px;
+    background: rgba(0,0,0,0.2);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+}
+
+#inicioSesion {
+    background: var(--gradiente); /* el inicio de sesion contendrá este gradiente */
+}
+
+
+h1 {
+    font-family: var(--fuente_de_lasCabeceras);
+    color: var(--clr-white);
+    font-size: 51px; /* 3.2rem */
+    font-weight: 700;
+    margin-bottom: 32px; /* 2rem */
+}
+
+h3 {
+    font-family: var(--fuente_de_lasCabeceras);
+    color: var(--clr-white);
+    font-size: 16px; /* 1rem */
+    font-weight: 700;
+    margin-bottom: 32px; /* 2rem */
+}
+
+button {
+    font-family: var(--fuente_de_lasCabeceras);
+    font-size: 21px; /* 1.3rem */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    width: 100%;
+    padding: 16px; /* 1rem */
+    margin-bottom: 24px; /* 1.5rem */
+    cursor: pointer;
+    border: 2px solid var(--clr-neon2);
+    border-radius: 15px;
+    color: var(--clr-neon2);
+    background: transparent;
+    box-shadow: inset 0 0 8px 0 var(--clr-neon2), 0 0 8px 0 var(--clr-neon2);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+button:hover {
+    color: var(--clr-bg);
+    background: var(--clr-neon2);
+    box-shadow: 0 0 32px 8px var(--clr-neon2);
+}
+
+#cerrar-sesion {
+    width: 230px;
+    height: 70px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
