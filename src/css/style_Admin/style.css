@@ -3,6 +3,9 @@
    --clr-bg: #261717;
    --clr-white: #fff;
    --clr-neon2: rgb(255, 213, 75);
+    --rojo-navegador :#ff2525ca; 
+    --gris-menu:#8989897e;
+
 
 
    --gradiente: linear-gradient(135deg, 
@@ -28,15 +31,15 @@ body {
     width: 1366px; /* Referencia de inicio al crear la páfina : 1366px */
     margin: 0 auto;
     position: relative;
-    justify-items: center;
-    align-items: center;
-    height: calc(100vh - 100px);  
-    background: var(--gradiente);
-    padding-top: 100px;
+    width: 100vh; /*  medida estandart para todos los body */
+    
 }
 
-#adminInicio {
-
+#adminInicio_body {
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    padding-top: 100px;
     display: grid;
     grid-template-columns: 1fr 3fr 3fr 1fr;
     grid-template-rows: 0.5fr 1fr 2fr; /* ajistando el flex a dos fracciones de la pantalla logro posicionar el cuadro donde necesito */
@@ -44,6 +47,8 @@ body {
         ". header header ."
         ". main main ."
         "footer footer footer footer";
+    height: calc(100vh - 100px);  
+    background: var(--gradiente);
     width: 100%;
     margin: 0 auto;
     div{
@@ -108,5 +113,60 @@ body {
                 color: #fff;
             }
         }
+    }
+}
+
+/* inicio de panel de control (Cpanel) */
+
+.Cpanel_body{
+    width: 100%;
+    /* disposición del layout en formato grid */
+    display: grid;
+    grid-template-columns: 0.6fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1fr 1fr;  /*  la primera fila tiene una menor medida porque contiene el nav  */
+    grid-template-areas: 
+        "aside logo logo logo"
+        "aside main main main"
+        "aside main main main"
+    ;
+    /* barra lateral que ará de navegador entre las paginas del Cpanel del administrador*/
+    aside{
+        background-color: var(--rojo-navegador) ;
+        width: 100%;
+        height: 100vh;
+        grid-area: aside;
+        position: relative;
+
+        button{               /* Boton de cerrado de sesión */
+            width: 80%;
+            height: 3vh;
+            background-color: transparent;
+            color: white;
+            border-radius: 20px;
+            border: 1px solid white;
+            font-size: 1.3em;
+            position: absolute;
+            bottom: 20px;
+            left: 10%;
+        }
+    }
+    
+    nav{   /* contiene el logo y el rotulo de la paginba (titulo y el eslogan del Cpanel) */
+        grid-area: logo;
+        background-color: var(--rojo-navegador);
+        text-align: center;
+        img{
+            width: 100px;
+            float: right;
+            margin-right: 10px;
+        }
+        h1,h3{
+            color: white;
+            font-size: 2.2em;
+        }
+    }
+    main{   /* el contenido será alterno en funcion a la opción en la que ya te encuentres */
+        grid-area: main;
+        background-color: var(--gris-menu);
     }
 }
