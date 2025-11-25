@@ -3,11 +3,12 @@
    --clr-bg: #261717;
    --clr-white: #fff;
    --clr-neon2: rgb(255, 213, 75);
-    --rojo-navegador :#ff2525ca; 
+    --rojo-navegador :#ff0000c8; 
     --gris-menu:#8989897e;
     --transparencia-formularios:#54545498;
-
-
+    --dato-del-contenido:rgba(255, 68, 0, 0.665);
+    --verdeSuave:rgba(127, 249, 127, 0.376);
+    --botones-de-agregado:rgb(237, 221, 0);
    --gradiente: linear-gradient(135deg, 
         #0EF5DD 0%,       
         var(--clr-bg) 50%,      
@@ -28,11 +29,10 @@ html{
 
 
 body {
-    width: 1366px; /* Referencia de inicio al crear la páfina : 1366px */
+    min-width: 1366px; /* Referencia de inicio al crear la páfina : 1366px */
     margin: 0 auto;
     position: relative;
     width: 100vh; /*  medida estandart para todos los body */
-    
 }
 
 #adminInicio_body {
@@ -124,7 +124,7 @@ body {
     /* disposición del layout en formato grid */
     display: grid;
     grid-template-columns: 0.6fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr;  /*  la primera fila tiene una menor medida porque contiene el nav  */
+    grid-template-rows: 0.2fr auto 1fr;  /*  la primera fila tiene una menor medida porque contiene el nav  */
     grid-template-areas: 
         "aside logo logo logo"
         "aside main main main"
@@ -149,6 +149,14 @@ body {
             position: absolute;
             bottom: 20px;
             left: 10%;
+
+            transition:background-color 0.5s ease;
+
+            &:hover{
+                background-color:white;
+                color: var(--rojo-navegador);
+
+            }
         }
     }
     
@@ -171,11 +179,15 @@ body {
         background-color: var(--gris-menu);
         justify-items: center;
         text-align: center;
+        box-sizing: border-box; /* controlo la referencia absoluta de la caja para que no aumete en ningun momento */
+        
         form{
             margin-top: 30px;
             width: 80%;
-            min-height: 40vh;
+            min-height: 50vh;
             background-color: var(--transparencia-formularios);
+            position: relative;
+            border-radius: 10px;
 
             h2{
                 color: white;
@@ -201,9 +213,60 @@ body {
                     margin-top: 10px;
                 }
             } 
+
             /* reajuste de la medida para el area de los datos (es uno de los campos)*/
             #contenido{
                 height: 30vh;
+                position: relative;
+                label{
+                    display: block;
+                }
+                input[type="text"]{
+                    display: block;
+                    padding-left: 10px;
+                    width: calc(80% - 10px);
+                    height: 3vh;
+                    border-radius: 10px;
+                    background-color: var(--dato-del-contenido);
+                    border: 1px solid black;
+                    margin-top: 10px;
+                    &::placeholder{
+                        color: white;
+                    }
+                }
+                .opciones{
+                    background-color: var(--verdeSuave) !important;
+                }
+
+                button{
+                    border-radius: 10px;
+                    border: none;
+                    background-color: var(--botones-de-agregado);
+                    position: absolute;
+                    bottom: 3%;
+                    right: 3%;
+                    img{
+                        width: 30px;
+                    }
+                }
+            }
+
+            button[type="submit"]{
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                border-radius: 10px;
+                width: 200px;
+                height: 5vh;
+                border:none;
+                position:absolute;
+                bottom: 3%;
+                left: 40%;
+                background-color: var(--verdeSuave);
+
+                img{
+                    width: 20px;
+                }
             }
         }
     }
