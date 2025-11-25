@@ -9,6 +9,11 @@
     --dato-del-contenido:rgba(255, 68, 0, 0.665);
     --verdeSuave:rgba(127, 249, 127, 0.376);
     --botones-de-agregado:rgb(237, 221, 0);
+
+    --marco-de-contenido-preguntas:rgba(92, 92, 255, 0.704);
+    --marco-de-contenido-situaciones:rgba(92, 255, 168, 0.615);
+    --marco-de-contenido-fotos:rgba(176, 92, 255, 0.641);
+
    --gradiente: linear-gradient(135deg, 
         #0EF5DD 0%,       
         var(--clr-bg) 50%,      
@@ -305,7 +310,9 @@ body {
             padding: 5%;
             overflow: auto;
             color: white;
-             font-size: 2em;
+            font-size: 2em;
+            border-radius: 10px;
+
 
              /* PREGUNTAS Y RESPUESTAS : AJUSTES */
              .datos_de_contenido{
@@ -324,6 +331,9 @@ body {
                 align-items: center;
             }
            
+            .div_foto{
+            height: 15vh;
+            }
             button{
                 border: none;
                 border-radius: 10px;
@@ -338,7 +348,19 @@ body {
                 background-color: #ffbc37;
             }
 
-            /* FOTOGRAFIAS AJUESTES  */
+        }
+        /* Los colores se pueden quitar eliminando estas lineas */
+        .contenedor-preguntas{
+            background-color: var(--marco-de-contenido-preguntas);
+        }
+        .contenedor-situaciones{
+            background-color: var(--marco-de-contenido-situaciones);
+        }
+        .contenedor-fotos{
+            background-color: var(--marco-de-contenido-fotos);
+        }
+        .lista-usuarios{
+            height: 60vh;
         }
     }
 }
