@@ -29,7 +29,7 @@ html{
 
 
 body {
-    min-width: 1366px; /* Referencia de inicio al crear la páfina : 1366px */
+    min-width: 100%; /* Referencia de inicio al crear la páfina : 1366px */
     margin: 0 auto;
     position: relative;
     width: 100vh; /*  medida estandart para todos los body */
@@ -124,11 +124,12 @@ body {
     /* disposición del layout en formato grid */
     display: grid;
     grid-template-columns: 0.6fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr auto 1fr;  /*  la primera fila tiene una menor medida porque contiene el nav  */
+    grid-template-rows: 9.09vh 45.45vh 45.45vh;  /*  la primera fila tiene una menor medida porque contiene el nav  */
+    /* medidas reales en el grid : 0.2fr 1fr 1fr paso a vh para controlar los main : 9.09vh 45.45vh 45.45vh FORMULA PARA CALCULARLO : (total de la suma de las filas/tamaño de la fila en fr)*100 */
     grid-template-areas: 
         "aside logo logo logo"
         "aside main main main"
-        "aside main main main"
+        "aside main main main" /* me gnerea problemas en el main al añadir material porque no tiene una altura fija en vh */
     ;
     /* barra lateral que ará de navegador entre las paginas del Cpanel del administrador*/
     aside{
@@ -205,7 +206,8 @@ body {
         justify-items: center;
         text-align: center;
         box-sizing: border-box; /* controlo la referencia absoluta de la caja para que no aumete en ningun momento */
-        
+        overflow: auto; /* para que aparezca una barra de desplazamiento en caso de que el contenido sobrepase el area del main */
+
         form{
             margin-top: 30px;
             width: 80%;
@@ -293,6 +295,50 @@ body {
                     width: 20px;
                 }
             }
+        }
+
+        .contenido{
+            width: 70%; /* para que reste el padding de 5% por lateral */
+            height:40vh;
+            background-color: var(--gris-menu);
+            margin-top: 3%;
+            padding: 5%;
+            overflow: auto;
+            color: white;
+             font-size: 2em;
+
+             /* PREGUNTAS Y RESPUESTAS : AJUSTES */
+             .datos_de_contenido{
+                 font-size: 0.8em;
+                margin-top: 5%;
+                height: 9vh;
+                background-color: var(--transparencia-formularios);
+                border-radius: 10px;
+                display: flex;
+                gap: 20px;
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-direction: row;
+                flex-basis: 80%;
+                justify-content: center;
+                align-items: center;
+            }
+           
+            button{
+                border: none;
+                border-radius: 10px;
+                img{
+                    width: 50px;
+                }
+            }
+            .borrar{
+                background-color: #ff3737; 
+            }
+            .configurar{
+                background-color: #ffbc37;
+            }
+
+            /* FOTOGRAFIAS AJUESTES  */
         }
     }
 }
