@@ -1,44 +1,5 @@
-:root{
-   --clr-neon: #EA0000;
-   --clr-bg: #261717;
-   --clr-white: #fff;
-   --clr-neon2: rgb(255, 213, 75);
-    --rojo-navegador :#ff0000c8; 
-    --gris-menu:#8989897e;
-    --transparencia-formularios:#54545498;
-    --dato-del-contenido:rgba(255, 68, 0, 0.665);
-    --verdeSuave:rgba(127, 249, 127, 0.376);
-    --botones-de-agregado:rgb(237, 221, 0);
+@import url('config.css');
 
-    --marco-de-contenido-preguntas:rgba(92, 92, 255, 0.704);
-    --marco-de-contenido-situaciones:rgba(92, 255, 168, 0.615);
-    --marco-de-contenido-fotos:rgba(176, 92, 255, 0.641);
-
-   --gradiente: linear-gradient(135deg, 
-        #0EF5DD 0%,       
-        var(--clr-bg) 50%,      
-        #B30000 80%,   
-        var(--clr-neon) 100%
-   );
-}
-
-/* ORGANIZACION DE LA PAGINA (LAYOUT) */
-*{
-    margin: 0;
-    padding: 0;
-}
-
-html{
-    background-color: #fff;
-}
-
-
-body {
-    min-width: 100%; /* Referencia de inicio al crear la páfina : 1366px */
-    margin: 0 auto;
-    position: relative;
-    width: 100vh; /*  medida estandart para todos los body */
-}
 
 #adminInicio_body {
     width: 100%;
@@ -220,7 +181,7 @@ body {
             background-color: var(--transparencia-formularios);
             position: relative;
             border-radius: 10px;
-
+            
             h2{
                 color: white;
             }
@@ -365,20 +326,66 @@ body {
     }
 }
 
-/* PANTALLA DE MEDIFICACIÓN DEL CONTENIDO SELECCIONADO (SERÁ UN POPUP GENERADO POR JS) */
+/* VISTAS DE MODIFICACIÓN */
 
-.modificacion_body{
-
-    background-color: white;
-    width: 100%;
-    
-    nav{
+#modificacion{
+    header{
         width: 100%;
+        height: 10vh;
         background-color: var(--rojo-navegador);
     }
+    main{
+        width: 100%;
+        height: 70vh;
+        justify-items: center;
+        padding-top: 10vh ;
+        form{
+            width: 50%;
+            height: 60vh;
+            background-color: var(--transparencia-formularios);
+            border-radius: 10px;
+           justify-items: center;
+           text-align: center;
+           position: relative;
 
+           input[type="text"]{
+                    width: 50%;
+                    margin-top: 2%;
+                }
+            div{
+                width: 70%;
+                text-align: start;
+                input[type="text"]{
+                    width: 99%;
+                    padding-left: 1%;
+                }
+                p{
+                    color: white;
+                    margin-bottom: 10px;
+                }
+            }
 
-    .Material_a_editar{
-        /* se decidirá el tamaño del contido a editar */
+            input[type="submit"]{
+                position: absolute;
+                bottom: 2%;
+                left: 15%;
+                height: 5vh;
+                border: 1px solid white;
+                background-color: transparent;
+                border-radius: 20px;
+                font-size: 1.5em;
+                color: white;
+                width: 70%;
+            }
+        }
+    }
+    footer{
+        width: 100%;
+        height: 9vh;
+        background-color: var(--rojo-navegador);
+        color: white;
+        justify-items: center;
+        align-items: center;
+        padding-top: 1vh;
     }
 }
