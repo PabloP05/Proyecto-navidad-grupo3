@@ -242,19 +242,17 @@ body {
         justify-content: center;
     }
 
-   button{
-                border: none;
-                border-radius: 10px;
-                img{
-                    width: 50px;
-                    
-                }
-            }
-            .borrar{
-                background-color: #ff3737; 
-            }
-            .ver{
-                background-color: #ffbc37;
-            }
-
+    button{
+        border: none;
+        border-radius: 10px;
+        img{
+            width: 50px;
+        }
+    }
+    .borrar{
+        background-color: #ff3737; 
+    }
+    .ver{
+        background-color: #ffbc37;
+    }
 }
