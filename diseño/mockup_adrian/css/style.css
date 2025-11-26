@@ -77,12 +77,12 @@ button:hover{
 
 /*Estilo de los input*/
 input[type="text"], input[type="email"]{
-    width: 300px;                   /*Anchura del input*/
-    height: 30px;                   /*Altura del input*/
-    padding-left: 10px;             /*Espacio interno del input*/
-    border: 2px solid black;      /*Estilo del borde de los input*/
-    border-radius: 5px;             /*Borde redondeado*/
-    transition: all 0.15s ease;     /*Tiempo de transición del hover*/
+    width: 300px;                           /*Anchura del input*/
+    height: 30px;                           /*Altura del input*/
+    padding-left: 10px;                     /*Espacio interno del input*/
+    border: 2px solid black;              /*Estilo del borde de los input*/
+    border-radius: 5px;                     /*Borde redondeado*/
+    transition: all 0.15s ease;             /*Tiempo de transición del hover*/
 }
 
 input[type="text"]:hover, input[type="email"]:hover{
@@ -103,17 +103,17 @@ input[type="text"]:hover, input[type="email"]:hover{
 #inicioSesion{
     header{
         text-align: center;                 /*ALineo el texto*/
-        padding: 200px 0px 50px 0px;       /*Espacio interno del button en la parte superior e inferior*/
+        padding: 200px 0px 50px 0px;        /*Espacio interno del button en la parte superior e inferior*/
     }
 
     main{
         #menuInicioSesion{
-            display: grid;                      /*Despliego mediante grid*/
-            grid-template-columns: 300px;       /*Asigno una única columna de 300px de ancho*/
-            grid-template-rows: 100px;          /*Asigno una única fila de 100px de alto*/
-            justify-items: center;              /*Alinea los elementos hijo al centro en horizontal*/
-            align-items: center;                /*Alinea los elementos hijo al centro en vertical*/
-            justify-content: center;            /*Alinea la cuadrícula al centro en horizontal*/
+            display: grid;                  /*Despliego mediante grid*/
+            grid-template-columns: 300px;   /*Asigno una única columna de 300px de ancho*/
+            grid-template-rows: 100px;      /*Asigno una única fila de 100px de alto*/
+            justify-items: center;          /*Alinea los elementos hijo al centro en horizontal*/
+            align-items: center;            /*Alinea los elementos hijo al centro en vertical*/
+            justify-content: center;        /*Alinea la cuadrícula al centro en horizontal*/
         }
     }
 }
@@ -149,21 +149,20 @@ input[type="text"]:hover, input[type="email"]:hover{
     }
 
     main{
-        margin: 100px 10px 0px 10px;       /*Espacio entre elementos del main por izquierda y derecha y por arriba*/
+        margin: 100px 10px 0px 10px;        /*Espacio entre elementos del main por izquierda y derecha y por arriba*/
 
         #menuBotones{
             display: grid;                  /*Despliego mediante un grid*/
-            grid-template-areas:            /*Organizo el grid en tres columnas y 2 filas*/
+                                            /*Organizo el grid en tres columnas y 2 filas*/
+            grid-template-areas:            
                 "iniciar salas partida"
                 "ranking ranking ranking";  /*El ranking ocupa todo*/
             grid-template-columns: 400px 400px 400px;   /*Tamaño de las columnas de ancho*/
-            grid-template-rows: 300px 100px;/*Tamaño de las filas de alto*/
+            grid-template-rows: 400px 100px;/*Tamaño de las filas de alto*/
             justify-content: center;        /*Alinea la cuadrícula al centro en horizontal*/
-            gap: 50px;                      /*Espacio entre de columnas*/
-            row-gap: 150px;                 /*Espacio entre filas*/
+            gap: 50px 50px;                 /*Espacio entre filas y columnas*/
 
             .lineaA{
-                padding: 200px 0px;         /*Espacio interno del main por arriba y abajo*/
                 margin: 0px;                /*Espacio entre elementos a 0px*/
             }
 
@@ -181,7 +180,6 @@ input[type="text"]:hover, input[type="email"]:hover{
 
             #btnRanking{
                 grid-area: ranking;         /*Nombre que se usará para el grid-template-areas*/
-                padding: 25px 0px;          /*Espacio interno del main por arriba y abajo*/
             }
         }
     }
@@ -311,92 +309,92 @@ input[type="text"]:hover, input[type="email"]:hover{
         gap: 50px;
 
         input[type="text"]{
-            flex: 0 1 75px;                /*Flex-grow (Si sobre espacio se agranda en 1), flex-shrink (Si falta espacio se encoje en 1), flex-basis (Como el width)*/
-            text-align: center;
-            padding: 0px;
+            flex: 0 1 75px;                 /*Flex-grow (Si sobre espacio se agranda en 1), flex-shrink (Si falta espacio se encoje en 1), flex-basis (Como el width)*/
+            text-align: center;             /*Centramos*/
+            padding: 0px;                   /*Quitamos espacio interno*/
         }
     }
 
     #flecha{
-        width: 70px;
-        position: absolute;
-        bottom: 20px;
-        left: 30px;
+        width: 70px;                        /*Ancho*/
+        position: absolute;                 /*Ponemos posicion absolute respecto al header*/
+        bottom: 20px;                       /*20px por encima del borde inferior del header*/
+        left: 30px;                         /*30px a la derecha del borde izquierdo del header*/
     }
 }
 
 /*--Preguntas y Respuestas--*/
 #preguntasRespuestas{
     header{
-        background-color: black;
-        color: var(--fondo-blanco);
+        background-color: black;          /*Fondo del header*/
+        color: var(--fondo-blanco);         /*Color de la letra del header*/
         text-align: center;                 /*Alineo el texto*/
-        padding: 30px 0px;         /*Espacio interno del button en la parte superior*/
+        padding: 30px 0px;                  /*Espacio interno del button en la parte superior*/
         position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
 
         #pregunta{
-            background-color: var(--fondo-blanco);
-            width: 40px;
-            padding: 15px;
-            position: absolute;
-            border-radius: 50px;
-            top: 20px;
-            left: 30px;
+            background-color: var(--fondo-blanco);  /*Fondo del icono*/
+            width: 40px;                    /*Ancho de la imagen*/
+            padding: 15px;                  /*Espacio interno de la imagen*/
+            position: absolute;             /*Ponemos posicion absolute respecto al header*/
+            border-radius: 50px;            /*Borde redondeado*/
+            top: 20px;                      /*20px por debajo del borde superior del header*/
+            left: 30px;                     /*30px a la derecha del borde izquierdo del header*/
         }
 
         #tiempo{
-            width: 150px;
-            padding: 10px 15px;
-            background-color: var(--fondo-blanco);
-            border: 2px solid var(--fondo-blanco);
-            border-radius: 10px;
-            color: black;
+            width: 150px;                   /*Ancho del temporizador*/
+            padding: 10px 15px;             /*Espacio interno del temporizador*/
+            background-color: var(--fondo-blanco);  /*Color del fondo*/
+            border: 2px solid var(--fondo-blanco);  /*Esilo del borde*/
+            border-radius: 10px;            /*Borde redondeado*/
+            color: black;                 /*Color de la letra*/
             box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
-            position: absolute;
-            top: 20px;
-            right: 30px;
+            position: absolute;             /*Ponemos posicion absolute respecto al header*/
+            top: 20px;                      /*20px por debajo del borde superior del header*/
+            right: 30px;                    /*30px a la izquierda del borde derecho del header*/
         }
     }
 
     main{
-        background-color: rgba(155, 201, 111, 0.827);
-        padding: 50px 0px;
+        background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
+        padding: 50px 0px;                  /*Espacio interno del main*/
 
         h2{
-            width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-            background-color: var(--color-neon);
-            border: 2px solid var(--color-neon);
-            border-radius: 10px;
-            color: black;
+            width: 1000px;                  /*Ancho del titulo*/
+            margin: 0 auto;                 /*Centramos la caja del titulo*/
+            padding: 20px;                  /*Espacio interno del titulo*/
+            text-align: center;             /*Centramos el texto del titulo*/
+            background-color: var(--color-neon);    /*Color del fondo del titulo*/
+            border: 2px solid var(--color-neon);    /*Estilo borde*/
+            border-radius: 10px;            /*Borde redondeado*/
+            color: black;                 /*Color de la letra*/
             box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
         }
 
         #opcionesPregunta{
-            width: 800px;
-            margin: 0 auto;
-            padding: 50px 0px;
-            color: var(--fondo-blanco);
+            width: 800px;                   /*Ancho de la caja*/
+            margin: 0 auto;                 /*Centra la caja*/
+            padding: 50px 0px;              /*Espacio interno de las respuestas*/
+            color: var(--fondo-blanco);     /*Color de la letra*/
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-direction: column;         /*Flexeamos dirección columna*/
+            align-items: center;            /*Centra el contenido respecto al eje vertical pero como esta en dirección columna pasa a ser el horizontal*/
 
             .contenedor-pregunta{
-                width: 700px;
-                text-align: left;
-                background-color: var(--fondo-oscuro);
-                border: 2px solid var(--fondo-oscuro);
-                border-radius: 10px;
+                width: 700px;               /*Ancho del contenedor*/
+                text-align: left;           /*Alineamos el contenido a la izquierda*/
+                background-color: var(--fondo-oscuro);  /*Color del fondo*/
+                border: 2px solid var(--fondo-oscuro);  /*Estilo borde*/
+                border-radius: 10px;        /*Borde redonedado*/
                 box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
-                margin: 25px 0px;
-                padding: 20px;
-                flex: 0 1 0px;
+                margin: 25px 0px;           /*Espacio entre elementos superior e inferior*/
+                padding: 20px;              /*Espacio interno de la respuesta*/
+                flex: 1 1 auto;             /*Flex-grow (se agranda de 1 en 1), flex-shrink (se empequeñece de 1 en 1), flex-basic (ancho especial para flex (antes que el width normal))*/
 
                 p{
-                    display: inline-block;
-                    margin-left: 20px;
+                    display: inline-block;  /*Desplegamos en inline-block para que no se baje después del input*/
+                    margin-left: 20px;      /*Espacio entre elementos por la izquierda*/
                 }
             }
         }
@@ -406,66 +404,175 @@ input[type="text"]:hover, input[type="email"]:hover{
 /*--Preguntas y Respuestas--*/
 #situaciones{
     header{
-        background-color: black;
-        color: var(--fondo-blanco);
+        background-color: black;         /*Color del fondo*/
+        color: var(--fondo-blanco);         /*Color de la letra*/
         text-align: center;                 /*Alineo el texto*/
-        padding: 30px 0px;         /*Espacio interno del button en la parte superior*/
+        padding: 30px 0px;                  /*Espacio interno del button en la parte superior*/
         position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
 
         #situacion{
-            background-color: var(--fondo-blanco);
-            width: 40px;
-            padding: 15px;
-            position: absolute;
-            border-radius: 50px;
-            top: 20px;
-            left: 30px;
+            background-color: var(--fondo-blanco);  /*Fondo del icono*/
+            width: 40px;                    /*Ancho de la imagen*/
+            padding: 15px;                  /*Espacio interno de la imagen*/
+            position: absolute;             /*Ponemos posicion absolute respecto al header*/
+            border-radius: 50px;            /*Borde redondeado*/
+            top: 20px;                      /*20px por debajo del borde superior del header*/
+            left: 30px;                     /*30px a la derecha del borde izquierdo del header*/
         }
 
         #tiempo{
-            width: 150px;
-            padding: 10px 15px;
-            background-color: var(--fondo-blanco);
-            border: 2px solid var(--fondo-blanco);
-            border-radius: 10px;
-            color: black;
+            width: 150px;                   /*Ancho del temporizador*/
+            padding: 10px 15px;             /*Espacio interno del temporizador*/
+            background-color: var(--fondo-blanco);  /*Color del fondo*/
+            border: 2px solid var(--fondo-blanco);  /*Esilo del borde*/
+            border-radius: 10px;            /*Borde redondeado*/
+            color: black;                 /*Color de la letra*/
             box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
-            position: absolute;
-            top: 20px;
-            right: 30px;
+            position: absolute;             /*Ponemos posicion absolute respecto al header*/
+            top: 20px;                      /*20px por debajo del borde superior del header*/
+            right: 30px;                    /*30px a la izquierda del borde derecho del header*/
         }
     }
 
     main{
-        background-color: rgba(155, 201, 111, 0.827);
-        padding: 50px 0px;
+        background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
+        padding: 50px 0px;                  /*Espacio interno del main*/
 
         h2{
-            width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-            background-color: var(--color-neon);
-            border: 2px solid var(--color-neon);
-            border-radius: 10px;
-            color: black;
+            width: 1000px;                  /*Ancho del titulo*/
+            margin: 0 auto;                 /*Centramos la caja del titulo*/
+            padding: 20px;                  /*Espacio interno del titulo*/
+            text-align: center;             /*Centramos el texto del titulo*/
+            background-color: var(--color-neon);    /*Color del fondo del titulo*/
+            border: 2px solid var(--color-neon);    /*Estilo borde*/
+            border-radius: 10px;            /*Borde redondeado*/
+            color: black;                 /*Color de la letra*/
             box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
         }
 
         #opcionesSituacion{
-            width: 800px;
-            margin: 0 auto;
-            padding: 50px 0px;
-            color: var(--fondo-blanco);
+            width: 1000px;                  /*Ancho de la situacion*/
+            margin: 0 auto;                 /*Centramos la caja*/
+            padding: 50px 0px;              /*Contenido interno de la situacion*/
+            color: var(--fondo-blanco);     /*Color de la letra*/
             display: grid;
-            grid-template-columns: 300px 300px;
-            grid-row: 300px;
+            grid-template-columns: 400px 400px; /*Hacemos dos columnas de 400px*/
+            grid-template-rows: auto;       /*Hacemos una fila que se adaptará al contenido por defecto al tamaño de sus hijos*/
+            gap: 0px 200px;                 /*Espacio entre filas y columnas*/
+            justify-content: left;          /*Alineamos a la izquierda el contenido*/
+            
 
             .contenedor-situacion{
-                
+                text-align: left;           /*Alineamos el contenido a la izquierda*/
+                background-color: var(--fondo-oscuro);  /*Color del fondo*/
+                border: 2px solid var(--fondo-oscuro);  /*Estilo borde*/
+                border-radius: 10px;        /*Borde redonedado*/
+                box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
+                margin: 25px 0px;           /*Espacio entre elementos superior e inferior*/
+                padding: 20px;              /*Espacio interno de la respuesta*/
+
                 p{
-                    display: inline-block;
-                    margin-left: 20px;
+                    display: inline-block;  /*Desplegamos en inline-block para que no se baje después del input*/
+                    margin-left: 20px;      /*Espacio entre elementos por la izquierda*/
+                }
+            }
+        }
+    }
+}
+
+/*Fotos*/
+#fotos{
+    header{
+        background-color: black;          /*Color del fondo*/
+        color: var(--fondo-blanco);         /*Color del texto*/
+        text-align: center;                 /*Alineo el texto*/
+        padding: 30px 0px;                  /*Espacio interno del button en la parte superior*/
+        position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
+
+        #foto{
+            background-color: var(--fondo-blanco);  /*Fondo del icono*/
+            width: 40px;                    /*Ancho de la imagen*/
+            padding: 15px;                  /*Espacio interno de la imagen*/
+            position: absolute;             /*Ponemos posicion absolute respecto al header*/
+            border-radius: 50px;            /*Borde redondeado*/
+            top: 20px;                      /*20px por debajo del borde superior del header*/
+            left: 30px;                     /*30px a la derecha del borde izquierdo del header*/
+        }
+
+        #tiempo{
+            width: 150px;                   /*Ancho del temporizador*/
+            padding: 10px 15px;             /*Espacio interno del temporizador*/
+            background-color: var(--fondo-blanco);  /*Color del fondo*/
+            border: 2px solid var(--fondo-blanco);  /*Esilo del borde*/
+            border-radius: 10px;            /*Borde redondeado*/
+            color: black;                 /*Color de la letra*/
+            box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
+            position: absolute;             /*Ponemos posicion absolute respecto al header*/
+            top: 20px;                      /*20px por debajo del borde superior del header*/
+            right: 30px;                    /*30px a la izquierda del borde derecho del header*/
+        }
+    }
+
+    main{
+        background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
+        padding: 50px 0px;                  /*Espacio interno del main*/
+
+        h2{
+            width: 1200px;                  /*Ancho del titulo*/
+            margin: 0 auto;                 /*Centramos la caja del titulo*/
+            padding: 20px;                  /*Espacio interno del titulo*/
+            text-align: center;             /*Centramos el texto del titulo*/
+            background-color: var(--color-neon);    /*Color del fondo del titulo*/
+            border: 2px solid var(--color-neon);    /*Estilo borde*/
+            border-radius: 10px;            /*Borde redondeado*/
+            color: black;                 /*Color de la letra*/
+            box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+        }
+
+        #opcionesFoto{
+            width: 1200px;                  /*Ancho de la situacion*/
+            margin: 0 auto;                 /*Centramos la caja*/
+            padding: 50px 0px;              /*Contenido interno de la situacion*/
+            color: var(--fondo-blanco);     /*Color del texto*/
+            display: grid;
+                                            /*Organizo el grid en 2 columnas y 2 filas*/
+            grid-template-areas:            
+                "pregunta1 imagen"
+                "pregunta2 imagen";  /*La imagen ocupa la columna 2 entera*/
+            grid-template-columns: 500px 400px; /*Ancho de las columnas*/
+            grid-template-rows: auto auto;  /*Altura por defecto de las filas que se adapta al contenido de sus hijos*/
+            gap: 0px 200px;                 /*Espacio entre las filas y columnas*/
+            justify-content: left;          /*Alineamos el contenido a la izquierda*/
+
+            #pregunta1{
+                grid-area: pregunta1;       /*Llamamos a la pregunta1 pregunta1 que es el nombre que usaremos para llamaralo en el grid-template-areas*/
+            }
+
+            #pregunta2{
+                grid-area: pregunta2;       /*Llamamos a la pregunta2 pregunta2 que es el nombre que usaremos para llamaralo en el grid-template-areas*/
+            }
+
+            #contenedor-imagen{
+                grid-area: imagen;          /*Llamamos a la contenedor-imagen imagen que es el nombre que usaremos para llamaralo en el grid-template-areas*/
+            }
+
+            #imagenFoto{
+                width: 300px;               /*Ancho de las imagenes*/
+            }
+            
+
+            .contenedor-foto{
+                text-align: left;           /*Alineamos el contenido a la izquierda*/
+                background-color: var(--fondo-oscuro);  /*Color del fondo*/
+                border: 2px solid var(--fondo-oscuro);  /*Estilo borde*/
+                border-radius: 10px;        /*Borde redonedado*/
+                box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
+                margin: 25px 0px;           /*Espacio entre elementos superior e inferior*/
+                padding: 20px;              /*Espacio interno de la respuesta*/
+
+                p{
+                    display: inline-block;  /*Desplegamos en inline-block para que no se baje después del input*/
+                    margin-left: 20px;      /*Espacio entre elementos por la izquierda*/
                 }
             }
         }
