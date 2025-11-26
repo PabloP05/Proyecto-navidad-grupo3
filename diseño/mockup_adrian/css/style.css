@@ -185,7 +185,7 @@ input[type="text"]:hover, input[type="email"]:hover{
     }
 }
 
-/*--Registro--*/
+/*--REGISTRO--*/
 #registro{
     header{
         text-align: center;                 /*Alineo al centro*/
@@ -235,7 +235,7 @@ input[type="text"]:hover, input[type="email"]:hover{
     }
 }
 
-/*--Ranking--*/
+/*--RANKING--*/
 #ranking{
     header{
         text-align: center;                 /*Alineo el texto*/
@@ -273,7 +273,7 @@ input[type="text"]:hover, input[type="email"]:hover{
     }
 }
 
-/*--Preguntas y Respuestas--*/
+/*--PREGUNTAS Y RESPUESTAS--*/
 #preguntasRespuestas{
     header{
         background-color: black;          /*Fondo del header*/
@@ -351,7 +351,7 @@ input[type="text"]:hover, input[type="email"]:hover{
     }
 }
 
-/*--Situaciones--*/
+/*--SITUACIONES--*/
 #situaciones{
     header{
         background-color: black;         /*Color del fondo*/
@@ -430,7 +430,7 @@ input[type="text"]:hover, input[type="email"]:hover{
     }
 }
 
-/*Fotos*/
+/*FOTOS*/
 #fotos{
     header{
         background-color: black;          /*Color del fondo*/
@@ -444,7 +444,7 @@ input[type="text"]:hover, input[type="email"]:hover{
             width: 40px;                    /*Ancho de la imagen*/
             padding: 15px;                  /*Espacio interno de la imagen*/
             position: absolute;             /*Ponemos posicion absolute respecto al header*/
-            border-radius: 50px;            /*Borde redondeado*/
+            border-radius: 25px;            /*Borde redondeado*/
             top: 20px;                      /*20px por debajo del borde superior del header*/
             left: 30px;                     /*30px a la derecha del borde izquierdo del header*/
         }
