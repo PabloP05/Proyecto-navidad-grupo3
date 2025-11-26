@@ -235,56 +235,6 @@ input[type="text"]:hover, input[type="email"]:hover{
     }
 }
 
-/*--Unirse a una Sala--*/
-#unirseSala{
-    header{
-        text-align: center;                 /*Alineo el texto*/
-        padding: 25px 0px 0px 0px;          /*Espacio interno del button en la parte superior*/
-        position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
-    }
-
-    form{
-        width: 600px;                       /*Ancho del formulario*/
-        margin: 100px auto 0 auto;           /*Espacio entre elementos, lo ponemos al centro con un poco de espacio arriba*/
-        padding: 50px 75px 50px 75px;       /*Espacio interno del formulario*/
-        background-color: transparent;      /*Sin fondo en el formulario*/
-        border: 2px solid var(--color-neon);/*Borde del formulario*/
-        border-radius: 20px;                /*Borde redondeado*/
-        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
-
-        label{
-            color: var(--fondo-blanco);     /*Color del label*/
-            font-weight: bold;              /*Negrita*/
-            margin-left: 70px;              /*Espacio entre elementos por la izquierda*/
-        }
-
-        input[type="text"]{
-            margin: 20px 0px 30px 10px;     /*Espacio entre elementos*/
-        }
-
-        #btnBuscar{
-            width: 250px;                   /*Ancho del button*/
-            margin: 30px auto 0 auto;       /*Espacio entre elementos, lo ponemos al centro con un poco de espacio arriba*/
-            font-size: 1.3rem;              /*Tamaño de la letra del button*/
-            padding: 10px 0px;              /*Espacio interno del button*/
-            cursor: pointer;                /*Cambia el simbolo del cursor cuando pasas por encima*/
-            border: 2px solid black;      /*Estilo del borde del button*/
-            border-radius: 15px;            /*Borde redondeado*/
-            color: var(--fondo-blanco);     /*Color de la letra del button*/
-            background-color: black;      /*Color del fondo del button*/
-            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; /*Sombra*/
-            transition: all 0.15s ease;     /*Tiempo de transición del hover*/
-        }
-
-        #btnBuscar:hover{
-            color: black;                 /*Color del hover*/
-            background: var(--fondo-blanco);/*Color del fondo del hover*/
-            box-shadow: 0 0 2em 0.5em var(--fondo-blanco);/*Sombra del hover*/
-            border-color: var(--fondo-blanco);/*Color del borde*/
-        }
-    }
-}
-
 /*--Ranking--*/
 #ranking{
     header{
@@ -401,7 +351,7 @@ input[type="text"]:hover, input[type="email"]:hover{
     }
 }
 
-/*--Preguntas y Respuestas--*/
+/*--Situaciones--*/
 #situaciones{
     header{
         background-color: black;         /*Color del fondo*/
