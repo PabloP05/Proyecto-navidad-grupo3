@@ -383,7 +383,7 @@ input[type="text"]:hover, input[type="email"]:hover{
             flex-direction: column;
             align-items: center;
 
-            div{
+            .contenedor-pregunta{
                 width: 700px;
                 text-align: left;
                 background-color: var(--fondo-oscuro);
@@ -457,21 +457,12 @@ input[type="text"]:hover, input[type="email"]:hover{
             margin: 0 auto;
             padding: 50px 0px;
             color: var(--fondo-blanco);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: grid;
+            grid-template-columns: 300px 300px;
+            grid-row: 300px;
 
-            div{
-                width: 700px;
-                text-align: left;
-                background-color: var(--fondo-oscuro);
-                border: 2px solid var(--fondo-oscuro);
-                border-radius: 10px;
-                box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
-                margin: 25px 0px;
-                padding: 20px;
-                flex: 0 1 0px;
-
+            .contenedor-situacion{
+                
                 p{
                     display: inline-block;
                     margin-left: 20px;
