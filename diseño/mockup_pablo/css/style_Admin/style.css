@@ -348,10 +348,6 @@
            text-align: center;
            position: relative;
 
-           input[type="text"]{
-                    width: 50%;
-                    margin-top: 2%;
-                }
             div{
                 width: 70%;
                 text-align: start;
@@ -363,8 +359,23 @@
                     color: white;
                     margin-bottom: 10px;
                 }
+
+                &.elementos{
+                    width: 80%;
+                    display: flex;
+                    justify-content: center;
+                    align-items:center ;
+                    margin-top: 2%;
+                    gap:1%;
+                    
+                    input[type="text"]{
+                    width: 50%;
+                    
+                    }
+                }
             }
 
+            
             input[type="submit"]{
                 position: absolute;
                 bottom: 2%;
