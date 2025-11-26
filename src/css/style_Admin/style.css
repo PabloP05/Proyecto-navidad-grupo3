@@ -128,7 +128,7 @@ body {
     width: 100%;
     /* disposición del layout en formato grid */
     display: grid;
-    grid-template-columns: 0.6fr 1fr 1fr 1fr;
+    grid-template-columns: 0.6fr 1fr 1fr 1fr; /* si hay que hacer el scrol hrizontal hay quie poner unas medidas mas fijas (pocentual) */
     grid-template-rows: 9.09vh 45.45vh 45.45vh;  /*  la primera fila tiene una menor medida porque contiene el nav  */
     /* medidas reales en el grid : 0.2fr 1fr 1fr paso a vh para controlar los main : 9.09vh 45.45vh 45.45vh FORMULA PARA CALCULARLO : (total de la suma de las filas/tamaño de la fila en fr)*100 */
     grid-template-areas: 
@@ -196,13 +196,13 @@ body {
         background-color: var(--rojo-navegador);
         text-align: center;
         img{
-            width: 100px;
+            width: 60px;
             float: right;
             margin-right: 10px;
         }
         h1,h3{
             color: white;
-            font-size: 2.2em;
+            font-size: 0.9em;
         }
     }
     main{   /* el contenido será alterno en funcion a la opción en la que ya te encuentres */
@@ -332,7 +332,7 @@ body {
             }
            
             .div_foto{
-            height: 15vh;
+            height: 25vh;
             }
             button{
                 border: none;
