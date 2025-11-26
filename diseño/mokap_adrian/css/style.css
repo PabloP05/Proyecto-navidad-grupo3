@@ -1,0 +1,482 @@
+/*Importamos una fuente de google*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+/*Variables predeterminadas para colores y fuentes*/
+:root{
+    --verde-neon: #00FF08;
+    --fondo-oscuro: #08251C;
+    --fondo-blanco: #fff;
+    --fondo-juegos: #00c127d1;
+    --fuente-principal: 'Poppins', sans-serif;
+    --fuente-cuerpo: 'Roboto', sans-serif;
+    --gradiente: linear-gradient(135deg,
+        #00ffdd 0%,
+        var(--fondo-oscuro) 50%,
+        hsl(145, 100%, 35%) 80%,
+        var(--verde-neon) 100%
+    );
+    --color-neon: rgb(246, 255, 0);
+    --color-rojo: rgb(200, 37, 1);
+}
+
+/*Ponemos predeterminado a todo con 0 de padding y 0 de margin*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/*Indicamos el tamaño de ancho, la altura, las fuentes y los fondos de los body*/
+body{
+    width: 100%;                            /*Ancho de una tablet predeterminada*/
+    max-width: 1366px;                      /*Tamaño maximo de ancho*/
+    min-height: 100vh;                      /*Minimo lo que ocupe la pantalla de altura de fondo*/
+    background: var(--gradiente);           /*Usamos la variable --gradiente para seleccionar el fondo*/
+    font-family: var(--fuente-cuerpo);      /*Usamos la variable --fuente-cuerpo para seleccionar la fuente*/
+    font-size: 10px;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 1.8rem;
+}
+
+p{
+    font-size: 1.2rem;
+}
+
+label{
+    font-size: 1.5rem;
+}
+
+/*Estilo de los buttons (Funcionarán mediante JavaScript)*/
+button{
+    width: 100%;                            /*Tamaño ancho del button*/
+    font-size: 1.3rem;                      /*Tamaño de la letra*/
+    text-align: center;                     /*Centramos el texto*/
+    display: block;                         /*Desplegamos en bloque para que el inicio sesion se baje y no se superponga*/
+    padding: 20px;                          /*Espacio interno del button*/
+    margin-bottom: 20px;                    /*Espacio entre elementos inferior del button*/
+    cursor: pointer;                        /*Cambia el simbolo del cursor cuando pasas por encima*/
+    border: 2px solid var(--color-neon);    /*Estilo del borde del button*/
+    border-radius: 15px;                    /*Borde redondeado*/
+    color: var(--color-neon);               /*Color de la letra del button*/
+    background-color: transparent;          /*Sin fondo*/
+    box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+    transition: all 0.3s ease;              /*Tiempo de transicion para el hover*/
+}
+
+/*Estilo de la transición de los buttons*/
+button:hover{
+    color: var(--color-neon);               /*Transicion del color*/
+    background: var(fondo-oscuro);          /*Transicion del color del fondo*/
+    box-shadow: 0 0 2em 0.5em var(--color-neon);    /*Transicion de la sombra*/
+}
+
+/*Estilo de los input*/
+input[type="text"], input[type="email"]{
+    width: 300px;                   /*Anchura del input*/
+    height: 30px;                   /*Altura del input*/
+    padding-left: 10px;             /*Espacio interno del input*/
+    border: 2px solid black;      /*Estilo del borde de los input*/
+    border-radius: 5px;             /*Borde redondeado*/
+    transition: all 0.15s ease;     /*Tiempo de transición del hover*/
+}
+
+input[type="text"]:hover, input[type="email"]:hover{
+    box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+    border-color: var(--color-neon);/*Color del borde*/
+}
+
+/*Estilo del Logo*/
+#logo{
+    width: 100px;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+
+/*--INICIO DE SESIÓN--*/
+#inicioSesion{
+    header{
+        text-align: center;                 /*ALineo el texto*/
+        padding: 200px 0px 50px 0px;       /*Espacio interno del button en la parte superior e inferior*/
+    }
+
+    main{
+        #menuInicioSesion{
+            display: grid;                      /*Despliego mediante grid*/
+            grid-template-columns: 300px;       /*Asigno una única columna de 300px de ancho*/
+            grid-template-rows: 100px;          /*Asigno una única fila de 100px de alto*/
+            justify-items: center;              /*Alinea los elementos hijo al centro en horizontal*/
+            align-items: center;                /*Alinea los elementos hijo al centro en vertical*/
+            justify-content: center;            /*Alinea la cuadrícula al centro en horizontal*/
+        }
+    }
+}
+
+/*--MENU PRINCIPAL--*/
+#menuPrincipal{
+    header{
+        text-align: center;                 /*Alineo el texto*/
+        padding: 25px 0px 0px 0px;          /*Espacio interno del button en la parte superior*/
+        position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
+
+        #btnCerrarSesion{
+            width: 250px;
+            position: absolute;             /*Lo posiciono de manera absolute respecto al header*/
+            top: 20px;                      /*Distancia entre el borde arriba del header al elemento*/
+            right: 30px;                    /*Distancia entre el borde derecho del header al elemento*/
+            font-size: 1.3rem;              /*Tamaño del button Cerrar Sesion*/
+            padding: 20px;                  /*Espacio interno del button*/
+            cursor: pointer;                /*Cambia el simbolo del cursor cuando pasas por encima*/
+            border: 2px solid black;      /*Estilo del borde del button*/
+            border-radius: 15px;            /*Borde redondeado*/
+            color: var(--fondo-blanco);     /*Color de la letra del button*/
+            background-color: black;      /*Color del fondo del button*/
+            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; /*Sombra*/
+            transition: all 0.15s ease;     /*Tiempo de transición del hover*/
+        }
+
+        #btnCerrarSesion:hover{
+            color: black;                 /*Color del hover*/
+            background: var(--color-rojo);  /*Color del fondo del hover*/
+            box-shadow: 0 0 2em 0.5em var(--color-rojo);    /*Sombra del hover*/
+        }
+    }
+
+    main{
+        margin: 100px 10px 0px 10px;       /*Espacio entre elementos del main por izquierda y derecha y por arriba*/
+
+        #menuBotones{
+            display: grid;                  /*Despliego mediante un grid*/
+            grid-template-areas:            /*Organizo el grid en tres columnas y 2 filas*/
+                "iniciar salas partida"
+                "ranking ranking ranking";  /*El ranking ocupa todo*/
+            grid-template-columns: 400px 400px 400px;   /*Tamaño de las columnas de ancho*/
+            grid-template-rows: 300px 100px;/*Tamaño de las filas de alto*/
+            justify-content: center;        /*Alinea la cuadrícula al centro en horizontal*/
+            gap: 50px;                      /*Espacio entre de columnas*/
+            row-gap: 150px;                 /*Espacio entre filas*/
+
+            .lineaA{
+                padding: 200px 0px;         /*Espacio interno del main por arriba y abajo*/
+                margin: 0px;                /*Espacio entre elementos a 0px*/
+            }
+
+            #btnIniciarPartida{
+                grid-area: iniciar;         /*Nombre que se usará para el grid-template-areas*/
+            }
+
+            #btnCrearSala{
+                grid-area: salas;           /*Nombre que se usará para el grid-template-areas*/
+            }
+
+            #btnPartidaPublica{
+                grid-area: partida;         /*Nombre que se usará para el grid-template-areas*/
+            }
+
+            #btnRanking{
+                grid-area: ranking;         /*Nombre que se usará para el grid-template-areas*/
+                padding: 25px 0px;          /*Espacio interno del main por arriba y abajo*/
+            }
+        }
+    }
+}
+
+/*--Registro--*/
+#registro{
+    header{
+        text-align: center;                 /*Alineo al centro*/
+        padding: 75px 0px 0px 0px;          /*Espacio interno del button en la parte superior*/
+    }
+
+    form{
+        width: 600px;                       /*Ancho del formulario*/
+        margin: 20px auto 0 auto;           /*Espacio entre elementos, lo ponemos al centro con un poco de espacio arriba*/
+        padding: 50px 75px 50px 75px;       /*Espacio interno del formulario*/
+        background-color: transparent;      /*Sin fondo en el formulario*/
+        border: 2px solid var(--color-neon);/*Borde del formulario*/
+        border-radius: 20px;                /*Borde redondeado*/
+        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+
+        label{
+            color: var(--fondo-blanco);     /*Color del label*/
+            font-weight: bold;              /*Negrita*/
+            margin-left: 50px;              /*Espacio entre elementos por la izquierda*/
+        }
+
+        input[type="text"], input[type="email"]{
+            margin: 20px 0px 30px 50px;     /*Espacio entre elementos*/
+            display: block;                 /*Desplegamos en bloque para que el elemento ocupe todo el ancho de la caja*/
+        }
+
+        #btnEnviar{
+            width: 250px;                   /*Ancho del button*/
+            margin: 60px auto 0 auto;       /*Espacio entre elementos, lo ponemos al centro con un poco de espacio arriba*/
+            font-size: 1.3rem;              /*Tamaño de la letra del button*/
+            padding: 10px 0px;              /*Espacio interno del button*/
+            cursor: pointer;                /*Cambia el simbolo del cursor cuando pasas por encima*/
+            border: 2px solid black;      /*Estilo del borde del button*/
+            border-radius: 15px;            /*Borde redondeado*/
+            color: var(--fondo-blanco);     /*Color de la letra del button*/
+            background-color: black;      /*Color del fondo del button*/
+            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; /*Sombra*/
+            transition: all 0.15s ease;     /*Tiempo de transición del hover*/
+        }
+
+        #btnEnviar:hover{
+            color: black;                 /*Color del hover*/
+            background: var(--fondo-blanco);/*Color del fondo del hover*/
+            box-shadow: 0 0 2em 0.5em var(--fondo-blanco);/*Sombra del hover*/
+            border-color: var(--fondo-blanco);/*Color del borde*/
+        }
+    }
+}
+
+/*--Unirse a una Sala--*/
+#unirseSala{
+    header{
+        text-align: center;                 /*Alineo el texto*/
+        padding: 25px 0px 0px 0px;          /*Espacio interno del button en la parte superior*/
+        position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
+    }
+
+    form{
+        width: 600px;                       /*Ancho del formulario*/
+        margin: 100px auto 0 auto;           /*Espacio entre elementos, lo ponemos al centro con un poco de espacio arriba*/
+        padding: 50px 75px 50px 75px;       /*Espacio interno del formulario*/
+        background-color: transparent;      /*Sin fondo en el formulario*/
+        border: 2px solid var(--color-neon);/*Borde del formulario*/
+        border-radius: 20px;                /*Borde redondeado*/
+        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+
+        label{
+            color: var(--fondo-blanco);     /*Color del label*/
+            font-weight: bold;              /*Negrita*/
+            margin-left: 70px;              /*Espacio entre elementos por la izquierda*/
+        }
+
+        input[type="text"]{
+            margin: 20px 0px 30px 10px;     /*Espacio entre elementos*/
+        }
+
+        #btnBuscar{
+            width: 250px;                   /*Ancho del button*/
+            margin: 30px auto 0 auto;       /*Espacio entre elementos, lo ponemos al centro con un poco de espacio arriba*/
+            font-size: 1.3rem;              /*Tamaño de la letra del button*/
+            padding: 10px 0px;              /*Espacio interno del button*/
+            cursor: pointer;                /*Cambia el simbolo del cursor cuando pasas por encima*/
+            border: 2px solid black;      /*Estilo del borde del button*/
+            border-radius: 15px;            /*Borde redondeado*/
+            color: var(--fondo-blanco);     /*Color de la letra del button*/
+            background-color: black;      /*Color del fondo del button*/
+            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; /*Sombra*/
+            transition: all 0.15s ease;     /*Tiempo de transición del hover*/
+        }
+
+        #btnBuscar:hover{
+            color: black;                 /*Color del hover*/
+            background: var(--fondo-blanco);/*Color del fondo del hover*/
+            box-shadow: 0 0 2em 0.5em var(--fondo-blanco);/*Sombra del hover*/
+            border-color: var(--fondo-blanco);/*Color del borde*/
+        }
+    }
+}
+
+/*--Ranking--*/
+#ranking{
+    header{
+        text-align: center;                 /*Alineo el texto*/
+        padding: 25px 0px 0px 0px;          /*Espacio interno del button en la parte superior*/
+        position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
+    }
+
+    main{
+        margin: 100px auto 0 auto;
+        width: 600px;
+        height: 60vh;
+        background-color: transparent;      /*Sin fondo en el formulario*/
+        border: 2px solid var(--color-neon);/*Borde del formulario*/
+        border-radius: 20px;                /*Borde redondeado*/
+        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+        display: flex;
+        flex-direction: column;             /*Dirección de los elementos: row (fila) o column (columna)*/
+        flex-wrap: wrap;                    /*Permite que los hijos se muevan a la siguiente línea si no caben*/
+        align-content: center;              /*Mueve el contenido de la caja*/
+        justify-content: center;            /*Mueve el contenido de la caja*/
+        gap: 50px;
+
+        input[type="text"]{
+            flex: 0 1 75px;                /*Flex-grow (Si sobre espacio se agranda en 1), flex-shrink (Si falta espacio se encoje en 1), flex-basis (Como el width)*/
+            text-align: center;
+            padding: 0px;
+        }
+    }
+
+    #flecha{
+        width: 70px;
+        position: absolute;
+        bottom: 20px;
+        left: 30px;
+    }
+}
+
+/*--Preguntas y Respuestas--*/
+#preguntasRespuestas{
+    header{
+        background-color: black;
+        color: var(--fondo-blanco);
+        text-align: center;                 /*Alineo el texto*/
+        padding: 30px 0px;         /*Espacio interno del button en la parte superior*/
+        position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
+
+        #pregunta{
+            background-color: var(--fondo-blanco);
+            width: 40px;
+            padding: 15px;
+            position: absolute;
+            border-radius: 50px;
+            top: 20px;
+            left: 30px;
+        }
+
+        #tiempo{
+            width: 150px;
+            padding: 10px 15px;
+            background-color: var(--fondo-blanco);
+            border: 2px solid var(--fondo-blanco);
+            border-radius: 10px;
+            color: black;
+            box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+    }
+
+    main{
+        background-color: rgba(155, 201, 111, 0.827);
+        padding: 50px 0px;
+
+        h2{
+            width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background-color: var(--color-neon);
+            border: 2px solid var(--color-neon);
+            border-radius: 10px;
+            color: black;
+            box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+        }
+
+        #opcionesPregunta{
+            width: 800px;
+            margin: 0 auto;
+            padding: 50px 0px;
+            color: var(--fondo-blanco);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            div{
+                width: 700px;
+                text-align: left;
+                background-color: var(--fondo-oscuro);
+                border: 2px solid var(--fondo-oscuro);
+                border-radius: 10px;
+                box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
+                margin: 25px 0px;
+                padding: 20px;
+                flex: 0 1 0px;
+
+                p{
+                    display: inline-block;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}
+
+/*--Preguntas y Respuestas--*/
+#situaciones{
+    header{
+        background-color: black;
+        color: var(--fondo-blanco);
+        text-align: center;                 /*Alineo el texto*/
+        padding: 30px 0px;         /*Espacio interno del button en la parte superior*/
+        position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
+
+        #situacion{
+            background-color: var(--fondo-blanco);
+            width: 40px;
+            padding: 15px;
+            position: absolute;
+            border-radius: 50px;
+            top: 20px;
+            left: 30px;
+        }
+
+        #tiempo{
+            width: 150px;
+            padding: 10px 15px;
+            background-color: var(--fondo-blanco);
+            border: 2px solid var(--fondo-blanco);
+            border-radius: 10px;
+            color: black;
+            box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+    }
+
+    main{
+        background-color: rgba(155, 201, 111, 0.827);
+        padding: 50px 0px;
+
+        h2{
+            width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background-color: var(--color-neon);
+            border: 2px solid var(--color-neon);
+            border-radius: 10px;
+            color: black;
+            box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+        }
+
+        #opcionesSituacion{
+            width: 800px;
+            margin: 0 auto;
+            padding: 50px 0px;
+            color: var(--fondo-blanco);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            div{
+                width: 700px;
+                text-align: left;
+                background-color: var(--fondo-oscuro);
+                border: 2px solid var(--fondo-oscuro);
+                border-radius: 10px;
+                box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
+                margin: 25px 0px;
+                padding: 20px;
+                flex: 0 1 0px;
+
+                p{
+                    display: inline-block;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}
