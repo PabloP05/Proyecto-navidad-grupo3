@@ -364,3 +364,21 @@ body {
         }
     }
 }
+
+/* PANTALLA DE MEDIFICACIÓN DEL CONTENIDO SELECCIONADO (SERÁ UN POPUP GENERADO POR JS) */
+
+.modificacion_body{
+
+    background-color: white;
+    width: 100%;
+    
+    nav{
+        width: 100%;
+        background-color: var(--rojo-navegador);
+    }
+
+
+    .Material_a_editar{
+        /* se decidirá el tamaño del contido a editar */
+    }
+}
