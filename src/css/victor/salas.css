@@ -13,6 +13,7 @@
    );
    --clr-neon2: rgb(246, 255, 0);
 }
+
 *{
     padding: 0;
     margin: 0;
