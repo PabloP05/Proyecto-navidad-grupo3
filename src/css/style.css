@@ -6,6 +6,7 @@
     --verde-neon: #00FF08;
     --fondo-oscuro: #08251C;
     --fondo-blanco: #fff;
+    --fondo-juegos: #00c127d1;
     --fuente-principal: 'Poppins', sans-serif;
     --fuente-cuerpo: 'Roboto', sans-serif;
     --gradiente: linear-gradient(135deg,
@@ -326,21 +327,21 @@ input[type="text"]:hover, input[type="email"]:hover{
 
 /*--Preguntas y Respuestas--*/
 #preguntasRespuestas{
-    background-color: var();
     header{
-        background-color: var();
+        background-color: black;
+        color: var(--fondo-blanco);
         text-align: center;                 /*Alineo el texto*/
-        padding: 25px 0px 0px 0px;          /*Espacio interno del button en la parte superior*/
+        padding: 25px 0px 25px 0px;         /*Espacio interno del button en la parte superior*/
         position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
 
         #tiempo{
             width: 150px;
             padding: 10px 15px;
-            background-color: black;
-            border: 2px solid black;
+            background-color: var(--fondo-blanco);
+            border: 2px solid var(--fondo-blanco);
             border-radius: 10px;
-            color: var(--fondo-blanco);
-            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; /*Sombra*/
+            color: black;
+            box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
             position: absolute;
             top: 20px;
             right: 30px;
@@ -348,9 +349,12 @@ input[type="text"]:hover, input[type="email"]:hover{
     }
 
     main{
+        background-color: var(--fondo-juegos);
+        padding: 50px 0px;
+
         h2{
             width: 1000px;
-            margin: 50px auto;
+            margin: 0 auto;
             padding: 20px;
             text-align: center;
             background-color: var(--color-neon);
