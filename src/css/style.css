@@ -326,7 +326,7 @@ input[type="text"]:hover, input[type="email"]:hover{
 
 /*--Preguntas y Respuestas--*/
 #preguntasRespuestas{
-    background-color: va;
+    background-color: var();
     header{
         background-color: var();
         text-align: center;                 /*Alineo el texto*/
