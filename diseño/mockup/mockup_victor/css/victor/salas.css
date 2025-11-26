@@ -104,6 +104,14 @@ button{
 
 /*SALAS*/
 
+#salastitulo{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+    color: var(--clr-blanco);
+}
+
 #salas{
     display: flex;
     flex-wrap: wrap; /* Permite que las salas se ajusten a una nueva fila */
