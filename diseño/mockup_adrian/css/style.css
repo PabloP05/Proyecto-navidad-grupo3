@@ -9,7 +9,7 @@
     --fondo-juegos: #00c127d1;
     --fuente-principal: 'Poppins', sans-serif;
     --fuente-cuerpo: 'Roboto', sans-serif;
-    --gradiente: linear-gradient(135deg,
+    --gradiente-juego: linear-gradient(135deg,
         #00ffdd 0%,
         var(--fondo-oscuro) 50%,
         hsl(145, 100%, 35%) 80%,
@@ -30,7 +30,7 @@ body{
     width: 100%;                            /*Ancho de una tablet predeterminada*/
     max-width: 1366px;                      /*Tamaño maximo de ancho*/
     min-height: 100vh;                      /*Minimo lo que ocupe la pantalla de altura de fondo*/
-    background: var(--gradiente);           /*Usamos la variable --gradiente para seleccionar el fondo*/
+    background: var(--gradiente-juego);           /*Usamos la variable --gradiente para seleccionar el fondo*/
     font-family: var(--fuente-cuerpo);      /*Usamos la variable --fuente-cuerpo para seleccionar la fuente*/
     font-size: 10px;
 }
@@ -57,8 +57,8 @@ button{
     font-size: 1.3rem;                      /*Tamaño de la letra*/
     text-align: center;                     /*Centramos el texto*/
     display: block;                         /*Desplegamos en bloque para que el inicio sesion se baje y no se superponga*/
-    padding: 20px;                          /*Espacio interno del button*/
-    margin-bottom: 20px;                    /*Espacio entre elementos inferior del button*/
+    padding: 1.4641%;                          /*Espacio interno del button*/
+    margin-bottom: 7.2463%;                    /*Espacio entre elementos inferior del button*/
     cursor: pointer;                        /*Cambia el simbolo del cursor cuando pasas por encima*/
     border: 2px solid var(--color-neon);    /*Estilo del borde del button*/
     border-radius: 15px;                    /*Borde redondeado*/
@@ -103,17 +103,18 @@ input[type="text"]:hover, input[type="email"]:hover{
 #inicioSesion{
     header{
         text-align: center;                 /*ALineo el texto*/
-        padding: 200px 0px 50px 0px;        /*Espacio interno del button en la parte superior e inferior*/
+        padding: 14.6412% 0px 3.6603% 0px;        /*Espacio interno del button en la parte superior e inferior*/
     }
 
     main{
         #menuInicioSesion{
-            display: grid;                  /*Despliego mediante grid*/
-            grid-template-columns: 300px;   /*Asigno una única columna de 300px de ancho*/
-            grid-template-rows: 100px;      /*Asigno una única fila de 100px de alto*/
-            justify-items: center;          /*Alinea los elementos hijo al centro en horizontal*/
-            align-items: center;            /*Alinea los elementos hijo al centro en vertical*/
-            justify-content: center;        /*Alinea la cuadrícula al centro en horizontal*/
+            width: 21.9619%;
+            display: block;                  /*Despliego mediante grid*/
+            margin: 0 auto;
+        }
+
+        .btn{
+            height: 10vh;
         }
     }
 }
@@ -122,16 +123,15 @@ input[type="text"]:hover, input[type="email"]:hover{
 #menuPrincipal{
     header{
         text-align: center;                 /*Alineo el texto*/
-        padding: 25px 0px 0px 0px;          /*Espacio interno del button en la parte superior*/
+        padding-top: 1.8301%;               /*Espacio interno del header en la parte superior*/
         position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
 
         #btnCerrarSesion{
-            width: 250px;
+            width: 18.3016%;
             position: absolute;             /*Lo posiciono de manera absolute respecto al header*/
-            top: 20px;                      /*Distancia entre el borde arriba del header al elemento*/
-            right: 30px;                    /*Distancia entre el borde derecho del header al elemento*/
+            top: 31.7460%;                  /*Distancia entre el borde arriba del header al elemento*/
+            right: 2.1961%;                 /*Distancia entre el borde derecho del header al elemento*/
             font-size: 1.3rem;              /*Tamaño del button Cerrar Sesion*/
-            padding: 20px;                  /*Espacio interno del button*/
             cursor: pointer;                /*Cambia el simbolo del cursor cuando pasas por encima*/
             border: 2px solid black;      /*Estilo del borde del button*/
             border-radius: 15px;            /*Borde redondeado*/
@@ -143,13 +143,13 @@ input[type="text"]:hover, input[type="email"]:hover{
 
         #btnCerrarSesion:hover{
             color: black;                 /*Color del hover*/
-            background: var(--color-rojo);  /*Color del fondo del hover*/
-            box-shadow: 0 0 2em 0.5em var(--color-rojo);    /*Sombra del hover*/
+            background-color: var(--fondo-blanco);
+            box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
         }
     }
 
     main{
-        margin: 100px 10px 0px 10px;        /*Espacio entre elementos del main por izquierda y derecha y por arriba*/
+        margin: 19.6078% 0.7320% 0px 0.7320%;        /*Espacio entre elementos del main por izquierda y derecha y por arriba*/
 
         #menuBotones{
             display: grid;                  /*Despliego mediante un grid*/
@@ -157,10 +157,10 @@ input[type="text"]:hover, input[type="email"]:hover{
             grid-template-areas:            
                 "iniciar salas partida"
                 "ranking ranking ranking";  /*El ranking ocupa todo*/
-            grid-template-columns: 400px 400px 400px;   /*Tamaño de las columnas de ancho*/
-            grid-template-rows: 400px 100px;/*Tamaño de las filas de alto*/
+            grid-template-columns: 29.7176% 29.7176% 29.7176%;   /*Tamaño de las columnas de ancho*/
+            grid-template-rows: 78.4313% 19.6078%;/*Tamaño de las filas de alto*/
             justify-content: center;        /*Alinea la cuadrícula al centro en horizontal*/
-            gap: 50px 50px;                 /*Espacio entre filas y columnas*/
+            gap: 1.9607% 3.7147%;                 /*Espacio entre filas y columnas*/
 
             .lineaA{
                 margin: 0px;                /*Espacio entre elementos a 0px*/
@@ -189,12 +189,12 @@ input[type="text"]:hover, input[type="email"]:hover{
 #registro{
     header{
         text-align: center;                 /*Alineo al centro*/
-        padding: 75px 0px 0px 0px;          /*Espacio interno del button en la parte superior*/
+        padding-top: 5.4904%;          /*Espacio interno del header en la parte superior*/
     }
 
     form{
-        width: 600px;                       /*Ancho del formulario*/
-        margin: 20px auto 0 auto;           /*Espacio entre elementos, lo ponemos al centro con un poco de espacio arriba*/
+        width: 43.9238%;                       /*Ancho del formulario*/
+        margin: 1.4641% auto 0 auto;           /*Espacio entre elementos, lo ponemos al centro con un poco de espacio arriba*/
         padding: 50px 75px 50px 75px;       /*Espacio interno del formulario*/
         background-color: transparent;      /*Sin fondo en el formulario*/
         border: 2px solid var(--color-neon);/*Borde del formulario*/
@@ -208,15 +208,15 @@ input[type="text"]:hover, input[type="email"]:hover{
         }
 
         input[type="text"], input[type="email"]{
-            margin: 20px 0px 30px 50px;     /*Espacio entre elementos*/
+            margin: 3.3333% 0px 5% 8.3333%;     /*Espacio entre elementos*/
             display: block;                 /*Desplegamos en bloque para que el elemento ocupe todo el ancho de la caja*/
         }
 
         #btnEnviar{
-            width: 250px;                   /*Ancho del button*/
-            margin: 60px auto 0 auto;       /*Espacio entre elementos, lo ponemos al centro con un poco de espacio arriba*/
+            width: 41.6666%;                   /*Ancho del button*/
+            margin: 10% auto 0 auto;       /*Espacio entre elementos, lo ponemos al centro con un poco de espacio arriba*/
             font-size: 1.3rem;              /*Tamaño de la letra del button*/
-            padding: 10px 0px;              /*Espacio interno del button*/
+            padding: 1.6666% 0px;              /*Espacio interno del button*/
             cursor: pointer;                /*Cambia el simbolo del cursor cuando pasas por encima*/
             border: 2px solid black;      /*Estilo del borde del button*/
             border-radius: 15px;            /*Borde redondeado*/
@@ -239,37 +239,37 @@ input[type="text"]:hover, input[type="email"]:hover{
 #ranking{
     header{
         text-align: center;                 /*Alineo el texto*/
-        padding: 25px 0px 0px 0px;          /*Espacio interno del button en la parte superior*/
+        padding: 1.8301%;                   /*Espacio interno del header en la parte superior*/
         position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
     }
 
     main{
-        margin: 100px auto 0 auto;
-        width: 600px;
-        height: 60vh;
+        display: block;
+        margin: 7.3206% auto 0 auto;
+        padding: 3.6603% 0px;
+        width: 43.9238%;
         background-color: transparent;      /*Sin fondo en el formulario*/
         border: 2px solid var(--color-neon);/*Borde del formulario*/
         border-radius: 20px;                /*Borde redondeado*/
         box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
-        display: flex;
-        flex-direction: column;             /*Dirección de los elementos: row (fila) o column (columna)*/
-        flex-wrap: wrap;                    /*Permite que los hijos se muevan a la siguiente línea si no caben*/
-        align-content: center;              /*Mueve el contenido de la caja*/
-        justify-content: center;            /*Mueve el contenido de la caja*/
-        gap: 50px;
 
-        input[type="text"]{
-            flex: 0 1 75px;                 /*Flex-grow (Si sobre espacio se agranda en 1), flex-shrink (Si falta espacio se encoje en 1), flex-basis (Como el width)*/
+        .jugadores{
+            background-color: black;
+            color: var(--fondo-blanco);
+            font-size: 1.5rem;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 3.3333% 33.3333%;
+            color: var(--fondo-blanco);
             text-align: center;             /*Centramos*/
-            padding: 0px;                   /*Quitamos espacio interno*/
         }
     }
 
     #flecha{
-        width: 70px;                        /*Ancho*/
+        width: 5.1244%;                        /*Ancho*/
         position: absolute;                 /*Ponemos posicion absolute respecto al header*/
-        bottom: 20px;                       /*20px por encima del borde inferior del header*/
-        left: 30px;                         /*30px a la derecha del borde izquierdo del header*/
+        bottom: 1.4641%;                       /*20px por encima del borde inferior del header*/
+        left: 2.1961%;                         /*30px a la derecha del borde izquierdo del header*/
     }
 }
 
