@@ -1,0 +1,526 @@
+/*Importamos una fuente de google*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+/*Variables predeterminadas para colores y fuentes*/
+:root{
+    --verde-neon: #00FF08;
+    --fondo-oscuro: #08251C;
+    --fondo-blanco: #fff;
+    --fondo-juegos: #00c127d1;
+    --fuente-principal: 'Poppins', sans-serif;
+    --fuente-cuerpo: 'Roboto', sans-serif;
+    --gradiente-juego: linear-gradient(135deg,
+        #00ffdd 0%,
+        var(--fondo-oscuro) 50%,
+        hsl(145, 100%, 35%) 80%,
+        var(--verde-neon) 100%
+    );
+    --color-neon: rgb(246, 255, 0);
+    --color-rojo: rgb(200, 37, 1);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 100%;                            
+    max-width: 1366px;                     
+    min-height: 100vh;                      
+    background: var(--gradiente-juego);           
+    font-family: var(--fuente-cuerpo);      
+    font-size: 10px;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 1.8rem;
+}
+
+p{
+    font-size: 1.2rem;
+}
+
+label{
+    font-size: 1.5rem;
+}
+
+button{
+    width: 100%;                            
+    font-size: 1.3rem;                      
+    text-align: center;                     
+    display: block;                         
+    padding: 1.4641%;                       
+    margin-bottom: 7.2463%;                 
+    cursor: pointer;                        
+    border: 2px solid var(--color-neon);    
+    border-radius: 15px;                    
+    color: var(--color-neon);               
+    background-color: transparent;          
+    box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
+    transition: all 0.3s ease;              
+}
+
+/*Estilo de la transición de los buttons*/
+button:hover{
+    color: var(--color-neon);               
+    background: var(fondo-oscuro);          
+    box-shadow: 0 0 2em 0.5em var(--color-neon);    
+}
+
+/*Estilo de los input*/
+input[type="text"], input[type="email"]{
+    width: 50%;                           
+    height: 5vh;                           
+    padding-left: 10px;                     
+    border: 2px solid black;              
+    border-radius: 5px;                     
+    transition: all 0.15s ease;            
+}
+
+input[type="text"]:hover, input[type="email"]:hover{
+    box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); 
+    border-color: var(--color-neon);
+}
+
+#logo{
+    width: 7.3206%;
+    position: absolute;
+    top: 1.4641%;
+    left: 2.1961%;
+}
+
+
+#inicioSesion{
+    header{
+        text-align: center;                 
+        padding: 14.6412% 0px 3.6603% 0px;  
+    }
+
+    main{
+        #menuInicioSesion{
+            width: 21.9619%;
+            display: block;                  
+            margin: 0 auto;
+        }
+
+        .btn{
+            height: 10vh;
+        }
+    }
+}
+
+/*--MENU PRINCIPAL--*/
+#menuPrincipal{
+    header{
+        text-align: center;                 
+        padding: 1.8301% 0px 0px 0px;       
+        position: relative;                 
+
+        #btnCerrarSesion{
+            width: 18.3016%;
+            position: absolute;             
+            top: 31.7460%;                  
+            right: 2.1961%;                 
+            font-size: 1.3rem;              
+            cursor: pointer;                
+            border: 2px solid black;     
+            border-radius: 15px;          
+            color: var(--fondo-blanco);   
+            background-color: black;     
+            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; 
+            transition: all 0.15s ease;     
+        }
+
+        #btnCerrarSesion:hover{
+            color: black;                
+            background: var(--color-rojo);
+            box-shadow: 0 0 2em 0.5em var(--color-rojo);    
+        }
+    }
+
+    main{
+        margin: 7.3206% 0.7320% 0px 0.7320%;        
+
+        #menuBotones{
+            height: 75vh;
+            display: grid;                  
+                                            
+            grid-template-areas:            
+                "iniciar salas partida"
+                "ranking ranking ranking";  
+            grid-template-columns: 29.2828% 29.2828% 29.2828%;   
+            grid-template-rows: 80% auto;
+            justify-content: center;     
+            gap: 2.5% 3.6603%;           
+
+            .lineaA{
+                margin: 0px;             
+            }
+
+            #btnIniciarPartida{
+                grid-area: iniciar;      
+            }
+
+            #btnCrearSala{
+                grid-area: salas;        
+            }
+
+            #btnPartidaPublica{
+                grid-area: partida;      
+            }
+
+            #btnRanking{
+                grid-area: ranking;      
+            }
+        }
+    }
+}
+
+/*--REGISTRO--*/
+#registro{
+    header{
+        text-align: center;              
+        padding-top: 5.4904%;          
+    }
+
+    form{
+        width: 43.9238%;                    
+        margin: 1.4641% auto 0 auto;        
+        padding: 50px 75px 50px 75px;       
+        background-color: transparent;      
+        border: 2px solid var(--color-neon);
+        border-radius: 20px;                
+        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); 
+
+        label{
+            color: var(--fondo-blanco);    
+            font-weight: bold;             
+            margin-left: 50px;             
+        }
+
+        input[type="text"], input[type="email"]{
+            margin: 3.3333% 0px 5% 8.3333%;
+            display: block;                
+        }
+
+        #btnEnviar{
+            width: 41.6666%;              
+            margin: 10% auto 0 auto;       
+            font-size: 1.3rem;             
+            padding: 1.6666% 0px;          
+            cursor: pointer;               
+            border: 2px solid black;      
+            border-radius: 15px;           
+            color: var(--fondo-blanco);    
+            background-color: black;      
+            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; 
+            transition: all 0.15s ease;     
+        }
+
+        #btnEnviar:hover{
+            color: black;                 
+            background: var(--fondo-blanco);
+            box-shadow: 0 0 2em 0.5em var(--fondo-blanco);
+            border-color: var(--fondo-blanco);
+        }
+    }
+}
+
+/*--RANKING--*/
+#ranking{
+    header{
+        text-align: center;               
+        padding: 1.8301%;                 
+        position: relative;               
+    }
+
+    main{
+        display: block;
+        margin: 7.3206% auto 0 auto;
+        padding: 3.6603% 0px;
+        width: 43.9238%;
+        background-color: transparent;      
+        border: 2px solid var(--color-neon);
+        border-radius: 20px;                
+        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); 
+
+        .jugadores{
+            background-color: black;
+            color: var(--fondo-blanco);
+            font-size: 1.5rem;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 3.3333% 33.3333%;
+            color: var(--fondo-blanco);
+            text-align: center;             
+        }
+    }
+
+    #flecha{
+        width: 5.1244%;                  
+        position: absolute;              
+        bottom: 1.4641%;                 
+        left: 2.1961%;                   
+    }
+}
+
+/*--PREGUNTAS Y RESPUESTAS--*/
+#preguntasRespuestas{
+    header{
+        background-color: black;        
+        color: var(--fondo-blanco);      
+        text-align: center;              
+        padding: 2.1961% 0px;            
+        position: relative;              
+
+        #pregunta{
+            background-color: var(--fondo-blanco);  
+            width: 2.9282%;              
+            padding: 1.0980%;            
+            position: absolute;          
+            border-radius: 50px;         
+            top: 20.2122%;               
+            left: 2.1961%;               
+        }
+
+        #tiempo{
+            width: 10.9809%;                   
+            padding: 0.7320% 1.0980%;             /*Espacio interno del temporizador*/
+            background-color: var(--fondo-blanco);  /*Color del fondo*/
+            border: 2px solid var(--fondo-blanco);  /*Esilo del borde*/
+            border-radius: 10px;            /*Borde redondeado*/
+            color: black;                 /*Color de la letra*/
+            box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
+            position: absolute;             
+            top: 20.2122%;                  
+            right: 2.1961%;                 
+        }
+    }
+
+    main{
+        background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
+        padding: 3.6603% 0px;          
+
+        h2{
+            width: 73.2064%;           
+            margin: 0 auto;            
+            padding: 1.4641%;          
+            text-align: center;        
+            background-color: var(--color-neon);   
+            border: 2px solid var(--color-neon);   
+            border-radius: 10px;        
+            color: black;               
+            box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+        }
+
+        #opcionesPregunta{
+            width: 80%;                   
+            margin: 0 auto;               
+            padding: 5% 0px;              
+            color: var(--fondo-blanco);   
+            display: flex;
+            flex-direction: column;       
+            align-items: center;          
+
+            .contenedor-pregunta{
+                width: 65.1769%;          
+                text-align: left;         
+                background-color: var(--fondo-oscuro);  
+                border: 2px solid var(--fondo-oscuro);  
+                border-radius: 10px;        /*Borde redonedado*/
+                box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
+                margin: 2.3277% 0px;     
+                padding: 1.8621%;        
+                flex: 1 1 auto;          
+
+                p{
+                    display: inline-block;  /*Desplegamos en inline-block para que no se baje después del input*/
+                    margin-left: 2.8571%;      /*Espacio entre elementos por la izquierda*/
+                }
+            }
+        }
+    }
+}
+
+/*--SITUACIONES--*/
+#situaciones{
+    header{
+        background-color: black;      
+        color: var(--fondo-blanco);    
+        text-align: center;            
+        padding: 2.1961% 0px;          
+        position: relative;            
+
+        #situacion{
+            background-color: var(--fondo-blanco);  /*Fondo del icono*/
+            width: 2.9282%;            
+            padding: 1.0980%;          
+            position: absolute;        
+            border-radius: 50px;       
+            top: 20.2122%;             
+            left: 2.1961%;             
+        }
+
+        #tiempo{
+            width: 10.9809%;                   /*Ancho del temporizador*/
+            padding: 0.7320% 1.0980%;             /*Espacio interno del temporizador*/
+            background-color: var(--fondo-blanco);  /*Color del fondo*/
+            border: 2px solid var(--fondo-blanco);  /*Esilo del borde*/
+            border-radius: 10px;            /*Borde redondeado*/
+            color: black;                 /*Color de la letra*/
+            box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
+            position: absolute;           
+            top: 20.2122%;                
+            right: 2.1961%;               
+        }
+    }
+
+    main{
+        background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
+        padding: 3.6603% 0px;                  /*Espacio interno del main*/
+
+        h2{
+            width: 73.2064%;           
+            margin: 0 auto;            
+            padding: 1.4641%;          
+            text-align: center;        
+            background-color: var(--color-neon);    /*Color del fondo del titulo*/
+            border: 2px solid var(--color-neon);    /*Estilo borde*/
+            border-radius: 10px;            /*Borde redondeado*/
+            color: black;                 /*Color de la letra*/
+            box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+        }
+
+        #opcionesSituacion{
+            width: 73.2064%;              
+            margin: 0 auto;               
+            padding: 3.6603% 0px;         
+            color: var(--fondo-blanco);   
+            display: grid;
+            grid-template-columns: 40% 40%; 
+            grid-template-rows: auto;       
+            gap: 0px 20%;                 
+            justify-content: left;          
+            
+
+            .contenedor-situacion{
+                text-align: left;           /*Alineamos el contenido a la izquierda*/
+                background-color: var(--fondo-oscuro);  /*Color del fondo*/
+                border: 2px solid var(--fondo-oscuro);  /*Estilo borde*/
+                border-radius: 10px;        /*Borde redonedado*/
+                box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
+                margin: 6.25% 0px;      
+                padding: 5%;            
+
+                p{
+                    display: inline-block; 
+                    margin-left: 2.8571%;  
+                }
+            }
+        }
+    }
+}
+
+/*FOTOS*/
+#fotos{
+    header{
+        background-color: black;        
+        color: var(--fondo-blanco);      
+        text-align: center;              
+        padding: 2.1961% 0px;            
+        position: relative;              
+
+        #foto{
+            background-color: var(--fondo-blanco);  /*Fondo del icono*/
+            width: 2.9282%;              
+            padding: 1.0980%;            
+            position: absolute;          
+            border-radius: 25px;         
+            top: 20.2122%;               
+            left: 2.1961%;               
+        }
+
+        #tiempo{
+            width: 10.9809%;                   
+            padding: 0.7320% 1.0980%;          
+            background-color: var(--fondo-blanco);  /*Color del fondo*/
+            border: 2px solid var(--fondo-blanco);  /*Esilo del borde*/
+            border-radius: 10px;            /*Borde redondeado*/
+            color: black;                 /*Color de la letra*/
+            box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
+            position: absolute;           
+            top: 20.2122%;                
+            right: 2.1961%;               
+        }
+    }
+
+    main{
+        background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
+        padding: 3.6603% 0px;                  /*Espacio interno del main*/
+
+        h2{
+            width: 87.8477%;           
+            margin: 0 auto;            
+            padding: 1.4641%;          
+            text-align: center;        
+            background-color: var(--color-neon);    /*Color del fondo del titulo*/
+            border: 2px solid var(--color-neon);    /*Estilo borde*/
+            border-radius: 10px;            /*Borde redondeado*/
+            color: black;                 /*Color de la letra*/
+            box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+        }
+
+        #opcionesFoto{
+            width: 87.8477%;             
+            margin: 0 auto;              
+            padding: 3.6603% 0px;        
+            color: var(--fondo-blanco);  
+            display: grid;
+                                            
+            grid-template-areas:            
+                "pregunta1 imagen"
+                "pregunta2 imagen";  /*La imagen ocupa la columna 2 entera*/
+            grid-template-columns: 41.4666% 33.3333%; /*Ancho de las columnas*/
+            grid-template-rows: auto auto; 
+            gap: 0px 16.6666%;             
+            justify-content: left;         
+
+            #pregunta1{
+                grid-area: pregunta1;      
+            }
+
+            #pregunta2{
+                grid-area: pregunta2;      
+            }
+
+            #contenedor-imagen{
+                grid-area: imagen;         
+            }
+
+            #imagenFoto{
+                width: 100%;               
+            }
+            
+
+            .contenedor-foto{
+                text-align: left;          
+                background-color: var(--fondo-oscuro);  /*Color del fondo*/
+                border: 2px solid var(--fondo-oscuro);  /*Estilo borde*/
+                border-radius: 10px;        /*Borde redonedado*/
+                box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
+                margin: 5% 0px;         
+                padding: 4%;            
+
+                p{
+                    display: inline-block; 
+                    margin-left: 2.8571%;  
+                }
+            }
+        }
+    }
+}
