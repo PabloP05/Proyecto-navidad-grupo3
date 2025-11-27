@@ -77,8 +77,8 @@ button:hover{
 
 /*Estilo de los input*/
 input[type="text"], input[type="email"]{
-    width: 300px;                           /*Anchura del input*/
-    height: 30px;                           /*Altura del input*/
+    width: 50%;                           /*Anchura del input*/
+    height: 5vh;                           /*Altura del input*/
     padding-left: 10px;                     /*Espacio interno del input*/
     border: 2px solid black;              /*Estilo del borde de los input*/
     border-radius: 5px;                     /*Borde redondeado*/
@@ -92,10 +92,10 @@ input[type="text"]:hover, input[type="email"]:hover{
 
 /*Estilo del Logo*/
 #logo{
-    width: 100px;
+    width: 7.3206%;
     position: absolute;
-    top: 20px;
-    left: 30px;
+    top: 1.4641%;
+    left: 2.1961%;
 }
 
 
@@ -123,7 +123,7 @@ input[type="text"]:hover, input[type="email"]:hover{
 #menuPrincipal{
     header{
         text-align: center;                 /*Alineo el texto*/
-        padding-top: 1.8301%;               /*Espacio interno del header en la parte superior*/
+        padding: 1.8301% 0px 0px 0px;          /*Espacio interno del button en la parte superior*/
         position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
 
         #btnCerrarSesion{
@@ -143,24 +143,25 @@ input[type="text"]:hover, input[type="email"]:hover{
 
         #btnCerrarSesion:hover{
             color: black;                 /*Color del hover*/
-            background-color: var(--fondo-blanco);
-            box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
+            background: var(--color-rojo);  /*Color del fondo del hover*/
+            box-shadow: 0 0 2em 0.5em var(--color-rojo);    /*Sombra del hover*/
         }
     }
 
     main{
-        margin: 19.6078% 0.7320% 0px 0.7320%;        /*Espacio entre elementos del main por izquierda y derecha y por arriba*/
+        margin: 7.3206% 0.7320% 0px 0.7320%;        /*Espacio entre elementos del main por izquierda y derecha y por arriba*/
 
         #menuBotones{
+            height: 75vh;
             display: grid;                  /*Despliego mediante un grid*/
                                             /*Organizo el grid en tres columnas y 2 filas*/
             grid-template-areas:            
                 "iniciar salas partida"
                 "ranking ranking ranking";  /*El ranking ocupa todo*/
-            grid-template-columns: 29.7176% 29.7176% 29.7176%;   /*Tamaño de las columnas de ancho*/
-            grid-template-rows: 78.4313% 19.6078%;/*Tamaño de las filas de alto*/
+            grid-template-columns: 29.2828% 29.2828% 29.2828%;   /*Tamaño de las columnas de ancho*/
+            grid-template-rows: 80% auto;/*Tamaño de las filas de alto*/
             justify-content: center;        /*Alinea la cuadrícula al centro en horizontal*/
-            gap: 1.9607% 3.7147%;                 /*Espacio entre filas y columnas*/
+            gap: 2.5% 3.6603%;                 /*Espacio entre filas y columnas*/
 
             .lineaA{
                 margin: 0px;                /*Espacio entre elementos a 0px*/
@@ -279,41 +280,41 @@ input[type="text"]:hover, input[type="email"]:hover{
         background-color: black;          /*Fondo del header*/
         color: var(--fondo-blanco);         /*Color de la letra del header*/
         text-align: center;                 /*Alineo el texto*/
-        padding: 30px 0px;                  /*Espacio interno del button en la parte superior*/
+        padding: 2.1961% 0px;                  /*Espacio interno del button en la parte superior*/
         position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
 
         #pregunta{
             background-color: var(--fondo-blanco);  /*Fondo del icono*/
-            width: 40px;                    /*Ancho de la imagen*/
-            padding: 15px;                  /*Espacio interno de la imagen*/
+            width: 2.9282%;                    /*Ancho de la imagen*/
+            padding: 1.0980%;                  /*Espacio interno de la imagen*/
             position: absolute;             /*Ponemos posicion absolute respecto al header*/
             border-radius: 50px;            /*Borde redondeado*/
-            top: 20px;                      /*20px por debajo del borde superior del header*/
-            left: 30px;                     /*30px a la derecha del borde izquierdo del header*/
+            top: 20.2122%;                      /*20px por debajo del borde superior del header*/
+            left: 2.1961%;                     /*30px a la derecha del borde izquierdo del header*/
         }
 
         #tiempo{
-            width: 150px;                   /*Ancho del temporizador*/
-            padding: 10px 15px;             /*Espacio interno del temporizador*/
+            width: 10.9809%;                   /*Ancho del temporizador*/
+            padding: 0.7320% 1.0980%;             /*Espacio interno del temporizador*/
             background-color: var(--fondo-blanco);  /*Color del fondo*/
             border: 2px solid var(--fondo-blanco);  /*Esilo del borde*/
             border-radius: 10px;            /*Borde redondeado*/
             color: black;                 /*Color de la letra*/
             box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
             position: absolute;             /*Ponemos posicion absolute respecto al header*/
-            top: 20px;                      /*20px por debajo del borde superior del header*/
-            right: 30px;                    /*30px a la izquierda del borde derecho del header*/
+            top: 20.2122%;                      /*20px por debajo del borde superior del header*/
+            right: 2.1961%;                    /*30px a la izquierda del borde derecho del header*/
         }
     }
 
     main{
         background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
-        padding: 50px 0px;                  /*Espacio interno del main*/
+        padding: 3.6603% 0px;                  /*Espacio interno del main*/
 
         h2{
-            width: 1000px;                  /*Ancho del titulo*/
+            width: 73.2064%;                  /*Ancho del titulo*/
             margin: 0 auto;                 /*Centramos la caja del titulo*/
-            padding: 20px;                  /*Espacio interno del titulo*/
+            padding: 1.4641%;                  /*Espacio interno del titulo*/
             text-align: center;             /*Centramos el texto del titulo*/
             background-color: var(--color-neon);    /*Color del fondo del titulo*/
             border: 2px solid var(--color-neon);    /*Estilo borde*/
@@ -323,28 +324,28 @@ input[type="text"]:hover, input[type="email"]:hover{
         }
 
         #opcionesPregunta{
-            width: 800px;                   /*Ancho de la caja*/
+            width: 80%;                   /*Ancho de la caja*/
             margin: 0 auto;                 /*Centra la caja*/
-            padding: 50px 0px;              /*Espacio interno de las respuestas*/
+            padding: 5% 0px;              /*Espacio interno de las respuestas*/
             color: var(--fondo-blanco);     /*Color de la letra*/
             display: flex;
             flex-direction: column;         /*Flexeamos dirección columna*/
             align-items: center;            /*Centra el contenido respecto al eje vertical pero como esta en dirección columna pasa a ser el horizontal*/
 
             .contenedor-pregunta{
-                width: 700px;               /*Ancho del contenedor*/
+                width: 65.1769%;               /*Ancho del contenedor*/
                 text-align: left;           /*Alineamos el contenido a la izquierda*/
                 background-color: var(--fondo-oscuro);  /*Color del fondo*/
                 border: 2px solid var(--fondo-oscuro);  /*Estilo borde*/
                 border-radius: 10px;        /*Borde redonedado*/
                 box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
-                margin: 25px 0px;           /*Espacio entre elementos superior e inferior*/
-                padding: 20px;              /*Espacio interno de la respuesta*/
+                margin: 2.3277% 0px;           /*Espacio entre elementos superior e inferior*/
+                padding: 1.8621%;              /*Espacio interno de la respuesta*/
                 flex: 1 1 auto;             /*Flex-grow (se agranda de 1 en 1), flex-shrink (se empequeñece de 1 en 1), flex-basic (ancho especial para flex (antes que el width normal))*/
 
                 p{
                     display: inline-block;  /*Desplegamos en inline-block para que no se baje después del input*/
-                    margin-left: 20px;      /*Espacio entre elementos por la izquierda*/
+                    margin-left: 2.8571%;      /*Espacio entre elementos por la izquierda*/
                 }
             }
         }
@@ -357,41 +358,41 @@ input[type="text"]:hover, input[type="email"]:hover{
         background-color: black;         /*Color del fondo*/
         color: var(--fondo-blanco);         /*Color de la letra*/
         text-align: center;                 /*Alineo el texto*/
-        padding: 30px 0px;                  /*Espacio interno del button en la parte superior*/
+        padding: 2.1961% 0px;                  /*Espacio interno del button en la parte superior*/
         position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
 
         #situacion{
             background-color: var(--fondo-blanco);  /*Fondo del icono*/
-            width: 40px;                    /*Ancho de la imagen*/
-            padding: 15px;                  /*Espacio interno de la imagen*/
+            width: 2.9282%;                    /*Ancho de la imagen*/
+            padding: 1.0980%;                  /*Espacio interno de la imagen*/
             position: absolute;             /*Ponemos posicion absolute respecto al header*/
             border-radius: 50px;            /*Borde redondeado*/
-            top: 20px;                      /*20px por debajo del borde superior del header*/
-            left: 30px;                     /*30px a la derecha del borde izquierdo del header*/
+            top: 20.2122%;                      /*20px por debajo del borde superior del header*/
+            left: 2.1961%;                     /*30px a la derecha del borde izquierdo del header*/
         }
 
         #tiempo{
-            width: 150px;                   /*Ancho del temporizador*/
-            padding: 10px 15px;             /*Espacio interno del temporizador*/
+            width: 10.9809%;                   /*Ancho del temporizador*/
+            padding: 0.7320% 1.0980%;             /*Espacio interno del temporizador*/
             background-color: var(--fondo-blanco);  /*Color del fondo*/
             border: 2px solid var(--fondo-blanco);  /*Esilo del borde*/
             border-radius: 10px;            /*Borde redondeado*/
             color: black;                 /*Color de la letra*/
             box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
             position: absolute;             /*Ponemos posicion absolute respecto al header*/
-            top: 20px;                      /*20px por debajo del borde superior del header*/
-            right: 30px;                    /*30px a la izquierda del borde derecho del header*/
+            top: 20.2122%;                      /*20px por debajo del borde superior del header*/
+            right: 2.1961%;                    /*30px a la izquierda del borde derecho del header*/
         }
     }
 
     main{
         background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
-        padding: 50px 0px;                  /*Espacio interno del main*/
+        padding: 3.6603% 0px;                  /*Espacio interno del main*/
 
         h2{
-            width: 1000px;                  /*Ancho del titulo*/
+            width: 73.2064%;                  /*Ancho del titulo*/
             margin: 0 auto;                 /*Centramos la caja del titulo*/
-            padding: 20px;                  /*Espacio interno del titulo*/
+            padding: 1.4641%;                  /*Espacio interno del titulo*/
             text-align: center;             /*Centramos el texto del titulo*/
             background-color: var(--color-neon);    /*Color del fondo del titulo*/
             border: 2px solid var(--color-neon);    /*Estilo borde*/
@@ -401,14 +402,14 @@ input[type="text"]:hover, input[type="email"]:hover{
         }
 
         #opcionesSituacion{
-            width: 1000px;                  /*Ancho de la situacion*/
+            width: 73.2064%;                  /*Ancho de la situacion*/
             margin: 0 auto;                 /*Centramos la caja*/
-            padding: 50px 0px;              /*Contenido interno de la situacion*/
+            padding: 3.6603% 0px;              /*Contenido interno de la situacion*/
             color: var(--fondo-blanco);     /*Color de la letra*/
             display: grid;
-            grid-template-columns: 400px 400px; /*Hacemos dos columnas de 400px*/
+            grid-template-columns: 40% 40%; /*Hacemos dos columnas de 400px*/
             grid-template-rows: auto;       /*Hacemos una fila que se adaptará al contenido por defecto al tamaño de sus hijos*/
-            gap: 0px 200px;                 /*Espacio entre filas y columnas*/
+            gap: 0px 20%;                 /*Espacio entre filas y columnas*/
             justify-content: left;          /*Alineamos a la izquierda el contenido*/
             
 
@@ -418,12 +419,12 @@ input[type="text"]:hover, input[type="email"]:hover{
                 border: 2px solid var(--fondo-oscuro);  /*Estilo borde*/
                 border-radius: 10px;        /*Borde redonedado*/
                 box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
-                margin: 25px 0px;           /*Espacio entre elementos superior e inferior*/
-                padding: 20px;              /*Espacio interno de la respuesta*/
+                margin: 6.25% 0px;           /*Espacio entre elementos superior e inferior*/
+                padding: 5%;              /*Espacio interno de la respuesta*/
 
                 p{
                     display: inline-block;  /*Desplegamos en inline-block para que no se baje después del input*/
-                    margin-left: 20px;      /*Espacio entre elementos por la izquierda*/
+                    margin-left: 2.8571%;      /*Espacio entre elementos por la izquierda*/
                 }
             }
         }
@@ -436,41 +437,41 @@ input[type="text"]:hover, input[type="email"]:hover{
         background-color: black;          /*Color del fondo*/
         color: var(--fondo-blanco);         /*Color del texto*/
         text-align: center;                 /*Alineo el texto*/
-        padding: 30px 0px;                  /*Espacio interno del button en la parte superior*/
+        padding: 2.1961% 0px;                  /*Espacio interno del button en la parte superior*/
         position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
 
         #foto{
             background-color: var(--fondo-blanco);  /*Fondo del icono*/
-            width: 40px;                    /*Ancho de la imagen*/
-            padding: 15px;                  /*Espacio interno de la imagen*/
+            width: 2.9282%;                    /*Ancho de la imagen*/
+            padding: 1.0980%;                  /*Espacio interno de la imagen*/
             position: absolute;             /*Ponemos posicion absolute respecto al header*/
             border-radius: 25px;            /*Borde redondeado*/
-            top: 20px;                      /*20px por debajo del borde superior del header*/
-            left: 30px;                     /*30px a la derecha del borde izquierdo del header*/
+            top: 20.2122%;                      /*20px por debajo del borde superior del header*/
+            left: 2.1961%;                     /*30px a la derecha del borde izquierdo del header*/
         }
 
         #tiempo{
-            width: 150px;                   /*Ancho del temporizador*/
-            padding: 10px 15px;             /*Espacio interno del temporizador*/
+            width: 10.9809%;                   /*Ancho del temporizador*/
+            padding: 0.7320% 1.0980%;             /*Espacio interno del temporizador*/
             background-color: var(--fondo-blanco);  /*Color del fondo*/
             border: 2px solid var(--fondo-blanco);  /*Esilo del borde*/
             border-radius: 10px;            /*Borde redondeado*/
             color: black;                 /*Color de la letra*/
             box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
             position: absolute;             /*Ponemos posicion absolute respecto al header*/
-            top: 20px;                      /*20px por debajo del borde superior del header*/
-            right: 30px;                    /*30px a la izquierda del borde derecho del header*/
+            top: 20.2122%;                      /*20px por debajo del borde superior del header*/
+            right: 2.1961%;                    /*30px a la izquierda del borde derecho del header*/
         }
     }
 
     main{
         background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
-        padding: 50px 0px;                  /*Espacio interno del main*/
+        padding: 3.6603% 0px;                  /*Espacio interno del main*/
 
         h2{
-            width: 1200px;                  /*Ancho del titulo*/
+            width: 87.8477%;                  /*Ancho del titulo*/
             margin: 0 auto;                 /*Centramos la caja del titulo*/
-            padding: 20px;                  /*Espacio interno del titulo*/
+            padding: 1.4641%;                  /*Espacio interno del titulo*/
             text-align: center;             /*Centramos el texto del titulo*/
             background-color: var(--color-neon);    /*Color del fondo del titulo*/
             border: 2px solid var(--color-neon);    /*Estilo borde*/
@@ -480,18 +481,18 @@ input[type="text"]:hover, input[type="email"]:hover{
         }
 
         #opcionesFoto{
-            width: 1200px;                  /*Ancho de la situacion*/
+            width: 87.8477%;                  /*Ancho de la situacion*/
             margin: 0 auto;                 /*Centramos la caja*/
-            padding: 50px 0px;              /*Contenido interno de la situacion*/
+            padding: 3.6603% 0px;              /*Contenido interno de la situacion*/
             color: var(--fondo-blanco);     /*Color del texto*/
             display: grid;
                                             /*Organizo el grid en 2 columnas y 2 filas*/
             grid-template-areas:            
                 "pregunta1 imagen"
                 "pregunta2 imagen";  /*La imagen ocupa la columna 2 entera*/
-            grid-template-columns: 500px 400px; /*Ancho de las columnas*/
+            grid-template-columns: 41.4666% 33.3333%; /*Ancho de las columnas*/
             grid-template-rows: auto auto;  /*Altura por defecto de las filas que se adapta al contenido de sus hijos*/
-            gap: 0px 200px;                 /*Espacio entre las filas y columnas*/
+            gap: 0px 16.6666%;                 /*Espacio entre las filas y columnas*/
             justify-content: left;          /*Alineamos el contenido a la izquierda*/
 
             #pregunta1{
@@ -507,7 +508,7 @@ input[type="text"]:hover, input[type="email"]:hover{
             }
 
             #imagenFoto{
-                width: 300px;               /*Ancho de las imagenes*/
+                width: 100%;               /*Ancho de las imagenes*/
             }
             
 
@@ -517,12 +518,12 @@ input[type="text"]:hover, input[type="email"]:hover{
                 border: 2px solid var(--fondo-oscuro);  /*Estilo borde*/
                 border-radius: 10px;        /*Borde redonedado*/
                 box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
-                margin: 25px 0px;           /*Espacio entre elementos superior e inferior*/
-                padding: 20px;              /*Espacio interno de la respuesta*/
+                margin: 5% 0px;           /*Espacio entre elementos superior e inferior*/
+                padding: 4%;              /*Espacio interno de la respuesta*/
 
                 p{
                     display: inline-block;  /*Desplegamos en inline-block para que no se baje después del input*/
-                    margin-left: 20px;      /*Espacio entre elementos por la izquierda*/
+                    margin-left: 2.8571%;      /*Espacio entre elementos por la izquierda*/
                 }
             }
         }
