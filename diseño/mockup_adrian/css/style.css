@@ -19,19 +19,17 @@
     --color-rojo: rgb(200, 37, 1);
 }
 
-/*Ponemos predeterminado a todo con 0 de padding y 0 de margin*/
 *{
     padding: 0;
     margin: 0;
 }
 
-/*Indicamos el tamaño de ancho, la altura, las fuentes y los fondos de los body*/
 body{
-    width: 100%;                            /*Ancho de una tablet predeterminada*/
-    max-width: 1366px;                      /*Tamaño maximo de ancho*/
-    min-height: 100vh;                      /*Minimo lo que ocupe la pantalla de altura de fondo*/
-    background: var(--gradiente-juego);           /*Usamos la variable --gradiente para seleccionar el fondo*/
-    font-family: var(--fuente-cuerpo);      /*Usamos la variable --fuente-cuerpo para seleccionar la fuente*/
+    width: 100%;                            
+    max-width: 1366px;                     
+    min-height: 100vh;                      
+    background: var(--gradiente-juego);           
+    font-family: var(--fuente-cuerpo);      
     font-size: 10px;
 }
 
@@ -51,46 +49,44 @@ label{
     font-size: 1.5rem;
 }
 
-/*Estilo de los buttons (Funcionarán mediante JavaScript)*/
 button{
-    width: 100%;                            /*Tamaño ancho del button*/
-    font-size: 1.3rem;                      /*Tamaño de la letra*/
-    text-align: center;                     /*Centramos el texto*/
-    display: block;                         /*Desplegamos en bloque para que el inicio sesion se baje y no se superponga*/
-    padding: 1.4641%;                          /*Espacio interno del button*/
-    margin-bottom: 7.2463%;                    /*Espacio entre elementos inferior del button*/
-    cursor: pointer;                        /*Cambia el simbolo del cursor cuando pasas por encima*/
-    border: 2px solid var(--color-neon);    /*Estilo del borde del button*/
-    border-radius: 15px;                    /*Borde redondeado*/
-    color: var(--color-neon);               /*Color de la letra del button*/
-    background-color: transparent;          /*Sin fondo*/
-    box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
-    transition: all 0.3s ease;              /*Tiempo de transicion para el hover*/
+    width: 100%;                            
+    font-size: 1.3rem;                      
+    text-align: center;                     
+    display: block;                         
+    padding: 1.4641%;                       
+    margin-bottom: 7.2463%;                 
+    cursor: pointer;                        
+    border: 2px solid var(--color-neon);    
+    border-radius: 15px;                    
+    color: var(--color-neon);               
+    background-color: transparent;          
+    box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
+    transition: all 0.3s ease;              
 }
 
 /*Estilo de la transición de los buttons*/
 button:hover{
-    color: var(--color-neon);               /*Transicion del color*/
-    background: var(fondo-oscuro);          /*Transicion del color del fondo*/
-    box-shadow: 0 0 2em 0.5em var(--color-neon);    /*Transicion de la sombra*/
+    color: var(--color-neon);               
+    background: var(fondo-oscuro);          
+    box-shadow: 0 0 2em 0.5em var(--color-neon);    
 }
 
 /*Estilo de los input*/
 input[type="text"], input[type="email"]{
-    width: 50%;                           /*Anchura del input*/
-    height: 5vh;                           /*Altura del input*/
-    padding-left: 10px;                     /*Espacio interno del input*/
-    border: 2px solid black;              /*Estilo del borde de los input*/
-    border-radius: 5px;                     /*Borde redondeado*/
-    transition: all 0.15s ease;             /*Tiempo de transición del hover*/
+    width: 50%;                           
+    height: 5vh;                           
+    padding-left: 10px;                     
+    border: 2px solid black;              
+    border-radius: 5px;                     
+    transition: all 0.15s ease;            
 }
 
 input[type="text"]:hover, input[type="email"]:hover{
-    box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
-    border-color: var(--color-neon);/*Color del borde*/
+    box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); 
+    border-color: var(--color-neon);
 }
 
-/*Estilo del Logo*/
 #logo{
     width: 7.3206%;
     position: absolute;
@@ -99,17 +95,16 @@ input[type="text"]:hover, input[type="email"]:hover{
 }
 
 
-/*--INICIO DE SESIÓN--*/
 #inicioSesion{
     header{
-        text-align: center;                 /*ALineo el texto*/
-        padding: 14.6412% 0px 3.6603% 0px;        /*Espacio interno del button en la parte superior e inferior*/
+        text-align: center;                 
+        padding: 14.6412% 0px 3.6603% 0px;  
     }
 
     main{
         #menuInicioSesion{
             width: 21.9619%;
-            display: block;                  /*Despliego mediante grid*/
+            display: block;                  
             margin: 0 auto;
         }
 
@@ -122,65 +117,65 @@ input[type="text"]:hover, input[type="email"]:hover{
 /*--MENU PRINCIPAL--*/
 #menuPrincipal{
     header{
-        text-align: center;                 /*Alineo el texto*/
-        padding: 1.8301% 0px 0px 0px;          /*Espacio interno del button en la parte superior*/
-        position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
+        text-align: center;                 
+        padding: 1.8301% 0px 0px 0px;       
+        position: relative;                 
 
         #btnCerrarSesion{
             width: 18.3016%;
-            position: absolute;             /*Lo posiciono de manera absolute respecto al header*/
-            top: 31.7460%;                  /*Distancia entre el borde arriba del header al elemento*/
-            right: 2.1961%;                 /*Distancia entre el borde derecho del header al elemento*/
-            font-size: 1.3rem;              /*Tamaño del button Cerrar Sesion*/
-            cursor: pointer;                /*Cambia el simbolo del cursor cuando pasas por encima*/
-            border: 2px solid black;      /*Estilo del borde del button*/
-            border-radius: 15px;            /*Borde redondeado*/
-            color: var(--fondo-blanco);     /*Color de la letra del button*/
-            background-color: black;      /*Color del fondo del button*/
-            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; /*Sombra*/
-            transition: all 0.15s ease;     /*Tiempo de transición del hover*/
+            position: absolute;             
+            top: 31.7460%;                  
+            right: 2.1961%;                 
+            font-size: 1.3rem;              
+            cursor: pointer;                
+            border: 2px solid black;     
+            border-radius: 15px;          
+            color: var(--fondo-blanco);   
+            background-color: black;     
+            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; 
+            transition: all 0.15s ease;     
         }
 
         #btnCerrarSesion:hover{
-            color: black;                 /*Color del hover*/
-            background: var(--color-rojo);  /*Color del fondo del hover*/
-            box-shadow: 0 0 2em 0.5em var(--color-rojo);    /*Sombra del hover*/
+            color: black;                
+            background: var(--color-rojo);
+            box-shadow: 0 0 2em 0.5em var(--color-rojo);    
         }
     }
 
     main{
-        margin: 7.3206% 0.7320% 0px 0.7320%;        /*Espacio entre elementos del main por izquierda y derecha y por arriba*/
+        margin: 7.3206% 0.7320% 0px 0.7320%;        
 
         #menuBotones{
             height: 75vh;
-            display: grid;                  /*Despliego mediante un grid*/
-                                            /*Organizo el grid en tres columnas y 2 filas*/
+            display: grid;                  
+                                            
             grid-template-areas:            
                 "iniciar salas partida"
-                "ranking ranking ranking";  /*El ranking ocupa todo*/
-            grid-template-columns: 29.2828% 29.2828% 29.2828%;   /*Tamaño de las columnas de ancho*/
-            grid-template-rows: 80% auto;/*Tamaño de las filas de alto*/
-            justify-content: center;        /*Alinea la cuadrícula al centro en horizontal*/
-            gap: 2.5% 3.6603%;                 /*Espacio entre filas y columnas*/
+                "ranking ranking ranking";  
+            grid-template-columns: 29.2828% 29.2828% 29.2828%;   
+            grid-template-rows: 80% auto;
+            justify-content: center;     
+            gap: 2.5% 3.6603%;           
 
             .lineaA{
-                margin: 0px;                /*Espacio entre elementos a 0px*/
+                margin: 0px;             
             }
 
             #btnIniciarPartida{
-                grid-area: iniciar;         /*Nombre que se usará para el grid-template-areas*/
+                grid-area: iniciar;      
             }
 
             #btnCrearSala{
-                grid-area: salas;           /*Nombre que se usará para el grid-template-areas*/
+                grid-area: salas;        
             }
 
             #btnPartidaPublica{
-                grid-area: partida;         /*Nombre que se usará para el grid-template-areas*/
+                grid-area: partida;      
             }
 
             #btnRanking{
-                grid-area: ranking;         /*Nombre que se usará para el grid-template-areas*/
+                grid-area: ranking;      
             }
         }
     }
@@ -189,49 +184,49 @@ input[type="text"]:hover, input[type="email"]:hover{
 /*--REGISTRO--*/
 #registro{
     header{
-        text-align: center;                 /*Alineo al centro*/
-        padding-top: 5.4904%;          /*Espacio interno del header en la parte superior*/
+        text-align: center;              
+        padding-top: 5.4904%;          
     }
 
     form{
-        width: 43.9238%;                       /*Ancho del formulario*/
-        margin: 1.4641% auto 0 auto;           /*Espacio entre elementos, lo ponemos al centro con un poco de espacio arriba*/
-        padding: 50px 75px 50px 75px;       /*Espacio interno del formulario*/
-        background-color: transparent;      /*Sin fondo en el formulario*/
-        border: 2px solid var(--color-neon);/*Borde del formulario*/
-        border-radius: 20px;                /*Borde redondeado*/
-        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+        width: 43.9238%;                    
+        margin: 1.4641% auto 0 auto;        
+        padding: 50px 75px 50px 75px;       
+        background-color: transparent;      
+        border: 2px solid var(--color-neon);
+        border-radius: 20px;                
+        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); 
 
         label{
-            color: var(--fondo-blanco);     /*Color del label*/
-            font-weight: bold;              /*Negrita*/
-            margin-left: 50px;              /*Espacio entre elementos por la izquierda*/
+            color: var(--fondo-blanco);    
+            font-weight: bold;             
+            margin-left: 50px;             
         }
 
         input[type="text"], input[type="email"]{
-            margin: 3.3333% 0px 5% 8.3333%;     /*Espacio entre elementos*/
-            display: block;                 /*Desplegamos en bloque para que el elemento ocupe todo el ancho de la caja*/
+            margin: 3.3333% 0px 5% 8.3333%;
+            display: block;                
         }
 
         #btnEnviar{
-            width: 41.6666%;                   /*Ancho del button*/
-            margin: 10% auto 0 auto;       /*Espacio entre elementos, lo ponemos al centro con un poco de espacio arriba*/
-            font-size: 1.3rem;              /*Tamaño de la letra del button*/
-            padding: 1.6666% 0px;              /*Espacio interno del button*/
-            cursor: pointer;                /*Cambia el simbolo del cursor cuando pasas por encima*/
-            border: 2px solid black;      /*Estilo del borde del button*/
-            border-radius: 15px;            /*Borde redondeado*/
-            color: var(--fondo-blanco);     /*Color de la letra del button*/
-            background-color: black;      /*Color del fondo del button*/
-            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; /*Sombra*/
-            transition: all 0.15s ease;     /*Tiempo de transición del hover*/
+            width: 41.6666%;              
+            margin: 10% auto 0 auto;       
+            font-size: 1.3rem;             
+            padding: 1.6666% 0px;          
+            cursor: pointer;               
+            border: 2px solid black;      
+            border-radius: 15px;           
+            color: var(--fondo-blanco);    
+            background-color: black;      
+            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; 
+            transition: all 0.15s ease;     
         }
 
         #btnEnviar:hover{
-            color: black;                 /*Color del hover*/
-            background: var(--fondo-blanco);/*Color del fondo del hover*/
-            box-shadow: 0 0 2em 0.5em var(--fondo-blanco);/*Sombra del hover*/
-            border-color: var(--fondo-blanco);/*Color del borde*/
+            color: black;                 
+            background: var(--fondo-blanco);
+            box-shadow: 0 0 2em 0.5em var(--fondo-blanco);
+            border-color: var(--fondo-blanco);
         }
     }
 }
@@ -239,9 +234,9 @@ input[type="text"]:hover, input[type="email"]:hover{
 /*--RANKING--*/
 #ranking{
     header{
-        text-align: center;                 /*Alineo el texto*/
-        padding: 1.8301%;                   /*Espacio interno del header en la parte superior*/
-        position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
+        text-align: center;               
+        padding: 1.8301%;                 
+        position: relative;               
     }
 
     main{
@@ -249,10 +244,10 @@ input[type="text"]:hover, input[type="email"]:hover{
         margin: 7.3206% auto 0 auto;
         padding: 3.6603% 0px;
         width: 43.9238%;
-        background-color: transparent;      /*Sin fondo en el formulario*/
-        border: 2px solid var(--color-neon);/*Borde del formulario*/
-        border-radius: 20px;                /*Borde redondeado*/
-        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+        background-color: transparent;      
+        border: 2px solid var(--color-neon);
+        border-radius: 20px;                
+        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); 
 
         .jugadores{
             background-color: black;
@@ -262,86 +257,86 @@ input[type="text"]:hover, input[type="email"]:hover{
             border-radius: 10px;
             margin: 3.3333% 33.3333%;
             color: var(--fondo-blanco);
-            text-align: center;             /*Centramos*/
+            text-align: center;             
         }
     }
 
     #flecha{
-        width: 5.1244%;                        /*Ancho*/
-        position: absolute;                 /*Ponemos posicion absolute respecto al header*/
-        bottom: 1.4641%;                       /*20px por encima del borde inferior del header*/
-        left: 2.1961%;                         /*30px a la derecha del borde izquierdo del header*/
+        width: 5.1244%;                  
+        position: absolute;              
+        bottom: 1.4641%;                 
+        left: 2.1961%;                   
     }
 }
 
 /*--PREGUNTAS Y RESPUESTAS--*/
 #preguntasRespuestas{
     header{
-        background-color: black;          /*Fondo del header*/
-        color: var(--fondo-blanco);         /*Color de la letra del header*/
-        text-align: center;                 /*Alineo el texto*/
-        padding: 2.1961% 0px;                  /*Espacio interno del button en la parte superior*/
-        position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
+        background-color: black;        
+        color: var(--fondo-blanco);      
+        text-align: center;              
+        padding: 2.1961% 0px;            
+        position: relative;              
 
         #pregunta{
-            background-color: var(--fondo-blanco);  /*Fondo del icono*/
-            width: 2.9282%;                    /*Ancho de la imagen*/
-            padding: 1.0980%;                  /*Espacio interno de la imagen*/
-            position: absolute;             /*Ponemos posicion absolute respecto al header*/
-            border-radius: 50px;            /*Borde redondeado*/
-            top: 20.2122%;                      /*20px por debajo del borde superior del header*/
-            left: 2.1961%;                     /*30px a la derecha del borde izquierdo del header*/
+            background-color: var(--fondo-blanco);  
+            width: 2.9282%;              
+            padding: 1.0980%;            
+            position: absolute;          
+            border-radius: 50px;         
+            top: 20.2122%;               
+            left: 2.1961%;               
         }
 
         #tiempo{
-            width: 10.9809%;                   /*Ancho del temporizador*/
+            width: 10.9809%;                   
             padding: 0.7320% 1.0980%;             /*Espacio interno del temporizador*/
             background-color: var(--fondo-blanco);  /*Color del fondo*/
             border: 2px solid var(--fondo-blanco);  /*Esilo del borde*/
             border-radius: 10px;            /*Borde redondeado*/
             color: black;                 /*Color de la letra*/
             box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
-            position: absolute;             /*Ponemos posicion absolute respecto al header*/
-            top: 20.2122%;                      /*20px por debajo del borde superior del header*/
-            right: 2.1961%;                    /*30px a la izquierda del borde derecho del header*/
+            position: absolute;             
+            top: 20.2122%;                  
+            right: 2.1961%;                 
         }
     }
 
     main{
         background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
-        padding: 3.6603% 0px;                  /*Espacio interno del main*/
+        padding: 3.6603% 0px;          
 
         h2{
-            width: 73.2064%;                  /*Ancho del titulo*/
-            margin: 0 auto;                 /*Centramos la caja del titulo*/
-            padding: 1.4641%;                  /*Espacio interno del titulo*/
-            text-align: center;             /*Centramos el texto del titulo*/
-            background-color: var(--color-neon);    /*Color del fondo del titulo*/
-            border: 2px solid var(--color-neon);    /*Estilo borde*/
-            border-radius: 10px;            /*Borde redondeado*/
-            color: black;                 /*Color de la letra*/
+            width: 73.2064%;           
+            margin: 0 auto;            
+            padding: 1.4641%;          
+            text-align: center;        
+            background-color: var(--color-neon);   
+            border: 2px solid var(--color-neon);   
+            border-radius: 10px;        
+            color: black;               
             box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
         }
 
         #opcionesPregunta{
-            width: 80%;                   /*Ancho de la caja*/
-            margin: 0 auto;                 /*Centra la caja*/
-            padding: 5% 0px;              /*Espacio interno de las respuestas*/
-            color: var(--fondo-blanco);     /*Color de la letra*/
+            width: 80%;                   
+            margin: 0 auto;               
+            padding: 5% 0px;              
+            color: var(--fondo-blanco);   
             display: flex;
-            flex-direction: column;         /*Flexeamos dirección columna*/
-            align-items: center;            /*Centra el contenido respecto al eje vertical pero como esta en dirección columna pasa a ser el horizontal*/
+            flex-direction: column;       
+            align-items: center;          
 
             .contenedor-pregunta{
-                width: 65.1769%;               /*Ancho del contenedor*/
-                text-align: left;           /*Alineamos el contenido a la izquierda*/
-                background-color: var(--fondo-oscuro);  /*Color del fondo*/
-                border: 2px solid var(--fondo-oscuro);  /*Estilo borde*/
+                width: 65.1769%;          
+                text-align: left;         
+                background-color: var(--fondo-oscuro);  
+                border: 2px solid var(--fondo-oscuro);  
                 border-radius: 10px;        /*Borde redonedado*/
                 box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
-                margin: 2.3277% 0px;           /*Espacio entre elementos superior e inferior*/
-                padding: 1.8621%;              /*Espacio interno de la respuesta*/
-                flex: 1 1 auto;             /*Flex-grow (se agranda de 1 en 1), flex-shrink (se empequeñece de 1 en 1), flex-basic (ancho especial para flex (antes que el width normal))*/
+                margin: 2.3277% 0px;     
+                padding: 1.8621%;        
+                flex: 1 1 auto;          
 
                 p{
                     display: inline-block;  /*Desplegamos en inline-block para que no se baje después del input*/
@@ -355,20 +350,20 @@ input[type="text"]:hover, input[type="email"]:hover{
 /*--SITUACIONES--*/
 #situaciones{
     header{
-        background-color: black;         /*Color del fondo*/
-        color: var(--fondo-blanco);         /*Color de la letra*/
-        text-align: center;                 /*Alineo el texto*/
-        padding: 2.1961% 0px;                  /*Espacio interno del button en la parte superior*/
-        position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
+        background-color: black;      
+        color: var(--fondo-blanco);    
+        text-align: center;            
+        padding: 2.1961% 0px;          
+        position: relative;            
 
         #situacion{
             background-color: var(--fondo-blanco);  /*Fondo del icono*/
-            width: 2.9282%;                    /*Ancho de la imagen*/
-            padding: 1.0980%;                  /*Espacio interno de la imagen*/
-            position: absolute;             /*Ponemos posicion absolute respecto al header*/
-            border-radius: 50px;            /*Borde redondeado*/
-            top: 20.2122%;                      /*20px por debajo del borde superior del header*/
-            left: 2.1961%;                     /*30px a la derecha del borde izquierdo del header*/
+            width: 2.9282%;            
+            padding: 1.0980%;          
+            position: absolute;        
+            border-radius: 50px;       
+            top: 20.2122%;             
+            left: 2.1961%;             
         }
 
         #tiempo{
@@ -379,9 +374,9 @@ input[type="text"]:hover, input[type="email"]:hover{
             border-radius: 10px;            /*Borde redondeado*/
             color: black;                 /*Color de la letra*/
             box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
-            position: absolute;             /*Ponemos posicion absolute respecto al header*/
-            top: 20.2122%;                      /*20px por debajo del borde superior del header*/
-            right: 2.1961%;                    /*30px a la izquierda del borde derecho del header*/
+            position: absolute;           
+            top: 20.2122%;                
+            right: 2.1961%;               
         }
     }
 
@@ -390,10 +385,10 @@ input[type="text"]:hover, input[type="email"]:hover{
         padding: 3.6603% 0px;                  /*Espacio interno del main*/
 
         h2{
-            width: 73.2064%;                  /*Ancho del titulo*/
-            margin: 0 auto;                 /*Centramos la caja del titulo*/
-            padding: 1.4641%;                  /*Espacio interno del titulo*/
-            text-align: center;             /*Centramos el texto del titulo*/
+            width: 73.2064%;           
+            margin: 0 auto;            
+            padding: 1.4641%;          
+            text-align: center;        
             background-color: var(--color-neon);    /*Color del fondo del titulo*/
             border: 2px solid var(--color-neon);    /*Estilo borde*/
             border-radius: 10px;            /*Borde redondeado*/
@@ -402,15 +397,15 @@ input[type="text"]:hover, input[type="email"]:hover{
         }
 
         #opcionesSituacion{
-            width: 73.2064%;                  /*Ancho de la situacion*/
-            margin: 0 auto;                 /*Centramos la caja*/
-            padding: 3.6603% 0px;              /*Contenido interno de la situacion*/
-            color: var(--fondo-blanco);     /*Color de la letra*/
+            width: 73.2064%;              
+            margin: 0 auto;               
+            padding: 3.6603% 0px;         
+            color: var(--fondo-blanco);   
             display: grid;
-            grid-template-columns: 40% 40%; /*Hacemos dos columnas de 400px*/
-            grid-template-rows: auto;       /*Hacemos una fila que se adaptará al contenido por defecto al tamaño de sus hijos*/
-            gap: 0px 20%;                 /*Espacio entre filas y columnas*/
-            justify-content: left;          /*Alineamos a la izquierda el contenido*/
+            grid-template-columns: 40% 40%; 
+            grid-template-rows: auto;       
+            gap: 0px 20%;                 
+            justify-content: left;          
             
 
             .contenedor-situacion{
@@ -419,12 +414,12 @@ input[type="text"]:hover, input[type="email"]:hover{
                 border: 2px solid var(--fondo-oscuro);  /*Estilo borde*/
                 border-radius: 10px;        /*Borde redonedado*/
                 box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
-                margin: 6.25% 0px;           /*Espacio entre elementos superior e inferior*/
-                padding: 5%;              /*Espacio interno de la respuesta*/
+                margin: 6.25% 0px;      
+                padding: 5%;            
 
                 p{
-                    display: inline-block;  /*Desplegamos en inline-block para que no se baje después del input*/
-                    margin-left: 2.8571%;      /*Espacio entre elementos por la izquierda*/
+                    display: inline-block; 
+                    margin-left: 2.8571%;  
                 }
             }
         }
@@ -434,33 +429,33 @@ input[type="text"]:hover, input[type="email"]:hover{
 /*FOTOS*/
 #fotos{
     header{
-        background-color: black;          /*Color del fondo*/
-        color: var(--fondo-blanco);         /*Color del texto*/
-        text-align: center;                 /*Alineo el texto*/
-        padding: 2.1961% 0px;                  /*Espacio interno del button en la parte superior*/
-        position: relative;                 /*Permito que los elementos hijos puedan posicionarse de manera absolute sobre él*/
+        background-color: black;        
+        color: var(--fondo-blanco);      
+        text-align: center;              
+        padding: 2.1961% 0px;            
+        position: relative;              
 
         #foto{
             background-color: var(--fondo-blanco);  /*Fondo del icono*/
-            width: 2.9282%;                    /*Ancho de la imagen*/
-            padding: 1.0980%;                  /*Espacio interno de la imagen*/
-            position: absolute;             /*Ponemos posicion absolute respecto al header*/
-            border-radius: 25px;            /*Borde redondeado*/
-            top: 20.2122%;                      /*20px por debajo del borde superior del header*/
-            left: 2.1961%;                     /*30px a la derecha del borde izquierdo del header*/
+            width: 2.9282%;              
+            padding: 1.0980%;            
+            position: absolute;          
+            border-radius: 25px;         
+            top: 20.2122%;               
+            left: 2.1961%;               
         }
 
         #tiempo{
-            width: 10.9809%;                   /*Ancho del temporizador*/
-            padding: 0.7320% 1.0980%;             /*Espacio interno del temporizador*/
+            width: 10.9809%;                   
+            padding: 0.7320% 1.0980%;          
             background-color: var(--fondo-blanco);  /*Color del fondo*/
             border: 2px solid var(--fondo-blanco);  /*Esilo del borde*/
             border-radius: 10px;            /*Borde redondeado*/
             color: black;                 /*Color de la letra*/
             box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
-            position: absolute;             /*Ponemos posicion absolute respecto al header*/
-            top: 20.2122%;                      /*20px por debajo del borde superior del header*/
-            right: 2.1961%;                    /*30px a la izquierda del borde derecho del header*/
+            position: absolute;           
+            top: 20.2122%;                
+            right: 2.1961%;               
         }
     }
 
@@ -469,10 +464,10 @@ input[type="text"]:hover, input[type="email"]:hover{
         padding: 3.6603% 0px;                  /*Espacio interno del main*/
 
         h2{
-            width: 87.8477%;                  /*Ancho del titulo*/
-            margin: 0 auto;                 /*Centramos la caja del titulo*/
-            padding: 1.4641%;                  /*Espacio interno del titulo*/
-            text-align: center;             /*Centramos el texto del titulo*/
+            width: 87.8477%;           
+            margin: 0 auto;            
+            padding: 1.4641%;          
+            text-align: center;        
             background-color: var(--color-neon);    /*Color del fondo del titulo*/
             border: 2px solid var(--color-neon);    /*Estilo borde*/
             border-radius: 10px;            /*Borde redondeado*/
@@ -481,49 +476,49 @@ input[type="text"]:hover, input[type="email"]:hover{
         }
 
         #opcionesFoto{
-            width: 87.8477%;                  /*Ancho de la situacion*/
-            margin: 0 auto;                 /*Centramos la caja*/
-            padding: 3.6603% 0px;              /*Contenido interno de la situacion*/
-            color: var(--fondo-blanco);     /*Color del texto*/
+            width: 87.8477%;             
+            margin: 0 auto;              
+            padding: 3.6603% 0px;        
+            color: var(--fondo-blanco);  
             display: grid;
-                                            /*Organizo el grid en 2 columnas y 2 filas*/
+                                            
             grid-template-areas:            
                 "pregunta1 imagen"
                 "pregunta2 imagen";  /*La imagen ocupa la columna 2 entera*/
             grid-template-columns: 41.4666% 33.3333%; /*Ancho de las columnas*/
-            grid-template-rows: auto auto;  /*Altura por defecto de las filas que se adapta al contenido de sus hijos*/
-            gap: 0px 16.6666%;                 /*Espacio entre las filas y columnas*/
-            justify-content: left;          /*Alineamos el contenido a la izquierda*/
+            grid-template-rows: auto auto; 
+            gap: 0px 16.6666%;             
+            justify-content: left;         
 
             #pregunta1{
-                grid-area: pregunta1;       /*Llamamos a la pregunta1 pregunta1 que es el nombre que usaremos para llamaralo en el grid-template-areas*/
+                grid-area: pregunta1;      
             }
 
             #pregunta2{
-                grid-area: pregunta2;       /*Llamamos a la pregunta2 pregunta2 que es el nombre que usaremos para llamaralo en el grid-template-areas*/
+                grid-area: pregunta2;      
             }
 
             #contenedor-imagen{
-                grid-area: imagen;          /*Llamamos a la contenedor-imagen imagen que es el nombre que usaremos para llamaralo en el grid-template-areas*/
+                grid-area: imagen;         
             }
 
             #imagenFoto{
-                width: 100%;               /*Ancho de las imagenes*/
+                width: 100%;               
             }
             
 
             .contenedor-foto{
-                text-align: left;           /*Alineamos el contenido a la izquierda*/
+                text-align: left;          
                 background-color: var(--fondo-oscuro);  /*Color del fondo*/
                 border: 2px solid var(--fondo-oscuro);  /*Estilo borde*/
                 border-radius: 10px;        /*Borde redonedado*/
                 box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
-                margin: 5% 0px;           /*Espacio entre elementos superior e inferior*/
-                padding: 4%;              /*Espacio interno de la respuesta*/
+                margin: 5% 0px;         
+                padding: 4%;            
 
                 p{
-                    display: inline-block;  /*Desplegamos en inline-block para que no se baje después del input*/
-                    margin-left: 2.8571%;      /*Espacio entre elementos por la izquierda*/
+                    display: inline-block; 
+                    margin-left: 2.8571%;  
                 }
             }
         }
