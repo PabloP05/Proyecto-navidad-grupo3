@@ -166,7 +166,7 @@ input[type="text"]:hover, input[type="email"]:hover{
                 grid-area: iniciar;      
             }
 
-            #btnCrearSala{
+            #btnSala{
                 grid-area: salas;        
             }
 
