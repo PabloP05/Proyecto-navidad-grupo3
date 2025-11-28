@@ -14,7 +14,7 @@ inicio_de_sesicon.addEventListener('submit',(e)=>{
     }
 })
 
-nombre.addEventListener('input',()=>{
+nombre.addEventListener('input',()=>{ //    el evento input hace que escuche al type="text" del html
     nombre.style.border='1px solid green'
     nombreFallo.innerText=''
     if(nombre.value.trim()==""){
