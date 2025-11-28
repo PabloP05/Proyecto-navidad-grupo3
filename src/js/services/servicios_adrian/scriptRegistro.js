@@ -10,7 +10,15 @@ let nick=document.getElementById("nick");
 //Cuando se pulsa el botón enviar...
 form.addEventListener("submit", function(e){
     e.preventDefault();                                                 //Evita que se envíe el formulario
+    validar();                                                          //Si le da a subir y falta algún campo se validarán todos los campos
 });
+
+//Validar todo
+function validar(){
+    validarNombreUsuario();
+    validarEmail();
+    validarNick();
+}
 
 //Cuando escribes en el input nombreUsuario
 nombreUsuario.addEventListener("input", () => {                              //En tiempo real detecta lo que escribes en el input
@@ -64,6 +72,7 @@ function validarNick(){
     }
 }
 
+//Validar si está mal
 function validarError(input, mensaje){
     let controlForm=input.parentElement;                            //La propiedad parentElement devuelve el elemento padre
     let aviso=controlForm.querySelector("p");                       //Elegimos el selector donde meteremos lo que devuelve
@@ -72,6 +81,7 @@ function validarError(input, mensaje){
     controlForm.className="control error";                          //Creamos la clase error
 }
 
+//Validar si está bien
 function validarOk(input){
     let controlForm=input.parentElement;
     let aviso=controlForm.querySelector("p");
