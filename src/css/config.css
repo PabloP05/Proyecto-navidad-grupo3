@@ -64,6 +64,13 @@ body {
     margin: 0 auto;
     position: relative;
     width: 100vh; /*  medida estandart para todos los body */
+
+    img{
+        width: 10%;
+        position: absolute;
+        bottom: 1%;
+        left: 1%;
+    }
 }
 
 h1{
@@ -97,5 +104,8 @@ p, a, li ,h2 ,h3,input,button,label{
     background: var(fondo-oscuro);          
     box-shadow: 0 0 2em 0.5em var(--color-neon);    
 }             
+}
+a{
+    text-decoration: none;
 }
 
