@@ -1,0 +1,202 @@
+@media (max-width: 480px) {
+
+    /* 
+    
+    a todas las medidas principales de los body le agrego 100% para que tome la medida del 
+    dispositivo y no desborde el contenidro
+    
+    */
+
+    #inicioSesion {
+        width: 100%;
+        overflow-x: hidden;
+        margin: 0 auto;
+
+        header {
+            padding: 8% 0 4% 0;
+            text-align: center;
+        }
+
+        main {
+            #menuInicioSesion {
+                width: 90%;
+                margin: 0 auto;   /* quita el 50% que empujaba demasiado */
+            }
+
+            .btn {
+                width: 100%;
+                height: auto;
+                padding: 12px;
+                font-size: 1rem;
+                margin: 10px 0;
+            }
+        }
+    }
+/* Menú de partida del usuario */
+    #menuPrincipal {
+       height: 100vh;
+       width: 100%;
+            img{
+                display: none;
+            }
+
+       main {
+       
+            #menuBotones {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 50px;
+                height: auto;
+                margin-left: 10%;
+                width:80%;
+            }
+        }
+
+        header {
+            #btnCerrarSesion {
+                width: 90%;
+                position: static;
+                margin: 12px auto;
+                display: block;
+                font-size: 1rem;
+            }
+        }
+    }
+/* Zona para unirse a una sala  */
+     .salas {
+        width: 100%;
+        #contenido {
+            width: 90%;
+            min-height: auto;
+            margin: 4vh auto;
+        }
+
+        .formulario {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .formulario input {
+            width: 100%;
+            margin: 1vh 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 2vh;
+        }
+
+        #salas {
+            width: 90%;
+            flex-direction: column;
+            gap: 2vh;
+        }
+
+        #salas .sala {
+            width: 100%;
+        }
+
+        #CreaSala {
+            width: 90%;
+            margin-top: 2vh;
+        }
+    }
+/* Zona para crear  una sala  */
+    #crear_salas {
+        width: 100%;
+        #contenido {
+            width: 90%;
+            min-height: auto;
+            margin: 4vh auto;
+        }
+
+        .formulario {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .formulario input {
+            width: 100%;
+            margin: 1vh 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 2vh;
+        }
+
+        #salas {
+            width: 90%;
+            flex-direction: column;
+            gap: 2vh;
+        }
+
+        #salas .sala {
+            width: 100%;
+        }
+
+        #CreaSala {
+            width: 90%;
+            margin-top: 2vh;
+        }
+    }
+
+    #ranking {
+        width: 100%; 
+        main {
+            width: 90%;
+            margin: 5% auto;
+            padding: 2vh 0;
+        }
+
+        main .jugadores {
+            margin: 2vh auto;
+            width: 90%;
+            font-size: 1rem;
+        }
+
+        #flecha {
+            width: 12%;
+            position: static;
+            margin: 2vh auto;
+            display: block;
+        }
+    }
+
+    /* MODOS DE LA APLICACION  */
+    #fotos {
+        header {
+            #foto {
+                width: 12%;
+                position: static;
+                margin: 2vh auto;
+                display: block;
+            }
+
+            #tiempo {
+                width: 50%;
+                position: static;
+                margin: 2vh auto;
+                display: block;
+            }
+        }
+
+        main {
+            h2 {
+                width: 90%;
+            }
+
+            #opcionesFoto {
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                gap: 2vh;
+
+                #contenedor-imagen {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
