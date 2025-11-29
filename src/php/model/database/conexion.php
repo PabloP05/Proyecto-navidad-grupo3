@@ -1,9 +1,15 @@
 <?php
-    require_once '../../config/config.php';
+    require_once __DIR__.'/../../config/config.php';
     class Conectar{
-        private $conexion;
+        protected $conexion;
         public function __construct() {
-            $this->conexion= new PDO('mysql:host=localhost;dbname=test', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+            $this->conexion = new PDO(
+                'mysql:host='.SERVIDOR.';dbname='.BBDD,
+                USUARIO,
+                CLAVE,
+                array(PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION) //activa los errores de PDO
+            );
+
         }
 
         public function __destruct(){

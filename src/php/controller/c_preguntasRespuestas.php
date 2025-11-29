@@ -12,7 +12,7 @@ class C_CargarPreguntas {
 
     public function CrearPregunta() {
         // 1. Validar que viene la pregunta
-        if (!isset($_POST['pregunta']) || empty(trim($_POST['pregunta']))) {
+        if (!isset($_POST['info']) || empty(trim($_POST['info']))) {
             echo "La pregunta es obligatoria";
         }else{
             $sw = true;
@@ -27,7 +27,7 @@ class C_CargarPreguntas {
             if (!$sw) {
                 echo "Todas las respuestas deben tener contenido";
             }else{
-                if ($this->modelo->agregarPregunta()) {
+                if ($this->modelo->AgregarPreguntas()) {
                     echo "Proceso realizado con éxito";
                 } else {
                     echo "Proceso no realizado";
