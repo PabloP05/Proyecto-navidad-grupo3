@@ -65,7 +65,7 @@ body {
     position: relative;
     width: 100vh; /*  medida estandart para todos los body */
 
-    img{
+    .volver_atras{
         width: 10%;
         position: absolute;
         bottom: 1%;

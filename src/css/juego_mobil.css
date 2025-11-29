@@ -166,8 +166,47 @@
 
     /* MODOS DE LA APLICACION  */
     #fotos {
+        width: 100%;
         header {
             #foto {
+                width: 12%;
+                position: static;
+                margin: 2vh auto;
+                display: block;
+            }
+
+            #tiempo {
+                width: 50%;
+                position: static;
+                margin: 2vh auto;
+                display: block;
+            }
+        }
+
+        main {
+             height: 100vh;
+            h2 {
+                width: 90%;
+            }
+
+            #opcionesFoto {
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                gap: 2vh;
+
+                #contenedor-imagen {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    #situaciones {
+        width: 100%;
+        height: auto;
+        header {
+            #situacion {
                 width: 12%;
                 position: static;
                 margin: 2vh auto;
@@ -187,13 +226,49 @@
                 width: 90%;
             }
 
-            #opcionesFoto {
-                width: 90%;
+            #opcionesSituacion {
+                width: 70%;
                 display: flex;
                 flex-direction: column;
                 gap: 2vh;
 
-                #contenedor-imagen {
+                .contenedor-situacion {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    #preguntasRespuestas {
+         width: 100%;
+        height: 100vh;
+        header {
+        height: 25vh;
+            #pregunta {
+                width: 12%;
+                position: static;
+                margin: 2vh auto;
+                display: block;
+            }
+
+            #tiempo {
+                width: 50%;
+                position: static;
+                margin: 2vh auto;
+                display: block;
+            }
+        }
+
+        main {
+            height: 70vh;
+            h2 {
+                width: 90%;
+            }
+
+            #opcionesPregunta {
+                width: 90%;
+
+                .contenedor-pregunta {
                     width: 100%;
                 }
             }

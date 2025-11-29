@@ -804,105 +804,101 @@
 }
 
 /*FOTOS*/
-#fotos{
-    background: var(--gradiente-juego);
-    height: 100vh;
-    header{
+#fotos {
+    header {
         background-color: black;        
         color: var(--fondo-blanco);      
         text-align: center;              
         padding: 2.1961% 0px;            
         position: relative;              
 
-        #foto{
-            background-color: var(--fondo-blanco);  /*Fondo del icono*/
-            width: 2.9282%;              
-            padding: 1.0980%;            
-            position: absolute;          
-            border-radius: 25px;         
-            top: 20.2122%;               
-            left: 2.1961%;               
+        #foto {
+            background-color: var(--fondo-blanco);
+            width: 2.9282%;
+            padding: 1.0980%;
+            position: absolute;
+            border-radius: 25px;
+            top: 20.2122%;
+            left: 2.1961%;
         }
 
-        #tiempo{
-            width: 10.9809%;                   
-            padding: 0.7320% 1.0980%;          
-            background-color: var(--fondo-blanco);  /*Color del fondo*/
-            border: 2px solid var(--fondo-blanco);  /*Esilo del borde*/
-            border-radius: 10px;            /*Borde redondeado*/
-            color: black;                 /*Color de la letra*/
-            box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
-            position: absolute;           
-            top: 20.2122%;                
-            right: 2.1961%;               
+        #tiempo {
+            width: 10.9809%;
+            padding: 0.7320% 1.0980%;
+            background-color: var(--fondo-blanco);
+            border: 2px solid var(--fondo-blanco);
+            border-radius: 10px;
+            color: black;
+            box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco);
+            position: absolute;
+            top: 20.2122%;
+            right: 2.1961%;
         }
     }
 
-    main{
-        background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
-        padding: 3.6603% 0px;                  /*Espacio interno del main*/
+    main {
+        background-color: rgba(155, 201, 111, 0.827);
+        padding: 3.6603% 0px;
 
-        h2{
-            width: 87.8477%;           
-            margin: 0 auto;            
-            padding: 1.4641%;          
-            text-align: center;        
-            background-color: var(--color-neon);    /*Color del fondo del titulo*/
-            border: 2px solid var(--color-neon);    /*Estilo borde*/
-            border-radius: 10px;            /*Borde redondeado*/
-            color: black;                 /*Color de la letra*/
-            box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+        h2 {
+            width: 87.8477%;
+            margin: 0 auto;
+            padding: 1.4641%;
+            text-align: center;
+            background-color: var(--color-neon);
+            border: 2px solid var(--color-neon);
+            border-radius: 10px;
+            color: black;
+            box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
         }
 
-        #opcionesFoto{
-            width: 87.8477%;             
-            margin: 0 auto;              
-            padding: 3.6603% 0px;        
-            color: var(--fondo-blanco);  
+        #opcionesFoto {
+            width: 87.8477%;
+            margin: 0 auto;
+            padding: 3.6603% 0px;
+            color: var(--fondo-blanco);
             display: grid;
-                                            
-            grid-template-areas:            
+
+            grid-template-areas:
                 "pregunta1 imagen"
-                "pregunta2 imagen";  /*La imagen ocupa la columna 2 entera*/
-            grid-template-columns: 41.4666% 33.3333%; /*Ancho de las columnas*/
-            grid-template-rows: auto auto; 
-            gap: 0px 16.6666%;             
-            justify-content: left;         
+                "pregunta2 imagen";
+            grid-template-columns: 60% 40%; /* ahora ocupa todo el ancho */
+            grid-template-rows: auto auto;
+            gap: 2%;                        /* separación más natural */
+            justify-content: space-between; /* empuja cada columna a su sitio */
 
-            #pregunta1{
-                grid-area: pregunta1;      
+            #pregunta1 { 
+                grid-area: pregunta1; 
+            }
+            #pregunta2 { 
+                grid-area: pregunta2; 
+            }
+            #contenedor-imagen { 
+                grid-area: imagen;
+            }
+            #imagenFoto { 
+                float: right;
+                width: 100%; 
             }
 
-            #pregunta2{
-                grid-area: pregunta2;      
-            }
+            .contenedor-foto {
+                text-align: left;
+                background-color: var(--fondo-oscuro);
+                border: 2px solid var(--fondo-oscuro);
+                border-radius: 10px;
+                box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro);
+                margin: 5% 0px;
+                padding: 4%;
 
-            #contenedor-imagen{
-                grid-area: imagen;         
-            }
-
-            #imagenFoto{
-                width: 30%;               
-            }
-            
-
-            .contenedor-foto{
-                text-align: left;          
-                background-color: var(--fondo-oscuro);  /*Color del fondo*/
-                border: 2px solid var(--fondo-oscuro);  /*Estilo borde*/
-                border-radius: 10px;        /*Borde redonedado*/
-                box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
-                margin: 5% 0px;         
-                padding: 4%;            
-
-                p{
-                    display: inline-block; 
-                    margin-left: 2.8571%;  
+                p {
+                    display: inline-block;
+                    margin-left: 2.8571%;
                 }
             }
         }
     }
 }
+
 
 /* CSS de las salas de las partidas *********************************** */
 
