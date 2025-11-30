@@ -1,0 +1,152 @@
+:root {
+   --verde-neon: #00FF88;
+   --gris-transparente: rgba(200, 200, 200, 0.2);
+   --fondo-oscuro: #08251C;
+   --clr-blanco: #fff;
+   --fuente-principal: 'Poppins', sans-serif;
+   --font-cuerpo: 'Roboto', sans-serif;
+   --gradiente: linear-gradient(135deg,
+       #00ffdd 0%,   
+       var(--fondo-oscuro) 50%,      
+       hsl(145, 100%, 35%) 80%,
+       var(--verde-neon) 100%    
+   );
+   --clr-neon2: rgb(246, 255, 0);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    padding: 0;
+    background: var(--gradiente);
+    font-family: var(--font-cuerpo);
+}
+
+/* 80px → 10.42vh */
+header{
+    width: 100%;
+    height: 10.42vh;
+    background-color: var(--verde-neon);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* 20px padding → 2.6vh */
+#titulo{
+    text-align: center;
+    padding-top: 2.6vh;
+    font-size: 1.75rem; /* 28px */
+    font-weight: 600;
+    color: var(--fondo-oscuro);
+}
+
+/* 700px → 51.2% */
+/* 200px min-height → 26vh */
+#contenido{
+    width: 51.2%;
+    min-height: 26vh;
+    margin: 5.2vh auto 0 auto;
+    background-color: rgba(8, 37, 28, 0.75);
+    color: var(--clr-blanco);
+    border-radius: 0.9rem; /* equivalente a 15px aprox */
+    padding: 2.6vh 3%;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+}
+
+/* 10px → 1.3vh */
+#subtitulo{
+    text-align: center;
+    padding-top: 1.3vh;
+    font-size: 1.375rem; /* 22px */
+    font-weight: 500;
+}
+
+.formulario{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3.25vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;    
+}
+
+.formulario input{
+    border-radius: 0.3rem;
+    margin-left: 1%;
+    padding: 0.7vh;
+    border: none;
+}
+
+button{
+    display: block;
+    margin: auto;
+    margin-top: 2.6vh;
+    padding: 1.3vh 3%;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: var(--clr-neon2);
+    color: var(--fondo-oscuro);
+    font-size: 1rem; /* 16px */
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* SALAS */
+
+#salastitulo{
+    text-align: center;
+    font-size: 1.5rem; /* 24px aprox */
+    font-weight: 600;
+    margin-top: 2.6vh;
+    color: var(--clr-blanco);
+}
+
+#salas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 51.2%;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    margin: 4vh auto;
+    flex-basis: auto; 
+}
+
+/* 150px → 11% */
+#salas .sala{
+    background-color: var(--gris-transparente);
+    color: var(--clr-blanco);
+    padding: 2vh 3%;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    text-align: center;
+    width: 11%;
+    cursor: pointer;
+}
+
+#salas a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 500px → 36.6% */
+#CreaSala{
+    text-align: center;
+    margin-top: 4vh;
+    font-size: 1.125rem; /* 18px */
+    font-weight: 500;
+    width: 36.6%;
+}
+
+#CreaSala :hover{
+    background-color: var(--clr-neon2);
+    color: var(--fondo-oscuro);
+    transition: background-color 0.3s, color 0.3s;
+}

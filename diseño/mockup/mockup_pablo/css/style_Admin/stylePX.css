@@ -1,0 +1,213 @@
+:root{
+   --clr-neon: #EA0000;
+   --clr-bg: #261717;
+   --clr-white: #fff;
+   --clr-neon2: rgb(255, 213, 75);
+    --rojo-navegador :#ff0000c8; 
+    --gris-menu:#8989897e;
+    --transparencia-formularios:#54545498;
+    --dato-del-contenido:rgba(255, 68, 0, 0.665);
+    --verdeSuave:rgba(127, 249, 127, 0.376);
+    --botones-de-agregado:rgb(237, 221, 0);
+   --gradiente: linear-gradient(135deg, 
+        #0EF5DD 0%,       
+        var(--clr-bg) 50%,      
+        #B30000 80%,   
+        var(--clr-neon) 100%
+   );
+}
+/* ORGANIZACION DE LA PAGINA (LAYOUT) */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: #fff;
+}
+
+
+body {
+    min-width: 1366px; /* Referencia de inicio al crear la página : 1366px */
+    margin: 0 auto;
+    position: relative;
+    width: 100vh; /*  medida estandart para todos los body */
+}
+
+.Cpanel_body{
+    width: 1366px;
+    /* disposición del layout en formato grid */
+    display: grid;
+    grid-template-columns: 0.6fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr auto 1fr;  /*  la primera fila tiene una menor medida porque contiene el nav  */
+    grid-template-areas: 
+        "aside logo logo logo"
+        "aside main main main"
+        "aside main main main"
+    ;
+    /* barra lateral que ará de navegador entre las paginas del Cpanel del administrador*/
+    aside{
+        background-color: var(--rojo-navegador) ;
+        width: 240px;
+        height: 100vh;
+        grid-area: aside;
+        position: relative;
+
+        ul{
+            color: white;
+            font-size: 1.5em;
+            margin-top: 70%;
+            margin-left: 10%;
+            list-style: none;
+
+            li{
+                margin-bottom: 2%;
+                width: 216px;
+                border-radius: 10px;
+                text-align: center;
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
+
+                &:hover{
+                    background-color: #B30000;
+                }
+            
+            }
+
+        }
+
+        button{               /* Boton de cerrado de sesión */
+            width: 192px;
+            height: 3.5vh;
+            background-color: transparent;
+            color: white;
+            border-radius: 20px;
+            border: 1px solid white;
+            font-size: 1.3em;
+            position: absolute;
+            bottom: 20px;
+            left: 10%;
+
+            transition:background-color 0.5s ease;
+
+            &:hover{
+                background-color:white;
+                color: var(--rojo-navegador);
+
+            }
+        }
+    }
+    
+    nav{   /* contiene el logo y el rotulo de la paginba (titulo y el eslogan del Cpanel) */
+        grid-area: logo;
+        background-color: var(--rojo-navegador);
+        text-align: center;
+        img{
+            width: 100px;
+            float: right;
+            margin-right: 10px;
+        }
+        h1,h3{
+            color: white;
+            font-size: 2.2em;
+        }
+    }
+    main{   /* el contenido será alterno en funcion a la opción en la que ya te encuentres */
+        grid-area: main;
+        background-color: var(--gris-menu);
+        justify-items: center;
+        text-align: center;
+        box-sizing: border-box; /* controlo la referencia absoluta de la caja para que no aumete en ningun momento */
+        
+        form{
+            margin-top: 30px;
+            width: 900px;
+            min-height: 50vh;
+            background-color: var(--transparencia-formularios);
+            position: relative;
+            border-radius: 10px;
+
+            h2{
+                color: white;
+            }
+
+            .campo{
+                width: 360px; /* 40% de 900px */
+                height: 20vh;
+                background-color: rgba(172, 172, 172, 0.216);
+                border-radius: 10px;
+                float: left;
+                margin: 1vh 5% 0 5%;
+                color: white;
+                justify-items: center;
+                select{
+                    border: none;
+                    border-radius: 10px;
+                    margin-top: 10px;
+                    height: 3vh;
+                }
+                p{
+                    width: 216px;
+                    margin-top: 10px;
+                }
+            } 
+
+            /* reajuste de la medida para el area de los datos (es uno de los campos)*/
+            #contenido{
+                height: 30vh;
+                position: relative;
+                label{
+                    display: block;
+                }
+                input[type="text"]{
+                    display: block;
+                    padding-left: 10px;
+                    width: 278px; /* calc(80% de 360px - 10px) = 288px - 10px */
+                    height: 3vh;
+                    border-radius: 10px;
+                    background-color: var(--dato-del-contenido);
+                    border: 1px solid black;
+                    margin-top: 10px;
+                    &::placeholder{
+                        color: white;
+                    }
+                }
+                .opciones{
+                    background-color: var(--verdeSuave) !important;
+                }
+
+                button{
+                    border-radius: 10px;
+                    border: none;
+                    background-color: var(--botones-de-agregado);
+                    position: absolute;
+                    bottom: 3%;
+                    right: 3%;
+                    img{
+                        width: 30px;
+                    }
+                }
+            }
+
+            button[type="submit"]{
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                border-radius: 10px;
+                width: 200px;
+                height: 5vh;
+                border:none;
+                position:absolute;
+                bottom: 3%;
+                left: 40%;
+                background-color: var(--verdeSuave);
+
+                img{
+                    width: 20px;
+                }
+            }
+        }
+    }
+}

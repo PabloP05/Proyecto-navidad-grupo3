@@ -1,0 +1,449 @@
+@media (max-width: 480px) {
+
+    /* 
+    
+    a todas las medidas principales de los body le agrego 100% para que tome la medida del 
+    dispositivo y no desborde el contenidro
+    
+    */
+
+    #inicioSesion {
+        width: 100%;
+        overflow-x: hidden;
+        margin: 0 auto;
+
+        header {
+            padding: 8% 0 4% 0;
+            text-align: center;
+        }
+
+        main {
+            #menuInicioSesion {
+                width: 90%;
+                margin: 0 auto;   /* quita el 50% que empujaba demasiado */
+            }
+
+            .btn {
+                width: 100%;
+                height: auto;
+                padding: 12px;
+                font-size: 1rem;
+                margin: 10px 0;
+            }
+        }
+    }
+/* Menú de partida del usuario */
+    #menuPrincipal {
+       height: 100vh;
+       width: 100%;
+            img{
+                display: none;
+            }
+
+       main {
+       
+            #menuBotones {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 50px;
+                height: auto;
+                margin-left: 10%;
+                width:80%;
+            }
+        }
+
+        header {
+            #btnCerrarSesion {
+                width: 90%;
+                position: static;
+                margin: 12px auto;
+                display: block;
+                font-size: 1rem;
+            }
+        }
+    }
+/* Zona para unirse a una sala  */
+     .salas {
+        width: 100%;
+        #contenido {
+            width: 90%;
+            min-height: auto;
+            margin: 4vh auto;
+        }
+
+        .formulario {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .formulario input {
+            width: 100%;
+            margin: 1vh 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 2vh;
+        }
+
+        #salas {
+            width: 90%;
+            flex-direction: column;
+            gap: 2vh;
+        }
+
+        #salas .sala {
+            width: 100%;
+        }
+
+        #CreaSala {
+            width: 90%;
+            margin-top: 2vh;
+        }
+    }
+/* Zona para crear  una sala  */
+    #crear_salas {
+        width: 100%;
+        #contenido {
+            width: 90%;
+            min-height: auto;
+            margin: 4vh auto;
+        }
+
+        .formulario {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .formulario input {
+            width: 100%;
+            margin: 1vh 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 2vh;
+        }
+
+        #salas {
+            width: 90%;
+            flex-direction: column;
+            gap: 2vh;
+        }
+
+        #salas .sala {
+            width: 100%;
+        }
+
+        #CreaSala {
+            width: 90%;
+            margin-top: 2vh;
+        }
+    }
+
+    #ranking {
+        width: 100%; 
+        main {
+            width: 90%;
+            margin: 5% auto;
+            padding: 2vh 0;
+        }
+
+        main .jugadores {
+            margin: 2vh auto;
+            width: 90%;
+            font-size: 1rem;
+        }
+
+        #flecha {
+            width: 12%;
+            position: static;
+            margin: 2vh auto;
+            display: block;
+        }
+    }
+
+    /* MODOS DE LA APLICACION  */
+    #fotos {
+        width: 100%;
+        header {
+            #foto {
+                width: 12%;
+                position: static;
+                margin: 2vh auto;
+                display: block;
+            }
+
+            #tiempo {
+                width: 50%;
+                position: static;
+                margin: 2vh auto;
+                display: block;
+            }
+        }
+
+        main {
+             height: 100vh;
+            h2 {
+                width: 90%;
+            }
+
+            #opcionesFoto {
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                gap: 2vh;
+
+                #contenedor-imagen {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    #situaciones {
+        width: 100%;
+        height: auto;
+        header {
+            #situacion {
+                width: 12%;
+                position: static;
+                margin: 2vh auto;
+                display: block;
+            }
+
+            #tiempo {
+                width: 50%;
+                position: static;
+                margin: 2vh auto;
+                display: block;
+            }
+        }
+
+        main {
+            h2 {
+                width: 90%;
+            }
+
+            #opcionesSituacion {
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                gap: 2vh;
+
+                .contenedor-situacion {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    #preguntasRespuestas {
+         width: 100%;
+        height: 100vh;
+        header {
+        height: 25vh;
+            #pregunta {
+                width: 12%;
+                position: static;
+                margin: 2vh auto;
+                display: block;
+            }
+
+            #tiempo {
+                width: 50%;
+                position: static;
+                margin: 2vh auto;
+                display: block;
+            }
+        }
+
+        main {
+            height: 70vh;
+            h2 {
+                width: 90%;
+            }
+
+            #opcionesPregunta {
+                width: 90%;
+
+                .contenedor-pregunta {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+    /* 
+    ajustes para tablets mas pequeñas de lo normal 
+    */
+
+    #inicioSesion {
+        width: 100%;
+        margin: 0 auto;
+
+        header {
+            padding: 5% 0 3% 0;
+            text-align: center;
+        }
+
+        main {
+            #menuInicioSesion {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            .btn {
+                width: 80%;
+                padding: 14px;
+                font-size: 1.1rem;
+                margin: 12px auto;
+                display: block;
+            }
+        }
+    }
+
+    #menuPrincipal {
+        height: 100vh !important;
+        width: 100%;
+
+        img {
+            max-width: 40%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        main {
+            
+            #menuBotones {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 40px;
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+
+        header {
+            #btnCerrarSesion {
+                width: 60%;
+                margin: 16px auto;
+                display: block;
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    .salas,
+    #crear_salas {
+        width: 100%;
+        height: 100vh;
+        #contenido {
+            width: 80%;
+            margin: 4vh auto;
+        }
+
+        .formulario {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .formulario input {
+            width: 80%;
+            margin: 1vh auto;
+        }
+
+        button {
+            width: 60%;
+            padding: 2vh;
+            margin: 2vh auto;
+            display: block;
+        }
+
+        #salas {
+            width: 80%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 3vh;
+            margin: 0 auto;
+        }
+
+        #salas .sala {
+            width: 45%;
+        }
+
+        #CreaSala {
+            width: 80%;
+            margin: 3vh auto;
+        }
+    }
+
+    #ranking {
+        width: 100%;
+        height: 100vh;
+        main {
+            width: 80%;
+            margin: 4% auto;
+            padding: 2vh 0;
+        }
+
+        main .jugadores {
+            width: 80%;
+            margin: 2vh auto;
+            font-size: 1.1rem;
+        }
+
+        #flecha {
+            width: 8%;
+            margin: 2vh auto;
+            display: block;
+        }
+    }
+
+    #fotos,#situaciones,#preguntasRespuestas {
+        width: 100%;
+        height: 100vh;
+        header {
+            #foto,#situacion,#pregunta {
+                width: 10%;
+                margin: 2vh auto;
+                display: block;
+            }
+
+            #tiempo {
+                width: 40%;
+                margin: 2vh auto;
+                display: block;
+            }
+        }
+
+        main {
+            width: 80%;
+            margin: 0 auto;
+            h2 {
+                width: 100%;
+                text-align: center;
+            }
+
+            #opcionesFoto, #opcionesSituacion, #opcionesPregunta {
+                width: 80%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 3vh;
+                margin: 0 auto;
+/* LO COLOCO JUNTO PORQUE VA A TENER LA MISMA MEDIDA  */
+                #contenedor-imagen, .contenedor-situacion, .contenedor-pregunta {
+                    width: 45%;
+                }
+            }
+        }
+    }
+}
