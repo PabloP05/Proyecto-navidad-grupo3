@@ -21,6 +21,7 @@
     div{
         grid-area: header;
         justify-items: center;
+        align-items: center;
         h1 {
             color: white;
             font-size: 3em;
@@ -170,7 +171,6 @@
         background-color: var(--gris-menu);
         justify-items: center;
         text-align: center;
-        box-sizing: border-box; /* controlo la referencia absoluta de la caja para que no aumete en ningun momento */
         overflow: auto; /* para que aparezca una barra de desplazamiento en caso de que el contenido sobrepase el area del main */
 
         form{
