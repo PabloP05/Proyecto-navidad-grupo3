@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Stalinist+One&display=swap');
+
+:root{
+
+    /* paleta de colores de la app de administrador */
+   --clr-neon: #EA0000;
+   --clr-bg: #261717;
+   --clr-white: #fff;
+   --clr-neon2: rgb(255, 213, 75);
+    --rojo-navegador :#ff0000c8; 
+    --gris-menu:#8989897e;
+    --transparencia-formularios:#54545498;
+    --dato-del-contenido:rgba(255, 68, 0, 0.665);
+    --verdeSuave:rgba(127, 249, 127, 0.376);
+    --botones-de-agregado:rgb(237, 221, 0);
+
+
+    /* material de fondo de contenedores para pagina de listado de administrador  */
+    --marco-de-contenido-preguntas:rgba(92, 92, 255, 0.704);
+    --marco-de-contenido-situaciones:rgba(92, 255, 168, 0.615);
+    --marco-de-contenido-fotos:rgba(176, 92, 255, 0.641);
+
+   --gradiente: linear-gradient(135deg, 
+        #0EF5DD 0%,       
+        var(--clr-bg) 50%,      
+        #B30000 80%,   
+        var(--clr-neon) 100%
+   );
+
+       /* paleta de colores de la app de usuario  */
+
+    --verde-neon: #00FF08;
+    --fondo-oscuro: #08251C;
+    --fondo-blanco: #fff;
+    --fondo-juegos: #00c127d1;
+     --gradiente-juego: linear-gradient(135deg,
+        #00ffdd 0%,
+        var(--fondo-oscuro) 50%,
+        hsl(145, 100%, 35%) 80%,
+        var(--verde-neon) 100%
+    );
+    --color-neon: rgb(246, 255, 0);
+    --color-rojo: rgb(200, 37, 1);
+
+
+
+
+   /* materiales comunes a todas las partes de la aplicación */
+   --titulos: "Stalinist One", sans-serif;
+   --titulos2:"Anton", sans-serif;
+   --texto:"Montserrat", sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+html{
+    background-color: #fff;
+}
+
+body {
+    min-width: 100%; /* Referencia de inicio al crear la páfina : 1366px */
+    margin: 0 auto;
+    position: relative;
+    width: 100%; /*  medida estandart para todos los body */
+    height: 100vh;
+
+    .volver_atras{
+        width: 10%;
+        position: absolute;
+        bottom: 1%;
+        left: 1%;
+    }
+}
+
+h1{
+        font-family:var(--titulos2);
+        color: white;
+        text-align: center;
+}
+form>h2{
+    color: white;
+}
+p, a, li ,h2 ,h3,input,button,label{
+    font-family: var(--texto);
+}
+
+.botones_juego{
+    width: 100%;                            
+    font-size: 1.3rem;                      
+    text-align: center;                     
+    display: block;                         
+    padding: 1.4641%;                       
+    margin-bottom: 7.2463%;                 
+    cursor: pointer;                        
+    border: 2px solid var(--color-neon);    
+    border-radius: 15px;                    
+    color: var(--color-neon);               
+    background-color: transparent;          
+    box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
+    transition: all 0.3s ease; 
+    &:hover{
+    color: var(--color-neon);               
+    background: var(fondo-oscuro);          
+    box-shadow: 0 0 2em 0.5em var(--color-neon);    
+}             
+}
+a{
+    text-decoration: none;
+}
+

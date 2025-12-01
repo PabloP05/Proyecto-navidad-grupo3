@@ -9,7 +9,7 @@ let btnCerrarSesion=document.getElementById("btnCerrarSesion");
 
 //Evento cuando pulsamos iniciar partida
 btnIniciarPartida.addEventListener("click", () => {
-    window.location.href="../../../../../diseño/mockup/mockup_adrian/html/vistas-juegos/buscarSala.html"; //Para enlazar mediante ruta
+    window.location.href="../../../../../diseño/mockup/mockup_adrian/html/vistas-juegos/unir-sala.html"; //Para enlazar mediante ruta
 });
 
 //Evento cuando pulsamos sala

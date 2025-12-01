@@ -339,7 +339,7 @@ input[type="text"]:hover, input[type="email"]:hover{
 
     main{
         background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
-        padding: 3.6603% 0px;          
+        padding: 3.6603% 0px;
 
         h2{
             width: 73.2064%;           
@@ -556,6 +556,38 @@ input[type="text"]:hover, input[type="email"]:hover{
                     margin-left: 2.8571%;  
                 }
             }
+        }
+
+        #btnEnviar{
+            width: 15%;
+            background-color: #00FF08;
+            border-color: black;
+            color: black;
+            box-shadow: none; /*Sombra*/
+            font-weight: bold;
+            position: fixed;
+            left: 55%;
+            top: 85%;
+        }
+
+        #btnEnviar:hover{
+            box-shadow: inset 0 0 0.5em 0 #00FF08, 0 0 0.5em 0 #00FF08; /*Sombra*/
+        }
+
+        #btnPasar{
+            width: 15%;
+            background-color: black;
+            border-color: black;
+            box-shadow: none; /*Sombra*/
+            color: var(--fondo-blanco);
+            font-weight: bold;
+            position: fixed;
+            left: 30%;
+            top: 85%;
+        }
+
+        #btnPasar:hover{
+            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; /*Sombra*/
         }
     }
 }
