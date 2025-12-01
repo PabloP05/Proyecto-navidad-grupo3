@@ -678,6 +678,7 @@
     }
 
     main{
+        height: 100vh;
         background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
         padding: 3.6603% 0px;          
 
@@ -758,6 +759,7 @@
     }
 
     main{
+        height: 100vh;
         background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
         padding: 3.6603% 0px;                  /*Espacio interno del main*/
 
@@ -805,6 +807,7 @@
 
 /*FOTOS*/
 #fotos {
+    height: 100vh;
     header {
         background-color: black;        
         color: var(--fondo-blanco);      
@@ -837,6 +840,7 @@
     }
 
     main {
+        height: 100vh;
         background-color: rgba(155, 201, 111, 0.827);
         padding: 3.6603% 0px;
 

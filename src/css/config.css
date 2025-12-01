@@ -63,7 +63,8 @@ body {
     min-width: 100%; /* Referencia de inicio al crear la páfina : 1366px */
     margin: 0 auto;
     position: relative;
-    width: 100vh; /*  medida estandart para todos los body */
+    width: 100%; /*  medida estandart para todos los body */
+    height: 100vh;
 
     .volver_atras{
         width: 10%;
