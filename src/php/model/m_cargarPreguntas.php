@@ -10,8 +10,7 @@
                /*  echo $sql; */
                 $this->cargar_respuestas();
                 return true;
-            } catch (PDOException $e) {
-                echo $e->getMessage(); #proviional
+            } catch (PDOException $e){
                 return false;
             }
         }
