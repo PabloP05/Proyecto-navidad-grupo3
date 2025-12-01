@@ -152,7 +152,7 @@
 
         main .jugadores {
             margin: 2vh auto;
-            width: 90%;
+            width: 90% !important;
             font-size: 1rem;
         }
 
