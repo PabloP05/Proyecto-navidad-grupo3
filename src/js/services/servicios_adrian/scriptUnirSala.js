@@ -1,11 +1,12 @@
 //VALIDACIONES AL BUSCAR SALAS
 
+let form=document.querySelector(".formulario")
 let codigo=document.getElementById("codigo");
-let btnBuscarSala=document.getElementById("btnBuscarSala");
+let btnBuscarSala=document.getElementById("btnUnirse");
 
 
-btnBuscarSala.addEventListener("submit", function(e) {
-    e.preventDefault();
+form.addEventListener("submit", function(e) {
+    //e.preventDefault();
     validar();
 });
 
@@ -23,7 +24,7 @@ function validar(){
 
 //Cuando escribes en el input codigo
 codigo.addEventListener("input", () => {                              //En tiempo real detecta lo que escribes en el input
-    codigo.value=codigo.value.replace(/[^0-9]/g, "");                   //Solo me deja escribir números y no caracteres
+    codigo.value=codigo.value.replace(/[^0-9]/g, "");                 //Solo me deja escribir números y no caracteres
     validar();
 });
 

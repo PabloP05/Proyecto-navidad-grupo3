@@ -9,7 +9,7 @@ let nick=document.getElementById("nick");
 
 //Cuando se pulsa el botón enviar...
 form.addEventListener("submit", function(e){
-    e.preventDefault();                                                 //Evita que se envíe el formulario
+    //e.preventDefault();                                                 //Evita que se envíe el formulario
     validar();                                                          //Si le da a subir y falta algún campo se validarán todos los campos
 });
 

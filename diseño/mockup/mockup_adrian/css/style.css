@@ -498,6 +498,7 @@ input[type="text"]:hover, input[type="email"]:hover{
     main{
         background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
         padding: 3.6603% 0px;                  /*Espacio interno del main*/
+        position: relative;
 
         h2{
             width: 87.8477%;           
@@ -559,6 +560,23 @@ input[type="text"]:hover, input[type="email"]:hover{
             }
         }
 
+        #popUp{
+            width: 15%;
+            text-align: center;
+            padding: 10%;
+            background-color: #7a8b3e;
+            border: 2px solid black;
+            border-radius: 10px;
+            color: var(--fondo-blanco);
+            font-size: 2rem;
+            font-weight: bold;
+            position: fixed;
+            top: 35%;
+            left: 33%;
+            z-index: 2;
+            display: none;
+        }
+
         #btnEnviar{
             width: 15%;
             background-color: #00FF08;
@@ -569,6 +587,7 @@ input[type="text"]:hover, input[type="email"]:hover{
             position: fixed;
             left: 55%;
             top: 85%;
+            display: none;
         }
 
         #btnEnviar:hover{
@@ -585,10 +604,22 @@ input[type="text"]:hover, input[type="email"]:hover{
             position: fixed;
             left: 30%;
             top: 85%;
+            display: none;
         }
 
         #btnPasar:hover{
             box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; /*Sombra*/
         }
+    }
+
+    #overlay{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        z-index: 1;
+        display: none;
     }
 }
