@@ -1,0 +1,1154 @@
+@import url('config.css');
+
+/* Panel de inicio de sesión del administrador */
+#adminInicio_body {
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    padding-top: 100px;
+    /* disposicion del layout con los grid */
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-rows: 0.5fr 1fr 2fr; /* ajistando el flex a dos fracciones de la pantalla logro posicionar el cuadro donde necesito */
+    grid-template-areas:
+        ". header header ."
+        ". main main ."
+        "footer footer footer footer";
+    height: calc(100vh - 100px);  
+    background: var(--gradiente);
+    width: 100%;
+    margin: 0 auto;
+    div{
+        grid-area: header;
+        justify-items: center;
+        align-items: center;
+        h1 {
+            color: white;
+            font-size: 3em;
+        }
+
+        h3 {
+            color: #fff;
+        }
+    }
+    
+ 
+    #inicio_de_sesicon {
+        grid-area: main;
+        width: 43.920105485232066%; /* 600 / 1366 * 100 = 43.920105485232066% */
+        height: 30vh;
+        margin: 0 auto 0 auto;
+        border-radius: 20px;
+        background-color: #a6a5a568;
+        align-items: center;
+        justify-content: center;
+       
+        /* ajustes del display flex */
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        flex-basis: 400px;
+
+        /* estilos de los input del formulario de inicio de sesión del administradoe */
+        input[type="text"], input[type="password"] {
+            display: block;
+            height: 3vh;
+            width: 36.59234870620139%; /* 500 / 1366 * 100 = 36.59234870620139% */
+            padding-left: 10px;
+            border-radius: 20px;
+            border: none;
+            background-color: #74747480;
+            color: white;
+
+            /* color del placeholder de los inputs para que aparezca blanco */
+            &::placeholder {
+                color: white;
+                opacity: 1;
+            }
+        }
+
+        input[type="submit"] {
+            width: 38.06228373702421%; /* 520 / 1366 * 100 = 38.06228373702421% */
+            height: 4vh;
+            border-radius: 10px;
+            border: 1px solid var(--clr-neon2);
+            background-color: transparent;
+            font-size: 1.3em;
+            transition: background-color 0.3s ease; /* hace que ek background cambie de una forma mas suave */
+
+            &:hover {
+                background-color: var(--clr-neon2);
+                color: #fff;
+            }
+        }
+    }
+}
+
+/* inicio de panel de control (Cpanel) */
+.Cpanel_body{
+    width: 100%;
+    /* disposición del layout en formato grid */
+    display: grid;
+    grid-template-columns: 0.6fr 1fr 1fr 1fr; /* si hay que hacer el scrol hrizontal hay quie poner unas medidas mas fijas (pocentual) */
+    grid-template-rows: 9.09vh 45.45vh 45.45vh;  /*  la primera fila tiene una menor medida porque contiene el nav  */
+    /* medidas reales en el grid : 0.2fr 1fr 1fr paso a vh para controlar los main : 9.09vh 45.45vh 45.45vh FORMULA PARA CALCULARLO : (total de la suma de las filas/tamaño de la fila en fr)*100 */
+    grid-template-areas: 
+        "aside logo logo logo"
+        "aside main main main"
+        "aside main main main" /* me gnerea problemas en el main al añadir material porque no tiene una altura fija en vh */
+    ;
+    /* barra lateral que ará de navegador entre las paginas del Cpanel del administrador*/
+    aside{
+        background-color: var(--rojo-navegador) ;
+        width: 100%;
+        height: 100vh;
+        grid-area: aside;
+        position: relative;
+
+        ul{
+            color: white;
+            font-size: 1.5em;
+            margin-top: 70%;
+            margin-left: 10%;
+            list-style: none;
+
+            li{
+                margin-bottom: 2%;
+                width:90%;
+                border-radius: 10px;
+                text-align: center;
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
+
+                &:hover{
+                    background-color: #B30000;
+                }
+            
+            }
+
+        }
+
+        button{               /* Boton de cerrado de sesión */
+            width: 80%;
+            height: 3.5vh;
+            background-color: transparent;
+            color: white;
+            border-radius: 20px;
+            border: 1px solid white;
+            font-size: 1.3em;
+            position: absolute;
+            bottom: 20px;
+            left: 10%;
+
+            transition:background-color 0.5s ease;
+
+            &:hover{
+                background-color:white;
+                color: var(--rojo-navegador);
+
+            }
+        }
+    }
+    
+    nav{   /* contiene el logo y el rotulo de la paginba (titulo y el eslogan del Cpanel) */
+        grid-area: logo;
+        background-color: var(--rojo-navegador);
+        text-align: center;
+        img{
+            width: 60px;
+            float: right;
+            margin-right: 10px;
+        }
+        h1,h3{
+            color: white;
+            font-size: 1.3em;
+        }
+    }
+    main{   /* el contenido será alterno en funcion a la opción en la que ya te encuentres */
+        grid-area: main;
+        background-color: var(--gris-menu);
+        justify-items: center;
+        text-align: center;
+        overflow: auto; /* para que aparezca una barra de desplazamiento en caso de que el contenido sobrepase el area del main */
+
+        form{
+            margin-top: 30px;
+            width: 80%;
+            min-height: 50vh;
+            background-color: var(--transparencia-formularios);
+            position: relative;
+            border-radius: 10px;
+            
+            h2{
+                color: white;
+            }
+
+            .campo{
+                width: 40%; /* medida relativa a su contenedor superior */
+                height: 20vh;
+                background-color: rgba(172, 172, 172, 0.216);
+                border-radius: 10px;
+                float: left;
+                margin: 1vh 5% 0 5%;
+                color: white;
+                justify-items: center;
+                select{
+                    border: none;
+                    border-radius: 10px;
+                    margin-top: 10px;
+                    height: 3vh;
+                }
+                p{
+                    width: 60%;
+                    margin-top: 10px;
+                }
+            } 
+
+            /* reajuste de la medida para el area de los datos (es uno de los campos)*/
+            #contenido{
+                height: 30vh;
+                position: relative;
+                label{
+                    display: block;
+                }
+                input[type="text"]{
+                    display: block;
+                    padding-left: 10px;
+                    width: calc(80% - 10px);
+                    height: 3vh;
+                    border-radius: 10px;
+                    background-color: var(--dato-del-contenido);
+                    border: 1px solid black;
+                    margin-top: 10px;
+                    &::placeholder{
+                        color: white;
+                    }
+                }
+                .opciones{
+                    background-color: var(--verdeSuave) !important;
+                }
+
+                button{
+                    border-radius: 10px;
+                    border: none;
+                    background-color: var(--botones-de-agregado);
+                    position: absolute;
+                    bottom: 3%;
+                    right: 3%;
+                    img{
+                        width: 30px;
+                    }
+                }
+            }
+
+            button[type="submit"]{
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                border-radius: 10px;
+                width: 200px;
+                height: 5vh;
+                border:none;
+                position:absolute;
+                bottom: 3%;
+                left: 40%;
+                background-color: var(--verdeSuave);
+
+                img{
+                    width: 20px;
+                }
+            }
+        }
+
+        .contenido{
+            width: 70%; /* para que reste el padding de 5% por lateral */
+            height:40vh;
+            background-color: var(--gris-menu);
+            margin-top: 3%;
+            padding: 5%;
+            overflow: auto;
+            color: white;
+            font-size: 2em;
+            border-radius: 10px;
+
+
+             /* PREGUNTAS Y RESPUESTAS : AJUSTES */
+             .datos_de_contenido{
+                 font-size: 0.8em;
+                margin-top: 5%;
+                height: 9vh;
+                background-color: var(--transparencia-formularios);
+                border-radius: 10px;
+                display: flex;
+                gap: 20px;
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-direction: row;
+                flex-basis: 80%;
+                justify-content: center;
+                align-items: center;
+            }
+           
+            .div_foto{
+            height: 25vh;
+            }
+            button{
+                border: none;
+                border-radius: 10px;
+                img{
+                    width: 50px;
+                }
+            }
+            .borrar{
+                background-color: #ff3737; 
+            }
+            .configurar{
+                background-color: #ffbc37;
+            }
+
+        }
+        /* Los colores se pueden quitar eliminando estas lineas */
+        .contenedor-preguntas{
+            background-color: var(--marco-de-contenido-preguntas);
+        }
+        .contenedor-situaciones{
+            background-color: var(--marco-de-contenido-situaciones);
+        }
+        .contenedor-fotos{
+            background-color: var(--marco-de-contenido-fotos);
+        }
+        .lista-usuarios{
+            height: 60vh;
+        }
+    }
+}
+
+/* VISTAS DE MODIFICACIÓN */
+#modificacion{
+    header{
+        width: 100%;
+        height: 10vh;
+        background-color: var(--rojo-navegador);
+        position: relative;
+        img{
+            width: 5%;
+            position: absolute;
+            left: 1%;
+            top: 1vh;
+        }
+    }
+    main{
+        width: 100%;
+        height: 70vh;
+        justify-items: center;
+        padding-top: 10vh ;
+        form{
+            width: 50%;
+            height: 60vh;
+            background-color: var(--transparencia-formularios);
+            border-radius: 10px;
+           justify-items: center;
+           text-align: center;
+           position: relative;
+
+            div{
+                width: 70%;
+                text-align: start;
+                input[type="text"]{
+                    width: 99%;
+                    padding-left: 1%;
+                }
+                p{
+                    color: white;
+                    margin-bottom: 10px;
+                }
+
+                &.elementos{
+                    width: 80%;
+                    display: flex;
+                    justify-content: center;
+                    align-items:center ;
+                    margin-top: 2%;
+                    gap:1%;
+                    
+                    input[type="text"]{
+                    width: 50%;
+                    
+                    }
+                }
+            }
+
+            
+            input[type="submit"]{
+                position: absolute;
+                bottom: 2%;
+                left: 15%;
+                height: 5vh;
+                border: 1px solid white;
+                background-color: transparent;
+                border-radius: 20px;
+                font-size: 1.5em;
+                color: white;
+                width: 70%;
+            }
+        }
+    }
+    footer{
+        width: 100%;
+        height: 9vh;
+        background-color: var(--rojo-navegador);
+        color: white;
+        justify-items: center;
+        align-items: center;
+        padding-top: 1vh;
+    }
+}
+
+/* **************************ZONA DE LAS SALAS DEL CSS DE SALAS ADMIN ****************************** */
+
+#gestionsalas{
+    display: flex;
+    flex-wrap: wrap; /* Permite que las salas se ajusten a una nueva fila */
+    width: 700px;
+    flex-grow: 0; /* Ajuste para evitar que crezca más de lo necesario */
+    flex-shrink: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px auto;
+    flex-basis: auto; 
+
+    .gsala{
+        background-color: var(--gris-transparente2);
+        color: var(--clr-blanco);
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        text-align: center;
+        width: 250px;
+        height: 70px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button{
+        border: none;
+        border-radius: 10px;
+        img{
+            width: 50px;
+        }
+    }
+    .borrar{
+        background-color: #ff3737; 
+    }
+    .ver{
+        background-color: #ffbc37;
+    }
+}
+
+/* ***************************************** ESTILOS DEL JUEGO Y AREAS DEL JUGADOR ********************* */
+
+#logo{
+    width: 7.3206%;
+    position: absolute;
+    top: 1.4641%;
+    left: 2.1961%;
+}
+
+/* inicio de sesión del juego */
+#inicioSesion{
+    background: var(--gradiente-juego);
+    height: 100vh;
+    header{
+        text-align: center;                 
+        padding: 14.6412% 0px 3.6603% 0px;  
+    }
+
+    main{
+        #menuInicioSesion{
+            width: 21.9619%;
+            display: block;                  
+            margin: 0 auto;
+        }
+
+        .btn{
+            height: 10vh;
+        }
+    }
+}
+
+/*--MENU PRINCIPAL--*/
+#menuPrincipal{
+    background: var(--gradiente-juego);
+    header{
+        text-align: center;                 
+        padding: 1.8301% 0px 0px 0px;       
+        position: relative;                 
+
+        #btnCerrarSesion{
+            width: 18.3016%;
+            position: absolute;             
+            top: 31.7460%;                  
+            right: 2.1961%;                 
+            font-size: 1.3rem;              
+            cursor: pointer;                
+            border: 2px solid black;     
+            border-radius: 15px;          
+            color: var(--fondo-blanco);   
+            background-color: black;     
+            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; 
+            transition: all 0.15s ease;     
+        }
+
+        #btnCerrarSesion:hover{
+            color: black;                
+            background: white;
+            box-shadow: 0 0 2em 0.5em white;  
+            border: none;  
+        }
+    }
+
+    main{
+        margin: 7.3206% 0.7320% 0px 0.7320%;        
+
+        #menuBotones{
+            height: 75vh;
+            display: grid;                  
+                                            
+            grid-template-areas:            
+                "iniciar salas partida"
+                "ranking ranking ranking";  
+            grid-template-columns: 29.2828% 29.2828% 29.2828%;   
+            grid-template-rows: 80% auto;
+            justify-content: center;     
+            gap: 2.5% 3.6603%;           
+
+            .lineaA{
+                margin: 0px;             
+            }
+
+            #btnIniciarPartida{
+                grid-area: iniciar;      
+            }
+
+            #btnCrearSala{
+                grid-area: salas;        
+            }
+
+            #btnPartidaPublica{
+                grid-area: partida;      
+            }
+
+            #btnRanking{
+                grid-area: ranking;      
+            }
+        }
+    }
+}
+
+/*--REGISTRO--*/
+#registro{
+    background: var(--gradiente-juego);
+    height: 100vh;
+    header{
+        text-align: center;              
+        padding-top: 5.4904%;          
+    }
+
+    form{
+        width: 43.9238%;                    
+        margin: 1.4641% auto 0 auto;        
+        padding: 50px 75px 50px 75px;       
+        background-color: transparent;      
+        border: 2px solid var(--color-neon);
+        border-radius: 20px;                
+        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); 
+
+        label{
+            color: var(--fondo-blanco);    
+            font-weight: bold;             
+            margin-left: 50px;             
+        }
+
+        input[type="text"], input[type="email"]{
+            margin: 3.3333% 0px 5% 8.3333%;
+            display: block;                
+        }
+
+        #btnEnviar{
+            width: 41.6666%;              
+            margin: 10% auto 0 auto;       
+            font-size: 1.3rem;             
+            padding: 1.6666% 0px;          
+            cursor: pointer;               
+            border: 2px solid black;      
+            border-radius: 15px;           
+            color: var(--fondo-blanco);    
+            background-color: black;      
+            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; 
+            transition: all 0.15s ease;     
+        }
+
+        #btnEnviar:hover{
+            color: black;                 
+            background: var(--fondo-blanco);
+            box-shadow: 0 0 2em 0.5em var(--fondo-blanco);
+            border-color: var(--fondo-blanco);
+        }
+    }
+}
+
+/*--RANKING--*/
+#ranking{
+    background: var(--gradiente-juego);
+    height: 100vh;
+    header{
+        text-align: center;               
+        padding: 1.8301%;                 
+        position: relative;               
+    }
+
+    main{
+        display: block;
+        margin: 7.3206% auto 0 auto;
+        padding: 3.6603% 0px;
+        width: 43.9238%;
+        background-color: transparent;      
+        border: 2px solid var(--color-neon);
+        border-radius: 20px;                
+        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); 
+
+        .jugadores{
+            background-color: black;
+            color: var(--fondo-blanco);
+            font-size: 1.5rem;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 3.3333% 33.3333%;
+            color: var(--fondo-blanco);
+            text-align: center;             
+        }
+    }
+
+    #flecha{
+        width: 5.1244%;                  
+        position: absolute;              
+        bottom: 1.4641%;                 
+        left: 2.1961%;                   
+    }
+}
+
+/*--PREGUNTAS Y RESPUESTAS--*/
+#preguntasRespuestas{
+    background: var(--gradiente-juego);
+    header{
+        background-color: black;        
+        color: var(--fondo-blanco);      
+        text-align: center;              
+        padding: 2.1961% 0px;            
+        position: relative;              
+
+        #pregunta{
+            background-color: var(--fondo-blanco);  
+            width: 2.9282%;              
+            padding: 1.0980%;            
+            position: absolute;          
+            border-radius: 50px;         
+            top: 20.2122%;               
+            left: 2.1961%;               
+        }
+
+        #tiempo{
+            width: 10.9809%;                   
+            padding: 0.7320% 1.0980%;             /*Espacio interno del temporizador*/
+            background-color: var(--fondo-blanco);  /*Color del fondo*/
+            border: 2px solid var(--fondo-blanco);  /*Esilo del borde*/
+            border-radius: 10px;            /*Borde redondeado*/
+            color: black;                 /*Color de la letra*/
+            box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
+            position: absolute;             
+            top: 20.2122%;                  
+            right: 2.1961%;                 
+        }
+    }
+
+    main{
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
+        padding: 3.6603% 0px;          
+
+        h2{
+            width: 73.2064%;           
+            margin: 0 auto;            
+            padding: 1.4641%;          
+            text-align: center;        
+            background-color: var(--color-neon);   
+            border: 2px solid var(--color-neon);   
+            border-radius: 10px;        
+            color: black;               
+            box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+        }
+
+        #opcionesPregunta{
+            width: 80%;                   
+            margin: 0 auto;               
+            padding: 5% 0px;              
+            color: var(--fondo-blanco);   
+            display: flex;
+            flex-direction: column;       
+            align-items: center;          
+
+            .contenedor-pregunta{
+                width: 65.1769%;          
+                text-align: left;         
+                background-color: var(--fondo-oscuro);  
+                border: 2px solid var(--fondo-oscuro);  
+                border-radius: 10px;        /*Borde redonedado*/
+                box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
+                margin: 2.3277% 0px;     
+                padding: 1.8621%;        
+                flex: 1 1 auto;          
+
+                p{
+                    display: inline-block;  /*Desplegamos en inline-block para que no se baje después del input*/
+                    margin-left: 2.8571%;      /*Espacio entre elementos por la izquierda*/
+                }
+            }
+        }
+    }
+}
+
+/*--SITUACIONES--*/
+#situaciones{
+    background: var(--gradiente-juego);
+    height: 100vh;
+    header{
+        background-color: black;      
+        color: var(--fondo-blanco);    
+        text-align: center;            
+        padding: 2.1961% 0px;          
+        position: relative;            
+
+        #situacion{
+            background-color: var(--fondo-blanco);  /*Fondo del icono*/
+            width: 2.9282%;            
+            padding: 1.0980%;          
+            position: absolute;        
+            border-radius: 50px;       
+            top: 20.2122%;             
+            left: 2.1961%;             
+        }
+
+        #tiempo{
+            width: 10.9809%;                   /*Ancho del temporizador*/
+            padding: 0.7320% 1.0980%;             /*Espacio interno del temporizador*/
+            background-color: var(--fondo-blanco);  /*Color del fondo*/
+            border: 2px solid var(--fondo-blanco);  /*Esilo del borde*/
+            border-radius: 10px;            /*Borde redondeado*/
+            color: black;                 /*Color de la letra*/
+            box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco); /*Sombra*/
+            position: absolute;           
+            top: 20.2122%;                
+            right: 2.1961%;               
+        }
+    }
+
+    main{
+        height: 100vh;
+        background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
+        padding: 3.6603% 0px;                  /*Espacio interno del main*/
+
+        h2{
+            width: 73.2064%;           
+            margin: 0 auto;            
+            padding: 1.4641%;          
+            text-align: center;        
+            background-color: var(--color-neon);    /*Color del fondo del titulo*/
+            border: 2px solid var(--color-neon);    /*Estilo borde*/
+            border-radius: 10px;            /*Borde redondeado*/
+            color: black;                 /*Color de la letra*/
+            box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); /*Sombra*/
+        }
+
+        #opcionesSituacion{
+            width: 73.2064%;              
+            margin: 0 auto;               
+            padding: 3.6603% 0px;         
+            color: var(--fondo-blanco);   
+            display: grid;
+            grid-template-columns: 40% 40%; 
+            grid-template-rows: auto;       
+            gap: 0px 20%;                 
+            justify-content: left;          
+            
+
+            .contenedor-situacion{
+                text-align: left;           /*Alineamos el contenido a la izquierda*/
+                background-color: var(--fondo-oscuro);  /*Color del fondo*/
+                border: 2px solid var(--fondo-oscuro);  /*Estilo borde*/
+                border-radius: 10px;        /*Borde redonedado*/
+                box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro); /*Sombra*/
+                margin: 6.25% 0px;      
+                padding: 5%;            
+
+                p{
+                    display: inline-block; 
+                    margin-left: 2.8571%;  
+                }
+            }
+        }
+    }
+}
+
+/*FOTOS*/
+#fotos {
+    height: 100vh;
+    header {
+        background-color: black;        
+        color: var(--fondo-blanco);      
+        text-align: center;              
+        padding: 2.1961% 0px;            
+        position: relative;              
+
+        #foto {
+            background-color: var(--fondo-blanco);
+            width: 2.9282%;
+            padding: 1.0980%;
+            position: absolute;
+            border-radius: 25px;
+            top: 20.2122%;
+            left: 2.1961%;
+        }
+
+        #tiempo {
+            width: 10.9809%;
+            padding: 0.7320% 1.0980%;
+            background-color: var(--fondo-blanco);
+            border: 2px solid var(--fondo-blanco);
+            border-radius: 10px;
+            color: black;
+            box-shadow: inset 0 0 0.5em 0 var(--fondo-blanco), 0 0 0.5em 0 var(--fondo-blanco);
+            position: absolute;
+            top: 20.2122%;
+            right: 2.1961%;
+        }
+    }
+
+    main {
+        height: 100vh;
+        background-color: rgba(155, 201, 111, 0.827);
+        padding: 3.6603% 0px;
+
+        h2 {
+            width: 87.8477%;
+            margin: 0 auto;
+            padding: 1.4641%;
+            text-align: center;
+            background-color: var(--color-neon);
+            border: 2px solid var(--color-neon);
+            border-radius: 10px;
+            color: black;
+            box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
+        }
+
+        #opcionesFoto {
+            width: 87.8477%;
+            margin: 0 auto;
+            padding: 3.6603% 0px;
+            color: var(--fondo-blanco);
+            display: grid;
+
+            grid-template-areas:
+                "pregunta1 imagen"
+                "pregunta2 imagen";
+            grid-template-columns: 60% 40%; /* ahora ocupa todo el ancho */
+            grid-template-rows: auto auto;
+            gap: 2%;                        /* separación más natural */
+            justify-content: space-between; /* empuja cada columna a su sitio */
+
+            #pregunta1 { 
+                grid-area: pregunta1; 
+            }
+            #pregunta2 { 
+                grid-area: pregunta2; 
+            }
+            #contenedor-imagen { 
+                grid-area: imagen;
+            }
+            #imagenFoto { 
+                float: right;
+                width: 100%; 
+            }
+
+            .contenedor-foto {
+                text-align: left;
+                background-color: var(--fondo-oscuro);
+                border: 2px solid var(--fondo-oscuro);
+                border-radius: 10px;
+                box-shadow: inset 0 0 0.5em 0 var(--fondo-oscuro), 0 0 0.5em 0 var(--fondo-oscuro);
+                margin: 5% 0px;
+                padding: 4%;
+
+                p {
+                    display: inline-block;
+                    margin-left: 2.8571%;
+                }
+            }
+        }
+    }
+}
+
+
+/* CSS de las salas de las partidas *********************************** */
+
+.salas{
+        background: var(--gradiente-juego);
+        height: 100vh;
+        color: white;
+
+    #titulo{
+    text-align: center;
+    padding-top: 2.6vh;
+    font-size: 1.75rem; /* 28px */
+    font-weight: 600;
+    color: var(--fondo-oscuro);
+}
+
+/* 700px → 51.2% */
+/* 200px min-height → 26vh */
+#contenido{
+    width: 51.2%;
+    min-height: 26vh;
+    margin: 5.2vh auto 0 auto;
+    background-color: rgba(8, 37, 28, 0.75);
+    color: var(--clr-blanco);
+    border-radius: 0.9rem; /* equivalente a 15px aprox */
+    padding: 2.6vh 3%;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+}
+
+/* 10px → 1.3vh */
+#subtitulo{
+    text-align: center;
+    padding-top: 1.3vh;
+    font-size: 1.375rem; /* 22px */
+    font-weight: 500;
+}
+
+.formulario{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3.25vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;    
+}
+
+.formulario input{
+    border-radius: 0.3rem;
+    margin-left: 1%;
+    padding: 0.7vh;
+    border: none;
+}
+
+button{
+    display: block;
+    margin: auto;
+    margin-top: 2.6vh;
+    padding: 1.3vh 3%;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: var(--clr-neon2);
+    color: var(--fondo-oscuro);
+    font-size: 1rem; /* 16px */
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* SALAS */
+
+#salastitulo{
+    text-align: center;
+    font-size: 1.5rem; /* 24px aprox */
+    font-weight: 600;
+    margin-top: 2.6vh;
+    color: var(--clr-blanco);
+}
+
+#salas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 51.2%;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    margin: 4vh auto;
+    flex-basis: auto; 
+}
+
+/* 150px → 11% */
+#salas .sala{
+    background-color: var(--gris-transparente);
+    color: var(--clr-blanco);
+    padding: 2vh 3%;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    text-align: center;
+    width: 11%;
+    cursor: pointer;
+}
+
+#salas a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 500px → 36.6% */
+#CreaSala{
+    text-align: center;
+    margin-top: 4vh;
+    font-size: 1.125rem; /* 18px */
+    font-weight: 500;
+    width: 36.6%;
+}
+
+#CreaSala :hover{
+    background-color: var(--clr-neon2);
+    color: var(--fondo-oscuro);
+    transition: background-color 0.3s, color 0.3s;
+}
+}
+
+#crear_salas{
+    background:var(--gradiente-juego);
+    height: 100vh;
+    color: #fff;
+    
+    header{
+        width: 100%;
+        height: 10.42vh;
+        background-color: var(--verde-neon);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+/* 20px padding → 2.6vh */
+#titulo{
+    text-align: center;
+    padding-top: 2.6vh;
+    font-size: 1.75rem; /* 28px */
+    font-weight: 600;
+    color: var(--fondo-oscuro);
+}
+
+/* 700px → 51.2% */
+/* 200px min-height → 26vh */
+#contenido{
+    width: 51.2%;
+    min-height: 26vh;
+    margin: 5.2vh auto 0 auto;
+    background-color: rgba(8, 37, 28, 0.75);
+    color: var(--clr-blanco);
+    border-radius: 0.9rem; /* equivalente a 15px aprox */
+    padding: 2.6vh 3%;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+}
+
+/* 10px → 1.3vh */
+#subtitulo{
+    text-align: center;
+    padding-top: 1.3vh;
+    font-size: 1.375rem; /* 22px */
+    font-weight: 500;
+}
+
+.formulario{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3.25vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;    
+}
+
+.formulario input{
+    border-radius: 0.3rem;
+    margin-left: 1%;
+    padding: 0.7vh;
+    border: none;
+}
+
+button{
+    display: block;
+    margin: auto;
+    margin-top: 2.6vh;
+    padding: 1.3vh 3%;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: var(--clr-neon2);
+    color: var(--fondo-oscuro);
+    font-size: 1rem; /* 16px */
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* SALAS */
+
+#salastitulo{
+    text-align: center;
+    font-size: 1.5rem; /* 24px aprox */
+    font-weight: 600;
+    margin-top: 2.6vh;
+    color: var(--clr-blanco);
+}
+
+#salas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 51.2%;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    margin: 4vh auto;
+    flex-basis: auto; 
+}
+
+/* 150px → 11% */
+#salas .sala{
+    background-color: var(--gris-transparente);
+    color: var(--clr-blanco);
+    padding: 2vh 3%;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    text-align: center;
+    width: 11%;
+    cursor: pointer;
+}
+
+#salas a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 500px → 36.6% */
+#CreaSala{
+    text-align: center;
+    margin-top: 4vh;
+    font-size: 1.125rem; /* 18px */
+    font-weight: 500;
+    width: 36.6%;
+}
+
+#CreaSala :hover{
+    background-color: var(--clr-neon2);
+    color: var(--fondo-oscuro);
+    transition: background-color 0.3s, color 0.3s;
+}
+}

@@ -1,19 +1,27 @@
 <?php
-    require_once __DIR__.'/../../config/config.php';
-    class Conectar{
-        protected $conexion;
-        public function __construct() {
-            $this->conexion = new PDO(
+require_once __DIR__.'/../../config/configDB.php';
+
+class Conectar {
+    public static $conexion;
+
+    public function __construct() {
+        try {
+            self::$conexion = new PDO(
                 'mysql:host='.SERVIDOR.';dbname='.BBDD,
                 USUARIO,
                 CLAVE,
-                array(PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION) //activa los errores de PDO
+                array(
+                    PDO::ATTR_PERSISTENT => true,
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+                )
             );
-
-        }
-
-        public function __destruct(){
-            $this->conexion = null;
+        } catch (PDOException $e) {
+            echo "Error de conexión: " . $e->getMessage();
         }
     }
+
+    public function __destruct() {
+        self::$conexion = null;
+    }
+}
 ?>
