@@ -19,6 +19,8 @@ btnSala.addEventListener("click", () => {
 
 //Evento cuando pulsamos partida pública
 btnPartidaPublica.addEventListener("click", () => {
+    console.log("Botón 'Partida Pública' pulsado"); // Mensaje de depuración
+
     // Definir modos con rutas verificadas
     let modos = [
         "../../html/victor/preguntasRespuestas.html", // Modo Preguntas y Respuestas
@@ -29,8 +31,9 @@ btnPartidaPublica.addEventListener("click", () => {
     // Seleccionar un modo aleatorio
     let modoAleatorio = modos[Math.floor(Math.random() * modos.length)];
 
+    console.log("Modo seleccionado:", modoAleatorio); // Mensaje de depuración
+
     // Redirigir al modo seleccionado
-    console.log("Redirigiendo a:", modoAleatorio); // Para depuración
     window.location.href = modoAleatorio;
 });
 
