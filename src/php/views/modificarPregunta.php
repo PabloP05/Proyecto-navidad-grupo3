@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- esto será una vista que recibirá los datos de la base de datos desde php (o AJAX) -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,37 +8,37 @@
 </head>
 <body id="modificacion">
     <header>
-        <img src="../../css/icon/vueltaAtras.png" alt="">
+        <a href="./indexAdmin.php?c=C_listarContenido&m=listarContenido"><img src="views/css/icon/vueltaAtras.png" alt=""></a>
         <h1>Stop bullying challenge</h1>
     </header>
     <main>
-        <form action="./indexAdmin.php?c=C_modificarPregunta&m=modificarDatos&id=<?php $pregunta['idPregunta']?>>" method="post">
-             <h2>datos</h2>
+        <form action="./indexAdmin.php?c=C_modificarPregunta&m=modificarDatos&id=<?= $pregunta['idPregunta'] ?>" method="post">
+
+            <h2>datos</h2>
             <div>
                 <p>Pregunta</p>
                 <?php 
                     if ($pregunta) {
-                        echo '<input type="text" name="pregunta" id="pregunta" value="' . $pregunta['pregunta'] . '">';
+                        echo '<input type="text" name="pregunta" id="pregunta" value="' . $pregunta['pregunta']. '">';
                     } else {
                         echo '<input type="text" name="pregunta" id="pregunta" placeholder="Pregunta no encontrada">';
                     }
                 ?>
             </div>
 
-            
-        <?php
+            <?php
             if (!empty($respuestas)) {
                 foreach ($respuestas as $index => $respuesta) { 
                     echo '<div class="elementos">
-                        <input type="text" name="" id="" value="'.$respuesta['respuesta'].'">
+                        <input type="text" name="respuestas['.$respuesta['idRespuestaPregunta'].']" 
+                               value="'.$respuesta['respuesta'].'">
                         <a href="./indexAdmin.php?c=C_modificarPregunta&m=borrarRespuesta&id='.$pregunta['idPregunta'].'&idRespuesta='.$respuesta['idRespuestaPregunta'].'">eliminar</a>
                     </div>';
                 }
             } else {
                 echo '<p>No se encontraron respuestas para esta pregunta.</p>';
             }
-        ?>
-            
+            ?>
 
             <input type="submit" value="Modificar datos">
         </form>

@@ -39,10 +39,16 @@
             <?php
                 foreach($situaciones as $situacion) {
                     echo '<div class="datos_de_contenido">
-                            <h2>' . htmlspecialchars($situacion['situacion']) . '</h2>
-                            <button class="borrar"><img src="views/css/icon/papelera.png" alt=""></button>
-                            <button class="configurar"><img src="views/css/icon/ajustes.png" alt=""></button>
-                          </div>';
+                              <h2>'.$situacion['situacion'].'</h2>
+                              <button class="borrar">
+                                 <img src="views/css/icon/papelera.png" alt="">
+                              </button>
+                              <button class="configurar">
+                                 <a href="./indexAdmin.php?c=C_modificarSituacion&m=modificar&id='.$situacion['idSituacion'].'">
+                                       <img src="views/css/icon/ajustes.png" alt="">
+                                 </a>
+                              </button>
+                        </div>';
                 }
             ?>
        </div>

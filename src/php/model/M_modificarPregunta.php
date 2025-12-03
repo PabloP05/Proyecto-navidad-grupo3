@@ -26,30 +26,25 @@
         }
 
         public function modificarPreguntaYrespuesta($idPregunta) {
-            // Modificar la pregunta
-            $sqlModificarPregunta = "UPDATE preguntas SET pregunta = :pregunta WHERE idPregunta = :idPregunta";
-            $resultadoModificarPregunta = Conectar::$conexion->prepare($sqlModificarPregunta);
-            $resultadoModificarPregunta->bindParam(':pregunta', $_POST['pregunta']);
-            $resultadoModificarPregunta->bindParam(':idPregunta', $idPregunta);
-            $resultadoModificarPregunta->execute();
+    // Modificar la pregunta
+    $sqlModificarPregunta = "UPDATE preguntas SET pregunta = :pregunta WHERE idPregunta = :idPregunta";
+    $resultadoModificarPregunta = Conectar::$conexion->prepare($sqlModificarPregunta);
+    $resultadoModificarPregunta->bindParam(':pregunta', $_POST['pregunta']);
+    $resultadoModificarPregunta->bindParam(':idPregunta', $idPregunta);
+    $resultadoModificarPregunta->execute();
 
-            // Modificar las respuestas
-            if (isset($_POST['respuestas'])) {
-                foreach ($_POST['respuestas'] as $idRespuesta => $textoRespuesta) {
-                    $sqlModificarRespuesta = "UPDATE respuestasPreguntas SET respuesta = :respuesta WHERE idRespuestaPregunta = :idRespuesta";
-                    $resultadoModificarRespuesta = Conectar::$conexion->prepare($sqlModificarRespuesta);
-                    $resultadoModificarRespuesta->bindParam(':respuesta', $textoRespuesta);
-                    $resultadoModificarRespuesta->bindParam(':idRespuesta', $idRespuesta);
-                    $resultadoModificarRespuesta->execute();
+    // Modificar las respuestas
+    if (isset($_POST['respuestas'])) {
+        foreach ($_POST['respuestas'] as $idRespuesta => $textoRespuesta) {
+            $sqlModificarRespuesta = "UPDATE respuestasPreguntas SET respuesta = :respuesta WHERE idRespuestaPregunta = :idRespuesta";
+            $resultadoModificarRespuesta = Conectar::$conexion->prepare($sqlModificarRespuesta);
+            $resultadoModificarRespuesta->bindParam(':respuesta', $textoRespuesta);
+            $resultadoModificarRespuesta->bindParam(':idRespuesta', $idRespuesta, PDO::PARAM_INT);
+            $resultadoModificarRespuesta->execute();
+        }
+    }
+}
 
-                    $sql ="UPDATE preguntas SET pregunta = :pregunta WHERE idPregunta = :idPregunta";   
-                    $modificacion = Conectar::$conexion->prepare($sql);
-                    $modificacion->bindParam(':pregunta', $_POST['pregunta']);
-                    $modificacion->bindParam(':idPregunta', $idPregunta);
-                    $modificacion->execute();
-                }
-            }
-        }   
 
     }
 ?>

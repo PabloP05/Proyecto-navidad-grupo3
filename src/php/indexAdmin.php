@@ -19,7 +19,7 @@ require_once __DIR__ .'/config/indexConfig.php';
     $controladorPath = __DIR__ . '/' . RUTA_CONTROLADOR . $_GET['c'] . '.php';
     if (!file_exists($controladorPath)) {
         http_response_code(500);
-        echo 'Error: controlador no encontrado (' . htmlspecialchars($controladorPath) . ')';
+        echo 'Error: controlador no encontrado';
         exit;
     }
 
@@ -46,7 +46,7 @@ require_once __DIR__ .'/config/indexConfig.php';
             include $vista;
         } else {
             http_response_code(500); //evito el codigo 500 del navegador
-            echo 'Error: vista no encontrada (' . htmlspecialchars($vistaPath) . ')';
+            echo 'Error: vista no encontrada ';
         }
     }
 ?>
