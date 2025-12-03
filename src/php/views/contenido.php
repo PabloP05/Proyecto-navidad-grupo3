@@ -28,7 +28,7 @@
                 foreach($preguntas as $pregunta) {
                     echo '<div class="datos_de_contenido">
                             <h2>' . htmlspecialchars($pregunta['pregunta']) . '</h2>
-                            <button class="borrar"><img src="views/css/icon/papelera.png" alt=""></button>
+                            <button class="borrar"><a href="./indexAdmin.php?c=C_borrarPreguntas&m=borrar&id='.$pregunta['idPregunta'].'"><img src="views/css/icon/papelera.png" alt=""></a></button>
                             <button class="configurar"><a href="./indexAdmin.php?c=C_modificarPregunta&m=modificar&id='.$pregunta['idPregunta'].'"><img src="views/css/icon/ajustes.png" alt=""></a></button>
                           </div>';
                 }   
@@ -41,7 +41,7 @@
                     echo '<div class="datos_de_contenido">
                               <h2>'.$situacion['situacion'].'</h2>
                               <button class="borrar">
-                                 <img src="views/css/icon/papelera.png" alt="">
+                                 <a href="./indexAdmin.php?c=C_borrarSituacion&m=borrar&id='.$situacion['idSituacion'].'"><img src="views/css/icon/papelera.png" alt=""><a>
                               </button>
                               <button class="configurar">
                                  <a href="./indexAdmin.php?c=C_modificarSituacion&m=modificar&id='.$situacion['idSituacion'].'">

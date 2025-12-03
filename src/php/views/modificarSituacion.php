@@ -31,11 +31,21 @@
             <?php
             if (!empty($respuestas)) {
                 foreach ($respuestas as $respuesta) { 
-                    echo '<div class="elementos">
+                    $sw=0;
+                    if($sw==0){
+                        echo '<div class="elementos">
+                        <input type="text" name="respuestas['.$respuesta['idRespuestaSituacion'].']" 
+                               value="'.$respuesta['respuestaSituacion'].'">
+                        <p>Respuesta correcta<p>        
+                       </div>';
+                        $sw=1;
+                    }else{
+                        echo '<div class="elementos">
                         <input type="text" name="respuestas['.$respuesta['idRespuestaSituacion'].']" 
                                value="'.$respuesta['respuestaSituacion'].'">
                         <a href="./indexAdmin.php?c=C_modificarSituacion&m=borrarRespuesta&id='.$situacion['idSituacion'].'&idRespuesta='.$respuesta['idRespuestaSituacion'].'">Eliminar</a>
-                    </div>';
+                        </div>';
+                    }
                 }
             } else {
                 echo '<p>No se encontraron respuestas para esta situación.</p>';
