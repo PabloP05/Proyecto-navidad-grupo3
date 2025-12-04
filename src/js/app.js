@@ -22,6 +22,18 @@ import { modeloFotos } from "./model/modeloFotos.js";
 import { vistaFotos } from "./views/vistaFotos.js";
 import { controladorFotos } from "./services/servicios_adrian/controladorFotos.js";
 
+import { modeloSalas } from "./model/modeloSalas.js";
+import { vistaSalas } from "./views/vistaSalas.js";
+import { controladorSalas } from "./services/servicios_adrian/controladorSalas.js";
+
+import { modeloCrearSala } from "./model/modeloCrearSala.js";
+import { vistaCrearSala } from "./views/vistaCrearSala.js";
+import { controladorCrearSala } from "./services/servicios_adrian/controladorCrearSala.js";
+
+import { modeloSala } from "./model/modeloSala.js";
+import { vistaSala } from "./views/vistaSala.js";
+import { controladorSala } from "./services/servicios_adrian/controladorSala.js";
+
 
 let page=document.body.id;
 switch(page){
@@ -60,5 +72,23 @@ switch(page){
         const objModeloFotos=new modeloFotos();
         const objVistaFotos=new vistaFotos();
         const objControladorFotos=new controladorFotos(objModeloFotos,objVistaFotos);
+        break;
+    case "salasBody":
+        //Inicializando el modo de juego fotos
+        const objModeloSalas=new modeloSalas();
+        const objVistaSalas=new vistaSalas();
+        const objControladorSalas=new controladorSalas(objModeloSalas,objVistaSalas);
+        break;
+    case "crear_salas":
+        //Inicializando el modo de juego fotos
+        const objModeloCrearSala=new modeloCrearSala();
+        const objVistaCrearSala=new vistaCrearSala();
+        const objControladorCrearSala=new controladorCrearSala(objModeloCrearSala,objVistaCrearSala);
+        break;
+    case "sala":
+        //Inicializando el modo de juego fotos
+        const objModeloSala=new modeloSala();
+        const objVistaSala=new vistaSala();
+        const objControladorSala=new controladorSala(objModeloSala,objVistaSala);
         break;
 }

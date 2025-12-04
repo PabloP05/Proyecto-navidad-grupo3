@@ -11,8 +11,11 @@ export class vistaLogin{
     iniciarSesion(){
         //Cuando se pulsa el botón enviar...
         this.form.addEventListener("submit", (e) => {
-            //e.preventDefault();                                       //Evita que se envíe el formulario
-            this.validar();                                             //Si le da a subir y falta algún campo se validarán todos los campos
+            let sw=this.validar();                                             //Si le da a subir y falta algún campo se validarán todos los campos
+            
+            if(sw!=0){
+                e.preventDefault();                                       //Evita que se envíe el formulario
+            }
         });
     }
 
@@ -37,8 +40,13 @@ export class vistaLogin{
 
     //Validar todo
     validar(){
-        this.validarNick();
-        this.validarPw();
+        let swNick=this.validarNick();
+        let swPw=this.validarPw();
+        if(swNick==0 && swPw==0){
+            return 0;
+        }else{
+            return 1;
+        }
     }
 
     //Validar el nick
@@ -47,8 +55,10 @@ export class vistaLogin{
 
         if(nickValor===""){
             this.validarError(this.nick, "Nick Inválido");
+            return 1;
         }else{
             this.validarOk(this.nick);
+            return 0;
         }
     }
 
@@ -58,8 +68,10 @@ export class vistaLogin{
 
         if(pwValor===""){
             this.validarError(this.pw, "Contraseña Inválida");
+            return 1;
         }else{
             this.validarOk(this.pw);
+            return 0;
         }
     }
 

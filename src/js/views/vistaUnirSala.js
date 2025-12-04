@@ -10,9 +10,10 @@ export class vistaUnirSala{
 
     buscar(){
         this.form.addEventListener("submit", (e) => {
-            //e.preventDefault();
-            sw=this.validar();
-            if(sw==0){
+            let sw=this.validar();
+            if(sw!=0){
+                e.preventDefault();
+            }else{
                 this.modoRandom();
             }
         });
@@ -33,13 +34,15 @@ export class vistaUnirSala{
     validar(){
         let codigoValor=this.codigo.value.trim();                  //La función trim() quita los espacios extra
 
-        sw=0;
         if(codigoValor===""){
-            sw=1;
             this.validarError(this.codigo, "Código Inválido");
+            return 1;
+        }else if(codigoValor.length<6){
+            this.validarError(this.codigo, "Debe Contener 6 Dígitos");
+            return 1;
         }else{
-            console.log(codigoValor);
             this.validarOk(this.codigo);
+            return 0;
         }
 
         return sw;

@@ -1243,6 +1243,44 @@
         color: inherit;
     }
 
+    #cajaCodigo{
+        text-align: center;
+        margin-top: 5%;
+        
+        #codigo{
+            text-align: center;
+        }
+    }
+
+    .ranking-grid{
+        width: 60%;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* 3 columnas */
+        grid-template-rows: 1fr 1fr 1fr 1fr;   /* 4 filas contando la del título */
+        gap: 10px;
+        text-align: center;
+        padding: 20px;
+        border: 2px solid var(--color-neon);
+        border-radius: 20px;
+        box-shadow: inset 0 0 0.5em var(--color-neon), 0 0 0.5em var(--color-neon);
+    }
+
+    .ranking-grid{
+        .caja{
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.4);
+            color: var(--fondo-blanco);
+            border-radius: 10px;
+            font-weight: bold;
+        }
+    }
+
+    .ranking-grid .titulo{
+        background: var(--color-neon);
+        color: black;
+    }
+
     /* 500px → 36.6% */
     #CreaSala{
         text-align: center;
@@ -1305,10 +1343,43 @@
         width: 80%;
         margin: 0 auto;
         margin-top: 3.25vh;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;    
+
+        .control{
+            text-align: center;
+        }
+
+        /*JAVA SCRIPT*/
+        .control.error{
+            input[type="text"]{
+                border-color: red;
+                margin-bottom: 0px;
+            }
+
+            input[type="text"]:hover{
+                box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
+                border-color: var(--color-neon);
+            }
+            
+            p{
+                font-size: 0.8rem;
+                font-weight: bold;
+                margin: 0.8333% 0px 0.8333% 0px;
+                padding-left: 11.6279%;
+                color: red;
+            }
+        }
+
+        .control.correcto{
+            input[type="text"]{
+                border-color: green;
+                box-shadow: inset 0 0 0.5em 0 green, 0 0 0.5em 0 green;
+            }
+
+            input[type="text"]:hover{
+                box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
+                border-color: var(--color-neon);
+            }
+        }
     }
 
     .formulario input{

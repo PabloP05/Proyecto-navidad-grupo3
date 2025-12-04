@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stop Bullyig Challenge - Crear sala</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/juego_mobil.css">
-</head>
-<body id="crear_salas">
-    <header id="cabecera">
-        <h1 id="titulo">
-            STOP BULLYING CHALLENGE
-        </h1>
-    </header>
-    <main>
-        <div id="contenido">
-            <h2 id="subtitulo">Crea una sala ahora</h2>
-            <form class="formulario" action="">
-                <label for="">Nombre:</label>
-                <input type="text" placeholder="Nombre sala">
-            </form>
-            <button>Crear</button>
-        </div>
-        <a href="salas.html"><img src="../../css/icon/vueltaAtras.png" alt="" id="volverSalas" class="volver_atras"></a>
-    </main>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Stop Bullyig Challenge - Crear sala</title>
+        <link rel="stylesheet" href="../../css/stylePablo.css">
+        <link rel="stylesheet" href="../../css/juego_mobil.css">
+    </head>
+    <body id="crear_salas">
+        <header id="cabecera">
+            <h1 id="titulo">STOP BULLYING CHALLENGE</h1>
+        </header>
+        <main>
+            <div id="contenido">
+                <h2 id="subtitulo">Crear una sala</h2>
+                <form class="formulario" action="salas.html">
+                    <div class="control">
+                        <label>Nombre:</label>
+                        <input type="text" id="nombre" placeholder="Nombre sala">
+                        <p></p>
+                    </div>
+                    <button id="btnCrear">Crear</button>
+                </form>
+            </div>
+            <a href="salas.html">
+                <img src="../../css/icon/vueltaAtras.png" alt="" id="volverSalas" class="volver_atras">
+            </a>
+        </main>
+        <script type="module" src="../../js/app.js"></script>
+    </body>
 </html>

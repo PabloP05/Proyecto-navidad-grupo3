@@ -14,8 +14,11 @@ export class vistaRegistro{
     registrarse(){
         //Cuando se pulsa el botón enviar...
         this.form.addEventListener("submit", (e) => {
-            //e.preventDefault();                                                 //Evita que se envíe el formulario
-            this.validar();                                                          //Si le da a subir y falta algún campo se validarán todos los campos
+            let sw=this.validar();                                                          //Si le da a subir y falta algún campo se validarán todos los campos
+            
+            if(sw!=0){
+                e.preventDefault();                                                 //Evita que se envíe el formulario
+            }
         });
     }
 
@@ -55,10 +58,16 @@ export class vistaRegistro{
     }
 
     validar(){
-        this.validarNombreUsuario();
-        this.validarEmail();
-        this.validarPw();
-        this.validarNick();
+        let swUser=this.validarNombreUsuario();
+        let swEmail=this.validarEmail();
+        let swPw=this.validarPw();
+        let swNick=this.validarNick();
+
+        if(swUser==0 && swEmail==0 && swPw==0 && swNick==0){
+            return 0;
+        }else{
+            return 1;
+        }
     }
 
     //Validar el nombre de usuario
@@ -67,8 +76,10 @@ export class vistaRegistro{
 
         if(nombreUsuarioValor===""){
             this.validarError(this.nombreUsuario, "Contraseña Inválida");
+            return 1;
         }else{
             this.validarOk(this.nombreUsuario);
+            return 0;
         }
     }
 
@@ -78,8 +89,10 @@ export class vistaRegistro{
 
         if(emailValor==="" || !this.email.checkValidity()){
             this.validarError(this.email, "Contraseña Inválida");
+            return 1;
         }else{
             this.validarOk(this.email);
+            return 0;
         }
     }
 
@@ -89,8 +102,10 @@ export class vistaRegistro{
 
         if(pwValor===""){
             this.validarError(this.pw, "Contraseña Inválida");
+            return 1;
         }else{
             this.validarOk(this.pw);
+            return 0;
         }
     }
 
@@ -100,8 +115,10 @@ export class vistaRegistro{
 
         if(nickValor===""){
             this.validarError(this.nick, "Nick Inválido");
+            return 1;
         }else{
             this.validarOk(this.nick);
+            return 0;
         }
     }
 
