@@ -48,6 +48,15 @@
         gap: 30px;
         flex-basis: 400px;
 
+        div{
+            width: 90%;
+            p{
+                margin-bottom: 10px;
+                font-size: 0.9em;
+                color: red;
+            }
+        }
+
         /* estilos de los input del formulario de inicio de sesión del administradoe */
         input[type="text"], input[type="password"] {
             display: block;
