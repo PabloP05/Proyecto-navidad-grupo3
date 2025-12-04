@@ -578,7 +578,7 @@
                 margin-left: 8.3333%;             
             }
 
-            input[type="text"], input[type="email"]{
+            input[type="text"], input[type="email"], input[type="password"]{
                 width: 60%;
                 margin: 3.3333% 0px 3.3333% 8.3333%;
                 padding-left: 2%;
@@ -588,12 +588,12 @@
 
         /*JAVA SCRIPT*/
         .control.error{
-            input[type="text"], input[type="email"]{
+            input[type="text"], input[type="email"], input[type="password"]{
                 border-color: red;
                 margin-bottom: 0px;
             }
 
-            input[type="text"]:hover, input[type="email"]:hover{
+            input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover{
                 box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
                 border-color: var(--color-neon);
             }
@@ -608,18 +608,109 @@
         }
 
         .control.correcto{
-            input[type="text"], input[type="email"]{
+            input[type="text"], input[type="email"], input[type="password"]{
                 border-color: green;
                 box-shadow: inset 0 0 0.5em 0 green, 0 0 0.5em 0 green;
             }
 
-            input[type="text"]:hover, input[type="email"]:hover{
+            input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover{
                 box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
                 border-color: var(--color-neon);
             }
         }
 
         #btnEnviar{
+            width: 41.6666%;              
+            margin: 10% auto 0 auto;       
+            font-size: 1.3rem;             
+            padding: 1.6666% 0px;          
+            cursor: pointer;               
+            border: 2px solid black;      
+            border-radius: 15px;           
+            color: var(--fondo-blanco);    
+            background-color: black;      
+            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; 
+            transition: all 0.15s ease;     
+        }
+
+        #btnEnviar:hover{
+            color: black;                 
+            background: var(--fondo-blanco);
+            box-shadow: 0 0 2em 0.5em var(--fondo-blanco);
+            border-color: var(--fondo-blanco);
+        }
+    }
+}
+
+/*--LOGIN--*/
+#login{
+    background: var(--gradiente-juego);
+    height: 100vh;
+
+    header{
+        text-align: center;              
+        padding-top: 5.4904%;          
+    }
+
+    form{
+        width: 43.9238%;                    
+        margin: 1.4641% auto 0 auto;        
+        padding: 3.6603% 5.4904%;       
+        background-color: transparent;      
+        border: 2px solid var(--color-neon);
+        border-radius: 20px;                
+        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
+
+        .control{
+            padding: 0px 5%;
+            label{
+                color: var(--fondo-blanco);    
+                font-weight: bold;             
+                margin-left: 8.3333%;             
+            }
+
+            input[type="text"], input[type="email"], input[type="password"]{
+                width: 60%;
+                margin: 3.3333% 0px 3.3333% 8.3333%;
+                padding-left: 2%;
+                display: block;                
+            }
+        }
+
+        /*JAVA SCRIPT*/
+        .control.error{
+            input[type="text"], input[type="email"], input[type="password"]{
+                border-color: red;
+                margin-bottom: 0px;
+            }
+
+            input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover{
+                box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
+                border-color: var(--color-neon);
+            }
+            
+            p{
+                font-size: 0.8rem;
+                font-weight: bold;
+                margin: 0.8333% 0px 0.8333% 0px;
+                padding-left: 11.6279%;
+                color: red;
+            }
+        }
+
+        .control.correcto{
+            input[type="text"], input[type="email"], input[type="password"]{
+                border-color: green;
+                box-shadow: inset 0 0 0.5em 0 green, 0 0 0.5em 0 green;
+            }
+
+            input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover{
+                box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
+                border-color: var(--color-neon);
+            }
+        }
+
+        #btnIniciar{
             width: 41.6666%;              
             margin: 10% auto 0 auto;       
             font-size: 1.3rem;             
