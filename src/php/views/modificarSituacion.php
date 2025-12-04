@@ -30,24 +30,21 @@
 
             <?php
             if (!empty($respuestas)) {
+                $sw=0;
+
                 foreach ($respuestas as $respuesta) { 
-                    $sw=0;
-                    if($sw==0){
                         echo '<div class="elementos">
                         <input type="text" name="respuestas['.$respuesta['idRespuestaSituacion'].']" 
-                               value="'.$respuesta['respuestaSituacion'].'">
-                        <p>Respuesta correcta<p>        
+                               value="'.$respuesta['respuestaSituacion'].'">       
                        </div>';
-                        $sw=1;
-                    }else{
-                        echo '<div class="elementos">
+                        /* echo '<div class="elementos">
                         <input type="text" name="respuestas['.$respuesta['idRespuestaSituacion'].']" 
                                value="'.$respuesta['respuestaSituacion'].'">
                         <a href="./indexAdmin.php?c=C_modificarSituacion&m=borrarRespuesta&id='.$situacion['idSituacion'].'&idRespuesta='.$respuesta['idRespuestaSituacion'].'">Eliminar</a>
-                        </div>';
+                        </div>'; */
                     }
                 }
-            } else {
+             else {
                 echo '<p>No se encontraron respuestas para esta situación.</p>';
             }
             ?>

@@ -28,23 +28,11 @@
 
             <?php
             if (!empty($respuestas)) {
-                $sw=0;
                 foreach ($respuestas as $index => $respuesta) { 
-                    if($sw==0){
                         echo '<div class="elementos">
                         <input type="text" name="respuestas['.$respuesta['idRespuestaPregunta'].']" 
                                value="'.$respuesta['respuesta'].'">
-                            <p>Respuesta correcta<p>
-                    </div>';
-                    $sw=1;
-                    }else{
-                        echo '<div class="elementos">
-                            <input type="text" name="respuestas['.$respuesta['idRespuestaPregunta'].']" 
-                                value="'.$respuesta['respuesta'].'">
-                            <a href="./indexAdmin.php?c=C_modificarPregunta&m=borrarRespuesta&id='.$pregunta['idPregunta'].'&idRespuesta='.$respuesta['idRespuestaPregunta'].'">eliminar</a>
-                        </div>';
-                    }
-                    
+                    </div>';    
                 }
             } else {
                 echo '<p>No se encontraron respuestas para esta pregunta.</p>';

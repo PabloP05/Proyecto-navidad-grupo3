@@ -210,6 +210,7 @@
             #contenido{
                 height: 30vh;
                 position: relative;
+                overflow: auto;
                 label{
                     display: block;
                 }
@@ -227,20 +228,35 @@
                     }
                 }
                 .opciones{
-                    background-color: var(--verdeSuave) !important;
+                    background-color:var(--verdeSuave)  !important;
                 }
 
                 button{
+
                     border-radius: 10px;
                     border: none;
-                    background-color: var(--botones-de-agregado);
-                    position: absolute;
-                    bottom: 3%;
-                    right: 3%;
+                    background-color: var(--botones-de-agregado) ;
+                     position: sticky;   
+                    top: 85%  ;        
+                    z-index: 9999;
+
                     img{
                         width: 30px;
                     }
+
+                    &#agregarCorrectas{
+                        background-color: green !important;
+                        right: 1%!important;
+                        bottom: 3%!important;
+                        }
+                        &#agregarIncorrectas{
+                            background-color: red!important;
+                            left: 1%!important;
+                            bottom: 3%!important;
+                        }
+                  
                 }
+                
             }
 
             button[type="submit"]{
@@ -262,6 +278,10 @@
             }
         }
 
+        
+        
+        
+        
         .contenido{
             width: 70%; /* para que reste el padding de 5% por lateral */
             height:40vh;
@@ -300,6 +320,7 @@
                 img{
                     width: 50px;
                 }
+                
             }
             .borrar{
                 background-color: #ff3737; 

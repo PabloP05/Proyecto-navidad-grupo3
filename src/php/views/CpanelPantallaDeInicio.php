@@ -26,7 +26,7 @@
             <h2>Agregado de contenidos</h2>
             <div class="campo">
                 <p>Selecciona el modo </p>
-                <select name="modo" id="">
+                <select name="modo" id="selectorModo">
                     <option value="1">Preguntas y respuestas</option>
                     <option value="2">Situaciones</option>
                     <option value="3">Describe la imagen</option>
@@ -37,13 +37,14 @@
                 <p>Datos del contenido</p>
                <!-- esto variará con JS al seleccionar la opcion del select -->
                 <input type="text" name="pregunta" placeholder="introduce pregunta contenido o url " required>
-                <input type="text" class="opciones" placeholder="adjunta datos" name="respuestasCorrectas[]">
-                <input type="text" class="opciones" placeholder="adjunta datos" name="respuestasIncorrectas[]">
-                <!-- se adjuntarán mas o menos en funcion a lo que indicque el usuario desde Js -->
-                 <button type="button"><img src="views/css/icon/iconoMas.png" alt=""></button>
+                <input type="text" class="opciones" placeholder="Respuesta correcta" name="respuestasCorrectas[]">
+                <input type="text" class="opciones" placeholder="Respuesta incorrecta" name="respuestasIncorrectas[]">
+                <input type="text" class="opciones" placeholder="Respuesta incorrecta" name="respuestasIncorrectas[]">
             </div>
              <button type="submit">Subir archivos <img src="views/css/icon/subidaDeArchivos.png" alt=""> </button>
         </form>
     </main>
+    
+    <script src="../js/services/servicios.js"></script>
 </body>
 </html>
