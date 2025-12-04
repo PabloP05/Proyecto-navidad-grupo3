@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Stalinist+One&display=swap');
+
+:root{
+
+    /* paleta de colores de la app de administrador */
+   --clr-neon: #EA0000;
+   --clr-bg: #261717;
+   --clr-white: #fff;
+   --clr-neon2: rgb(255, 213, 75);
+    --rojo-navegador :#ff0000c8; 
+    --gris-menu:#8989897e;
+    --transparencia-formularios:#54545498;
+    --dato-del-contenido:rgba(255, 68, 0, 0.665);
+    --verdeSuave:rgba(127, 249, 127, 0.376);
+    --botones-de-agregado:rgb(237, 221, 0);
+
+
+    /* material de fondo de contenedores para pagina de listado de administrador  */
+    --marco-de-contenido-preguntas:rgba(92, 92, 255, 0.704);
+    --marco-de-contenido-situaciones:rgba(92, 255, 168, 0.615);
+    --marco-de-contenido-fotos:rgba(176, 92, 255, 0.641);
+
+   --gradiente: linear-gradient(135deg, 
+        #0EF5DD 0%,       
+        var(--clr-bg) 50%,      
+        #B30000 80%,   
+        var(--clr-neon) 100%
+   );
+
+       /* paleta de colores de la app de usuario  */
+
+
+
+
+
+
+   /* materiales comunes a todas las partes de la aplicación */
+   --titulos: "Stalinist One", sans-serif;
+   --titulos2:"Anton", sans-serif;
+   --texto:"Montserrat", sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+html{
+    background-color: #fff;
+}
+
+body {
+    min-width: 100%; /* Referencia de inicio al crear la páfina : 1366px */
+    margin: 0 auto;
+    position: relative;
+    width: 100vh; /*  medida estandart para todos los body */
+}
+
+h1{
+        font-family:var(--titulos2);
+        color: white;
+        text-align: center;
+}
+form>h2{
+    color: white;
+}
+p, a, li ,h2 ,h3,input,button,label{
+    font-family: var(--texto);
+}
+

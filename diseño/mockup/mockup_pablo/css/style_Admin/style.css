@@ -1,0 +1,418 @@
+@import url('config.css');
+
+
+#adminInicio_body {
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    padding-top: 100px;
+    /* disposicion del layout con los grid */
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-rows: 0.5fr 1fr 2fr; /* ajistando el flex a dos fracciones de la pantalla logro posicionar el cuadro donde necesito */
+    grid-template-areas:
+        ". header header ."
+        ". main main ."
+        "footer footer footer footer";
+    height: calc(100vh - 100px);  
+    background: var(--gradiente);
+    width: 100%;
+    margin: 0 auto;
+    div{
+        grid-area: header;
+        justify-items: center;
+        h1 {
+            color: white;
+            font-size: 3em;
+        }
+
+        h3 {
+            color: #fff;
+        }
+    }
+    
+ 
+    #inicio_de_sesicon {
+        grid-area: main;
+        width: 43.920105485232066%; /* 600 / 1366 * 100 = 43.920105485232066% */
+        height: 30vh;
+        margin: 0 auto 0 auto;
+        border-radius: 20px;
+        background-color: #a6a5a568;
+        align-items: center;
+        justify-content: center;
+       
+        /* ajustes del display flex */
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        flex-basis: 400px;
+
+        div{
+            width: 90%;
+            p{
+                margin-bottom: 10px;
+                font-size: 0.9em;
+                color: red;
+            }
+        }
+
+        /* estilos de los input del formulario de inicio de sesión del administradoe */
+        input[type="text"], input[type="password"] {
+            display: block;
+            height: 3vh;
+            width: 36.59234870620139%; /* 500 / 1366 * 100 = 36.59234870620139% */
+            padding-left: 10px;
+            border-radius: 20px;
+            border: none;
+            background-color: #74747480;
+            color: white;
+
+            /* color del placeholder de los inputs para que aparezca blanco */
+            &::placeholder {
+                color: white;
+                opacity: 1;
+            }
+        }
+
+        input[type="submit"] {
+            width: 38.06228373702421%; /* 520 / 1366 * 100 = 38.06228373702421% */
+            height: 4vh;
+            border-radius: 10px;
+            border: 1px solid var(--clr-neon2);
+            background-color: transparent;
+            font-size: 1.3em;
+            transition: background-color 0.3s ease; /* hace que ek background cambie de una forma mas suave */
+
+            &:hover {
+                background-color: var(--clr-neon2);
+                color: #fff;
+            }
+        }
+    }
+}
+
+/* inicio de panel de control (Cpanel) */
+
+.Cpanel_body{
+    width: 100%;
+    /* disposición del layout en formato grid */
+    display: grid;
+    grid-template-columns: 0.6fr 1fr 1fr 1fr; /* si hay que hacer el scrol hrizontal hay quie poner unas medidas mas fijas (pocentual) */
+    grid-template-rows: 9.09vh 45.45vh 45.45vh;  /*  la primera fila tiene una menor medida porque contiene el nav  */
+    /* medidas reales en el grid : 0.2fr 1fr 1fr paso a vh para controlar los main : 9.09vh 45.45vh 45.45vh FORMULA PARA CALCULARLO : (total de la suma de las filas/tamaño de la fila en fr)*100 */
+    grid-template-areas: 
+        "aside logo logo logo"
+        "aside main main main"
+        "aside main main main" /* me gnerea problemas en el main al añadir material porque no tiene una altura fija en vh */
+    ;
+    /* barra lateral que ará de navegador entre las paginas del Cpanel del administrador*/
+    aside{
+        background-color: var(--rojo-navegador) ;
+        width: 100%;
+        height: 100vh;
+        grid-area: aside;
+        position: relative;
+
+        ul{
+            color: white;
+            font-size: 1.5em;
+            margin-top: 70%;
+            margin-left: 10%;
+            list-style: none;
+
+            li{
+                margin-bottom: 2%;
+                width:90%;
+                border-radius: 10px;
+                text-align: center;
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
+
+                &:hover{
+                    background-color: #B30000;
+                }
+            
+            }
+
+        }
+
+        button{               /* Boton de cerrado de sesión */
+            width: 80%;
+            height: 3.5vh;
+            background-color: transparent;
+            color: white;
+            border-radius: 20px;
+            border: 1px solid white;
+            font-size: 1.3em;
+            position: absolute;
+            bottom: 20px;
+            left: 10%;
+
+            transition:background-color 0.5s ease;
+
+            &:hover{
+                background-color:white;
+                color: var(--rojo-navegador);
+
+            }
+        }
+    }
+    
+    nav{   /* contiene el logo y el rotulo de la paginba (titulo y el eslogan del Cpanel) */
+        grid-area: logo;
+        background-color: var(--rojo-navegador);
+        text-align: center;
+        img{
+            width: 60px;
+            float: right;
+            margin-right: 10px;
+        }
+        h1,h3{
+            color: white;
+            font-size: 1.3em;
+        }
+    }
+    main{   /* el contenido será alterno en funcion a la opción en la que ya te encuentres */
+        grid-area: main;
+        background-color: var(--gris-menu);
+        justify-items: center;
+        text-align: center;
+        box-sizing: border-box; /* controlo la referencia absoluta de la caja para que no aumete en ningun momento */
+        overflow: auto; /* para que aparezca una barra de desplazamiento en caso de que el contenido sobrepase el area del main */
+
+        form{
+            margin-top: 30px;
+            width: 80%;
+            min-height: 50vh;
+            background-color: var(--transparencia-formularios);
+            position: relative;
+            border-radius: 10px;
+            
+            h2{
+                color: white;
+            }
+
+            .campo{
+                width: 40%; /* medida relativa a su contenedor superior */
+                height: 20vh;
+                background-color: rgba(172, 172, 172, 0.216);
+                border-radius: 10px;
+                float: left;
+                margin: 1vh 5% 0 5%;
+                color: white;
+                justify-items: center;
+                select{
+                    border: none;
+                    border-radius: 10px;
+                    margin-top: 10px;
+                    height: 3vh;
+                }
+                p{
+                    width: 60%;
+                    margin-top: 10px;
+                }
+            } 
+
+            /* reajuste de la medida para el area de los datos (es uno de los campos)*/
+            #contenido{
+                height: 30vh;
+                position: relative;
+                label{
+                    display: block;
+                }
+                input[type="text"]{
+                    display: block;
+                    padding-left: 10px;
+                    width: calc(80% - 10px);
+                    height: 3vh;
+                    border-radius: 10px;
+                    background-color: var(--dato-del-contenido);
+                    border: 1px solid black;
+                    margin-top: 10px;
+                    &::placeholder{
+                        color: white;
+                    }
+                }
+                .opciones{
+                    background-color: var(--verdeSuave) !important;
+                }
+
+                button{
+                    border-radius: 10px;
+                    border: none;
+                    background-color: var(--botones-de-agregado);
+                    position: absolute;
+                    bottom: 3%;
+                    right: 3%;
+                    img{
+                        width: 30px;
+                    }
+                }
+            }
+
+            button[type="submit"]{
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                border-radius: 10px;
+                width: 200px;
+                height: 5vh;
+                border:none;
+                position:absolute;
+                bottom: 3%;
+                left: 40%;
+                background-color: var(--verdeSuave);
+
+                img{
+                    width: 20px;
+                }
+            }
+        }
+
+        .contenido{
+            width: 70%; /* para que reste el padding de 5% por lateral */
+            height:40vh;
+            background-color: var(--gris-menu);
+            margin-top: 3%;
+            padding: 5%;
+            overflow: auto;
+            color: white;
+            font-size: 2em;
+            border-radius: 10px;
+
+
+             /* PREGUNTAS Y RESPUESTAS : AJUSTES */
+             .datos_de_contenido{
+                 font-size: 0.8em;
+                margin-top: 5%;
+                height: 9vh;
+                background-color: var(--transparencia-formularios);
+                border-radius: 10px;
+                display: flex;
+                gap: 20px;
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-direction: row;
+                flex-basis: 80%;
+                justify-content: center;
+                align-items: center;
+            }
+           
+            .div_foto{
+            height: 25vh;
+            }
+            button{
+                border: none;
+                border-radius: 10px;
+                img{
+                    width: 50px;
+                }
+            }
+            .borrar{
+                background-color: #ff3737; 
+            }
+            .configurar{
+                background-color: #ffbc37;
+            }
+
+        }
+        /* Los colores se pueden quitar eliminando estas lineas */
+        .contenedor-preguntas{
+            background-color: var(--marco-de-contenido-preguntas);
+        }
+        .contenedor-situaciones{
+            background-color: var(--marco-de-contenido-situaciones);
+        }
+        .contenedor-fotos{
+            background-color: var(--marco-de-contenido-fotos);
+        }
+        .lista-usuarios{
+            height: 60vh;
+        }
+    }
+}
+
+/* VISTAS DE MODIFICACIÓN */
+
+#modificacion{
+    header{
+        width: 100%;
+        height: 10vh;
+        background-color: var(--rojo-navegador);
+        position: relative;
+        img{
+            width: 5%;
+            position: absolute;
+            left: 1%;
+            top: 1vh;
+        }
+    }
+    main{
+        width: 100%;
+        height: 70vh;
+        justify-items: center;
+        padding-top: 10vh ;
+        form{
+            width: 50%;
+            height: 60vh;
+            background-color: var(--transparencia-formularios);
+            border-radius: 10px;
+           justify-items: center;
+           text-align: center;
+           position: relative;
+
+            div{
+                width: 70%;
+                text-align: start;
+                input[type="text"]{
+                    width: 99%;
+                    padding-left: 1%;
+                }
+                p{
+                    color: white;
+                    margin-bottom: 10px;
+                }
+
+                &.elementos{
+                    width: 80%;
+                    display: flex;
+                    justify-content: center;
+                    align-items:center ;
+                    margin-top: 2%;
+                    gap:1%;
+                    
+                    input[type="text"]{
+                    width: 50%;
+                    
+                    }
+                }
+            }
+
+            
+            input[type="submit"]{
+                position: absolute;
+                bottom: 2%;
+                left: 15%;
+                height: 5vh;
+                border: 1px solid white;
+                background-color: transparent;
+                border-radius: 20px;
+                font-size: 1.5em;
+                color: white;
+                width: 70%;
+            }
+        }
+    }
+    footer{
+        width: 100%;
+        height: 9vh;
+        background-color: var(--rojo-navegador);
+        color: white;
+        justify-items: center;
+        align-items: center;
+        padding-top: 1vh;
+    }
+}
