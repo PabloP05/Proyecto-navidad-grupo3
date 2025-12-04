@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    //respuestas de prueba, esto viene de servidor (lo he hecho para que cuando venga de servidor es el mismo formato de datos)
     const preguntas = [
         {
             pregunta: "¿Cuál de estas acciones NO es bullying?",
