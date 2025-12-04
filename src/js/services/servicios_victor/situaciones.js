@@ -1,8 +1,12 @@
+// =======================================
+// situaciones.js
+// =======================================
+
 document.addEventListener("DOMContentLoaded", function() {
 
     let ultimaSeleccion = [];
 
-    //situaciones de prueba, esto viene de servidor (lo he hecho para que cuando venga de servidor es el mismo formato de datos)
+    // situaciones de prueba (simulando datos del servidor)
     const situaciones = [
         {
             situacion: "Ves a un compañero siendo acosado en clase. ¿Qué harías?",
@@ -67,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // Función para mostrar popup y registrar puntos
     function mostrarPopup() {
         if (!ultimaSeleccion.length) return;
 
@@ -74,6 +79,16 @@ document.addEventListener("DOMContentLoaded", function() {
             return (input.checked && input.dataset.correcta === "1") || (!input.checked && input.dataset.correcta === "0");
         });
 
+        // ========================
+        // SUMAR PUNTOS
+        // ========================
+        let puntos = parseInt(localStorage.getItem("puntos")) || 0;
+        if (todasCorrectas) puntos++;
+        localStorage.setItem("puntos", puntos);
+
+        // ========================
+        // POPUP VISUAL
+        // ========================
         const popup = document.createElement("div");
         popup.textContent = todasCorrectas ? "¡Correcto!" : "¡Incorrecto!";
         popup.style.position = "fixed";
@@ -91,6 +106,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         setTimeout(() => {
             popup.remove();
+
+            // ========================
+            // LLAMAR A TERMINAR RONDA
+            // ========================
             if (typeof window.terminarRonda === "function") {
                 window.terminarRonda();
             }
@@ -98,14 +117,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const btn = document.getElementById("btnSiguiente");
         if (btn) btn.remove();
+
+        actualizarContador();
     }
 
-    // Mostrar contador de ronda
-    function mostrarContadorRonda() {
-        let ronda = localStorage.getItem("rondaActual");
-        if (!ronda) ronda = 1;
-        let puntos = localStorage.getItem("puntos");
-        if (!puntos) puntos = 0;
+    // Mostrar contador de ronda y puntos
+    function actualizarContador() {
+        let ronda = parseInt(localStorage.getItem("rondaActual")) || 1;
+        let puntos = parseInt(localStorage.getItem("puntos")) || 0;
+
         let div = document.getElementById("contadorRonda");
         if (!div) {
             div = document.createElement("div");
@@ -123,8 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         div.textContent = `Ronda: ${ronda} | Puntos: ${puntos}`;
     }
-    window.onload = function() {
-        mostrarContadorRonda();
-    }
+
+    actualizarContador();
 
 });

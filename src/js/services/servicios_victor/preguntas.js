@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    //preguintas de prueba, esto viene de servidor (lo he hecho para que cuando venga de servidor es el mismo formato de datos)
     const preguntas = [
         {
             pregunta: "¿Cuál de estas acciones NO es bullying?",
@@ -21,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     let ultimaSeleccion = null;
+    let temporizadorInterval = null;
 
     function mostrarPreguntaAleatoria() {
         const pregunta = preguntas[Math.floor(Math.random() * preguntas.length)];
@@ -42,8 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         });
 
-        const btnExistente = document.getElementById("btnSiguiente");
-        if (btnExistente) btnExistente.remove();
+        iniciarTemporizador(30, document.getElementById("tiempo"), tiempoAgotado);
     }
 
     function seleccionarRespuesta(input) {
@@ -53,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         contenedores.forEach(div => div.classList.remove("selected"));
         input.parentElement.classList.add("selected");
 
+        // Crear botón Siguiente si no existe
         if (!document.getElementById("btnSiguiente")) {
             const btn = document.createElement("button");
             btn.id = "btnSiguiente";
@@ -61,14 +61,37 @@ document.addEventListener("DOMContentLoaded", function() {
             btn.style.marginTop = "20px";
             document.querySelector("main").appendChild(btn);
 
-            btn.onclick = mostrarPopup;
+            btn.onclick = function() {
+                clearInterval(temporizadorInterval);
+                mostrarPopup();
+            };
         }
     }
 
-    function mostrarPopup() {
-        if (!ultimaSeleccion) return;
+    function tiempoAgotado() {
+        mostrarPopup();
+    }
 
-        const correcta = ultimaSeleccion.dataset.correcta === "1";
+    function iniciarTemporizador(duracion, displayElement, callback) {
+        let tiempo = duracion;
+
+        function actualizarContador() {
+            displayElement.textContent = `Tiempo: ${tiempo}`;
+            if (tiempo <= 5) displayElement.style.color = "red";
+
+            if (tiempo < 0) {
+                clearInterval(temporizadorInterval);
+                callback();
+            }
+            tiempo--;
+        }
+
+        actualizarContador();
+        temporizadorInterval = setInterval(actualizarContador, 1000);
+    }
+
+    function mostrarPopup() {
+        const correcta = ultimaSeleccion && ultimaSeleccion.dataset.correcta === "1";
 
         if (correcta) {
             let puntos = parseInt(localStorage.getItem("puntos")) || 0;
@@ -76,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.setItem("puntos", puntos);
         }
 
-        //pop up de resultado
         const popup = document.createElement("div");
         popup.textContent = correcta ? "¡Correcto!" : "¡Incorrecto!";
         popup.style.position = "fixed";
@@ -102,35 +124,29 @@ document.addEventListener("DOMContentLoaded", function() {
         if (btn) btn.remove();
     }
 
-    // Mostrar contador de ronda
-function mostrarContadorRonda() {
-    let ronda = localStorage.getItem("rondaActual");
-    if (!ronda) ronda = 1;
-    let puntos = localStorage.getItem("puntos");
-    if (!puntos) puntos = 0;
-    let div = document.getElementById("contadorRonda");
-    if (!div) {
-        div = document.createElement("div");
-        div.id = "contadorRonda";
-        div.style.position = "fixed";
-        div.style.bottom = "20px";
-        div.style.right = "20px";
-        div.style.background = "#222";
-        div.style.color = "#fff";
-        div.style.padding = "8px 16px";
-        div.style.borderRadius = "8px";
-        div.style.fontWeight = "bold";
-        div.style.zIndex = "9999";
-        document.body.appendChild(div);
+    function mostrarContadorRonda() {
+        let ronda = localStorage.getItem("rondaActual") || 1;
+        let puntos = localStorage.getItem("puntos") || 0;
+        let div = document.getElementById("contadorRonda");
+        if (!div) {
+            div = document.createElement("div");
+            div.id = "contadorRonda";
+            div.style.position = "fixed";
+            div.style.bottom = "20px";
+            div.style.right = "20px";
+            div.style.background = "#222";
+            div.style.color = "#fff";
+            div.style.padding = "8px 16px";
+            div.style.borderRadius = "8px";
+            div.style.fontWeight = "bold";
+            div.style.zIndex = "9999";
+            document.body.appendChild(div);
+        }
+        div.textContent = `Ronda: ${ronda} | Puntos: ${puntos}`;
     }
-    div.textContent = `Ronda: ${ronda} | Puntos: ${puntos}`;
-}
-window.onload = function() {
-    mostrarContadorRonda();
-    mostrarPreguntaAleatoria();
-};
 
-    // Ejecutamos la primera pregunta
-    mostrarPreguntaAleatoria();
-
+    window.onload = function() {
+        mostrarContadorRonda();
+        mostrarPreguntaAleatoria();
+    };
 });
