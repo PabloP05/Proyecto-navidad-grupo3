@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     if(btnIniciarPartida){
         btnIniciarPartida.addEventListener('click',()=>{
-            window.location.href="unir-sala.html";
+            window.location.href="unirSala.html";
         });
     }
 

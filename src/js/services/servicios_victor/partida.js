@@ -51,13 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
         //selecciona el modo
         switch(modo) {
             case "preguntasRespuestas":
-                window.location.href = "/src/html/victor/preguntasRespuestas.html";
+                window.location.href = "/src/html/juego/preguntasRespuestas.html";
                 break;
             case "situaciones":
-                window.location.href = "/src/html/victor/situaciones.html";
+                window.location.href = "/src/html/juego/situaciones.html";
                 break;
             case "fotos":
-                window.location.href = "/src/html/victor/fotos.html";
+                window.location.href = "/src/html/juego/fotos.html";
                 break;
         }
     }
