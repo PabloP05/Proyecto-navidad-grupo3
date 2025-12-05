@@ -3,7 +3,7 @@ export class vistaUnirSala{
     constructor(){
         this.form=document.querySelector("form");
         this.codigo=document.getElementById("codigo");
-        this.btnBuscarSala=document.getElementById("btnUnirse");
+        this.btnBuscarSala=document.getElementById("btnBuscarSala");
         this.buscar();
         this.revisarInputs();
     }

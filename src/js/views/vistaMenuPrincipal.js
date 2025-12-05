@@ -16,14 +16,14 @@ export class vistaMenuPrincipal{
     iniciarPartida(){
         //Evento cuando pulsamos iniciar partida
         this.btnIniciarPartida.addEventListener("click", () => {
-            window.location.href="../../../src/html/vista-juegos/unir-sala.html"; //Para enlazar mediante ruta
+            window.location.href="../../../src/html/juego/unirSala.html"; //Para enlazar mediante ruta
         });
     }
 
     verSalas(){
         //Evento cuando pulsamos sala
         this.btnSala.addEventListener("click", () => {
-            window.location.href="../../../src/html/vista-juegos/salas.html";
+            window.location.href="../../../src/html/juego/salas.html";
         });
     }
 
@@ -38,11 +38,11 @@ export class vistaMenuPrincipal{
             let modoAleatorio=modos[Math.floor(Math.random()*modos.length)];
 
             if(modoAleatorio=="modo1"){
-                window.location.href="../../../src/html/vista-juegos/preguntasRespuestas.html";
+                window.location.href="../../../src/html/juego/preguntasRespuestas.html";
             }else if(modoAleatorio=="modo2"){
-                window.location.href="../../../src/html/vista-juegos/situaciones.html";
+                window.location.href="../../../src/html/juego/situaciones.html";
             }else{
-                window.location.href="../../../src/html/vista-juegos/fotos.html";
+                window.location.href="../../../src/html/juego/fotos.html";
             }
         });
     }
@@ -50,14 +50,14 @@ export class vistaMenuPrincipal{
     ranking(){
         //Evento cuando pulsamos ranking
         this.btnRanking.addEventListener("click", () => {
-            window.location.href="../../../src/html/vista-juegos/ranking.html";
+            window.location.href="../../../src/html/juego/ranking.html";
         });
     }
 
     cerrarSesion(){
         //Evento cuando pulsamos cerrar sesión
         this.btnCerrarSesion.addEventListener("click", () => {
-            window.location.href="../../../src/html/vista-juegos/inicio.html";
+            window.location.href="../../../src/html/juego/inicio.html";
         });
     }
 }
