@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/stylePablo.css">
+        <link rel="stylesheet" href="../../css/juego_mobil.css">
         <title>Registro</title>
     </head>
     <body id="registro">
@@ -11,18 +12,7 @@
             <h1>REGISTRO DE USUARIO</h1>
         </header>
         <main>
-            <form action="registrarUsuario.php" method="POST">
-<<<<<<< HEAD
-                <label>Nombre de Usuario:</label>
-                <input type="text" id="nombreUsuario" placeholder="Nombre de Usuario">
-                <label>Correo:</label>
-                <input type="email" id="email" placeholder="usuario@gmail.com">
-                <label>Nick:</label>
-                <input type="text" id="nick" placeholder="Nick">
-                <button id="btnEnviar">ENVIAR</button>
-            </form>
-        </main>
-=======
+            <form action="menuPrincipal.html">
                 <div class="control">
                     <label>Nombre de Usuario:</label>
                     <input type="text" id="nombreUsuario" placeholder="Nombre de Usuario">
@@ -34,14 +24,21 @@
                     <p></p>
                 </div>
                 <div class="control">
+                    <label>Contraseña:</label>
+                    <input type="password" id="pw">
+                    <p></p>
+                </div>
+                <div class="control">
                     <label>Nick:</label>
                     <input type="text" id="nick" placeholder="Nick">
                     <p></p>
                 </div>
-                <button id="btnEnviar">ENVIAR</button>
+                <button id="btnEnviar" class="botones_juego">ENVIAR</button>
             </form>
         </main>
-        <script src="../../../../../src/js/services/servicios_adrian/scriptRegistro.js"></script>
->>>>>>> Adrian
+        <a href="inicio.html">
+            <img src="../../css/icon/vueltaAtras.png" alt="" id="volverSalas" class="volver_atras">
+        </a>
+        <script type="module" src="../../js/app.js"></script>
     </body>
 </html>

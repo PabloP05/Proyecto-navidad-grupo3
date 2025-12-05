@@ -1,5 +1,6 @@
 /*Importamos una fuente de google*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Stalinist+One&display=swap');
 
 /*Variables predeterminadas para colores y fuentes*/
 :root{
@@ -74,7 +75,7 @@ button:hover{
 
 /*Estilo de los input*/
 input[type="text"], input[type="email"]{
-    width: 50%;                           
+    width: 70%;                           
     height: 5vh;                           
     padding-left: 10px;                     
     border: 2px solid black;              
@@ -166,7 +167,7 @@ input[type="text"]:hover, input[type="email"]:hover{
                 grid-area: iniciar;      
             }
 
-            #btnCrearSala{
+            #btnSala{
                 grid-area: salas;        
             }
 
@@ -191,21 +192,56 @@ input[type="text"]:hover, input[type="email"]:hover{
     form{
         width: 43.9238%;                    
         margin: 1.4641% auto 0 auto;        
-        padding: 50px 75px 50px 75px;       
+        padding: 3.6603% 5.4904%;       
         background-color: transparent;      
         border: 2px solid var(--color-neon);
         border-radius: 20px;                
         box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); 
 
-        label{
-            color: var(--fondo-blanco);    
-            font-weight: bold;             
-            margin-left: 50px;             
+        .control{
+            label{
+                color: var(--fondo-blanco);    
+                font-weight: bold;             
+                margin-left: 8.3333%;             
+            }
+
+            input[type="text"], input[type="email"]{
+                margin: 3.3333% 0px 3.3333% 8.3333%;
+                display: block;                
+            }
         }
 
-        input[type="text"], input[type="email"]{
-            margin: 3.3333% 0px 5% 8.3333%;
-            display: block;                
+        /*JAVA SCRIPT*/
+        .control.error{
+            input[type="text"], input[type="email"]{
+                border-color: red;
+                margin-bottom: 0px;
+            }
+
+            input[type="text"]:hover, input[type="email"]:hover{
+                box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
+                border-color: var(--color-neon);
+            }
+            
+            p{
+                font-size: 0.8rem;
+                font-weight: bold;
+                margin: 0.8333% 0px 0.8333% 0px;
+                padding-left: 11.6279%;
+                color: red;
+            }
+        }
+
+        .control.correcto{
+            input[type="text"], input[type="email"]{
+                border-color: green;
+                box-shadow: inset 0 0 0.5em 0 green, 0 0 0.5em 0 green;
+            }
+
+            input[type="text"]:hover, input[type="email"]:hover{
+                box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
+                border-color: var(--color-neon);
+            }
         }
 
         #btnEnviar{
@@ -304,7 +340,7 @@ input[type="text"]:hover, input[type="email"]:hover{
 
     main{
         background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
-        padding: 3.6603% 0px;          
+        padding: 3.6603% 0px;
 
         h2{
             width: 73.2064%;           
@@ -462,6 +498,7 @@ input[type="text"]:hover, input[type="email"]:hover{
     main{
         background-color: rgba(155, 201, 111, 0.827);   /*Color del fondo del main*/
         padding: 3.6603% 0px;                  /*Espacio interno del main*/
+        position: relative;
 
         h2{
             width: 87.8477%;           
@@ -522,5 +559,67 @@ input[type="text"]:hover, input[type="email"]:hover{
                 }
             }
         }
+
+        #popUp{
+            width: 15%;
+            text-align: center;
+            padding: 10%;
+            background-color: #7a8b3e;
+            border: 2px solid black;
+            border-radius: 10px;
+            color: var(--fondo-blanco);
+            font-size: 2rem;
+            font-weight: bold;
+            position: fixed;
+            top: 35%;
+            left: 33%;
+            z-index: 2;
+            display: none;
+        }
+
+        #btnEnviar{
+            width: 15%;
+            background-color: #00FF08;
+            border-color: black;
+            color: black;
+            box-shadow: none; /*Sombra*/
+            font-weight: bold;
+            position: fixed;
+            left: 55%;
+            top: 85%;
+            display: none;
+        }
+
+        #btnEnviar:hover{
+            box-shadow: inset 0 0 0.5em 0 #00FF08, 0 0 0.5em 0 #00FF08; /*Sombra*/
+        }
+
+        #btnPasar{
+            width: 15%;
+            background-color: black;
+            border-color: black;
+            box-shadow: none; /*Sombra*/
+            color: var(--fondo-blanco);
+            font-weight: bold;
+            position: fixed;
+            left: 30%;
+            top: 85%;
+            display: none;
+        }
+
+        #btnPasar:hover{
+            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; /*Sombra*/
+        }
+    }
+
+    #overlay{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        z-index: 1;
+        display: none;
     }
 }
