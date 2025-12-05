@@ -15,6 +15,8 @@ export class vistaSalas{
     }
 
     mostrarSalas(){
+        this.contenedorSalas.innerHTML = "";                                                        // Borra todo antes de añadir
+
         //Recupera las salas guardadas en localStorage
         let salas=JSON.parse(localStorage.getItem("salas")) || [];
 

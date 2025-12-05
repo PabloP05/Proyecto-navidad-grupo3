@@ -34,6 +34,10 @@ import { modeloSala } from "./model/modeloSala.js";
 import { vistaSala } from "./views/vistaSala.js";
 import { controladorSala } from "./services/servicios_adrian/controladorSala.js";
 
+import { modeloRanking } from "./model/modeloRanking.js";
+import { vistaRanking } from "./views/vistaRanking.js";
+import { controladorRanking } from "./services/servicios_adrian/controladorRanking.js";
+
 
 let page=document.body.id;
 switch(page){
@@ -74,21 +78,27 @@ switch(page){
         const objControladorFotos=new controladorFotos(objModeloFotos,objVistaFotos);
         break;
     case "salasBody":
-        //Inicializando el modo de juego fotos
+        //Inicializando las salas
         const objModeloSalas=new modeloSalas();
         const objVistaSalas=new vistaSalas();
         const objControladorSalas=new controladorSalas(objModeloSalas,objVistaSalas);
         break;
     case "crear_salas":
-        //Inicializando el modo de juego fotos
+        //Inicializando crear salas
         const objModeloCrearSala=new modeloCrearSala();
         const objVistaCrearSala=new vistaCrearSala();
         const objControladorCrearSala=new controladorCrearSala(objModeloCrearSala,objVistaCrearSala);
         break;
     case "sala":
-        //Inicializando el modo de juego fotos
+        //Inicializando ver una sala en concreto
         const objModeloSala=new modeloSala();
         const objVistaSala=new vistaSala();
         const objControladorSala=new controladorSala(objModeloSala,objVistaSala);
+        break;
+    case "ranking":
+        //Inicializando el ranking
+        const objModeloRanking=new modeloRanking();
+        const objVistaRanking=new vistaRanking();
+        const objControladorRanking=new controladorRanking(objModeloRanking,objVistaRanking);
         break;
 }
