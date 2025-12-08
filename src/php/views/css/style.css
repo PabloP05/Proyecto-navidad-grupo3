@@ -210,6 +210,7 @@
             #contenido{
                 height: 30vh;
                 position: relative;
+                overflow: auto;
                 label{
                     display: block;
                 }
@@ -227,20 +228,35 @@
                     }
                 }
                 .opciones{
-                    background-color: var(--verdeSuave) !important;
+                    background-color:var(--verdeSuave)  !important;
                 }
 
                 button{
+
                     border-radius: 10px;
                     border: none;
-                    background-color: var(--botones-de-agregado);
-                    position: absolute;
-                    bottom: 3%;
-                    right: 3%;
+                    background-color: var(--botones-de-agregado) ;
+                     position: sticky;   
+                    top: 85%  ;        
+                    z-index: 9999;
+
                     img{
                         width: 30px;
                     }
+
+                    &#agregarCorrectas{
+                        background-color: green !important;
+                        right: 1%!important;
+                        bottom: 3%!important;
+                        }
+                        &#agregarIncorrectas{
+                            background-color: red!important;
+                            left: 1%!important;
+                            bottom: 3%!important;
+                        }
+                  
                 }
+                
             }
 
             button[type="submit"]{
@@ -262,6 +278,10 @@
             }
         }
 
+        
+        
+        
+        
         .contenido{
             width: 70%; /* para que reste el padding de 5% por lateral */
             height:40vh;
@@ -300,6 +320,7 @@
                 img{
                     width: 50px;
                 }
+                
             }
             .borrar{
                 background-color: #ff3737; 
@@ -555,7 +576,6 @@
 #registro{
     background: var(--gradiente-juego);
     height: 100vh;
-
     header{
         text-align: center;              
         padding-top: 5.4904%;          
@@ -564,153 +584,24 @@
     form{
         width: 43.9238%;                    
         margin: 1.4641% auto 0 auto;        
-        padding: 3.6603% 5.4904%;       
+        padding: 50px 75px 50px 75px;       
         background-color: transparent;      
         border: 2px solid var(--color-neon);
         border-radius: 20px;                
-        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
+        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); 
 
-        .control{
-            padding: 0px 5%;
-            label{
-                color: var(--fondo-blanco);    
-                font-weight: bold;             
-                margin-left: 8.3333%;             
-            }
-
-            input[type="text"], input[type="email"], input[type="password"]{
-                width: 60%;
-                margin: 3.3333% 0px 3.3333% 8.3333%;
-                padding-left: 2%;
-                display: block;                
-            }
+        label{
+            color: var(--fondo-blanco);    
+            font-weight: bold;             
+            margin-left: 50px;             
         }
 
-        /*JAVA SCRIPT*/
-        .control.error{
-            input[type="text"], input[type="email"], input[type="password"]{
-                border-color: red;
-                margin-bottom: 0px;
-            }
-
-            input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover{
-                box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
-                border-color: var(--color-neon);
-            }
-            
-            p{
-                font-size: 0.8rem;
-                font-weight: bold;
-                margin: 0.8333% 0px 0.8333% 0px;
-                padding-left: 11.6279%;
-                color: red;
-            }
-        }
-
-        .control.correcto{
-            input[type="text"], input[type="email"], input[type="password"]{
-                border-color: green;
-                box-shadow: inset 0 0 0.5em 0 green, 0 0 0.5em 0 green;
-            }
-
-            input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover{
-                box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
-                border-color: var(--color-neon);
-            }
+        input[type="text"], input[type="email"]{
+            margin: 3.3333% 0px 5% 8.3333%;
+            display: block;                
         }
 
         #btnEnviar{
-            width: 41.6666%;              
-            margin: 10% auto 0 auto;       
-            font-size: 1.3rem;             
-            padding: 1.6666% 0px;          
-            cursor: pointer;               
-            border: 2px solid black;      
-            border-radius: 15px;           
-            color: var(--fondo-blanco);    
-            background-color: black;      
-            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; 
-            transition: all 0.15s ease;     
-        }
-
-        #btnEnviar:hover{
-            color: black;                 
-            background: var(--fondo-blanco);
-            box-shadow: 0 0 2em 0.5em var(--fondo-blanco);
-            border-color: var(--fondo-blanco);
-        }
-    }
-}
-
-/*--LOGIN--*/
-#login{
-    background: var(--gradiente-juego);
-    height: 100vh;
-
-    header{
-        text-align: center;              
-        padding-top: 5.4904%;          
-    }
-
-    form{
-        width: 43.9238%;                    
-        margin: 1.4641% auto 0 auto;        
-        padding: 3.6603% 5.4904%;       
-        background-color: transparent;      
-        border: 2px solid var(--color-neon);
-        border-radius: 20px;                
-        box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
-
-        .control{
-            padding: 0px 5%;
-            label{
-                color: var(--fondo-blanco);    
-                font-weight: bold;             
-                margin-left: 8.3333%;             
-            }
-
-            input[type="text"], input[type="email"], input[type="password"]{
-                width: 60%;
-                margin: 3.3333% 0px 3.3333% 8.3333%;
-                padding-left: 2%;
-                display: block;                
-            }
-        }
-
-        /*JAVA SCRIPT*/
-        .control.error{
-            input[type="text"], input[type="email"], input[type="password"]{
-                border-color: red;
-                margin-bottom: 0px;
-            }
-
-            input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover{
-                box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
-                border-color: var(--color-neon);
-            }
-            
-            p{
-                font-size: 0.8rem;
-                font-weight: bold;
-                margin: 0.8333% 0px 0.8333% 0px;
-                padding-left: 11.6279%;
-                color: red;
-            }
-        }
-
-        .control.correcto{
-            input[type="text"], input[type="email"], input[type="password"]{
-                border-color: green;
-                box-shadow: inset 0 0 0.5em 0 green, 0 0 0.5em 0 green;
-            }
-
-            input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover{
-                box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
-                border-color: var(--color-neon);
-            }
-        }
-
-        #btnIniciar{
             width: 41.6666%;              
             margin: 10% auto 0 auto;       
             font-size: 1.3rem;             
@@ -971,9 +862,9 @@
     }
 
     main {
+        height: 100vh;
         background-color: rgba(155, 201, 111, 0.827);
         padding: 3.6603% 0px;
-        position: relative;
 
         h2 {
             width: 87.8477%;
@@ -1031,72 +922,6 @@
                 }
             }
         }
-
-        #popUp{
-            width: 15%;
-            text-align: center;
-            padding: 10%;
-            background-color: #7a8b3e;
-            border: 2px solid black;
-            border-radius: 10px;
-            color: var(--fondo-blanco);
-            font-size: 2rem;
-            font-weight: bold;
-            position: fixed;
-            top: 35%;
-            left: 33%;
-            z-index: 2;
-            display: none;
-        }
-
-        #btnEnviar{
-            width: 15%;
-            padding: 1%;
-            background-color: #00FF08;
-            border-color: black;
-            border-radius: 10px;
-            color: black;
-            box-shadow: none; /*Sombra*/
-            font-weight: bold;
-            position: fixed;
-            left: 55%;
-            top: 85%;
-            display: none;
-        }
-
-        #btnEnviar:hover{
-            box-shadow: inset 0 0 0.5em 0 #00FF08, 0 0 0.5em 0 #00FF08; /*Sombra*/
-        }
-
-        #btnPasar{
-            width: 15%;
-            padding: 1%;
-            background-color: black;
-            border-color: black;
-            border-radius: 10px;
-            box-shadow: none; /*Sombra*/
-            color: var(--fondo-blanco);
-            font-weight: bold;
-            position: fixed;
-            left: 30%;
-            top: 85%;
-            display: none;
-        }
-
-        #btnPasar:hover{
-            box-shadow: inset 0 0 0.5em 0 black, 0 0 0.5em 0 black; /*Sombra*/
-        }
-    }
-
-    #overlay{
-        width: 100%;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: transparent;
-        z-index: 1;
-        display: none;
     }
 }
 
@@ -1104,355 +929,247 @@
 /* CSS de las salas de las partidas *********************************** */
 
 .salas{
-    background: var(--gradiente-juego);
-    height: 100vh;
-    color: white;
-
-    #titulo{
-        text-align: center;
-        padding-top: 2.6vh;
-        font-size: 1.75rem; /*28px*/
-        font-weight: 600;
-        color: var(--fondo-oscuro);
-    }
-
-    /* 700px → 51.2% */
-    /* 200px min-height → 26vh */
-    #contenido{
-        width: 51.2%;
-        min-height: 26vh;
-        margin: 5.2vh auto 0 auto;
-        background-color: rgba(8, 37, 28, 0.75);
-        color: var(--clr-blanco);
-        border-radius: 0.9rem; /* equivalente a 15px aprox */
-        padding: 2.6vh 3%;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.35);
-    }
-
-    /* 10px → 1.3vh */
-    #subtitulo{
-        text-align: center;
-        padding-top: 1.3vh;
-        font-size: 1.375rem; /* 22px */
-        font-weight: 500;
-    }
-
-    .formulario{
-        width: 80%;
-        margin: 0 auto;
-        margin-top: 3.25vh;
-        text-align: center;
-        
-        #controlUnirSala{
-            margin: 0 auto;
-            input[type="text"]{
-                display: inline-block;
-            }
-        }
-        
-        /*JAVA SCRIPT*/
-        .control.error{
-            input[type="text"], input[type="email"]{
-                border-color: red;
-                margin-bottom: 0px;
-            }
-
-            input[type="text"]:hover, input[type="email"]:hover{
-                box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
-                border-color: var(--color-neon);
-            }
-            
-            p{
-                font-size: 0.8rem;
-                font-weight: bold;
-                margin: 0.8333% 0px 0.8333% 0px;
-                padding-left: 11.6279%;
-                color: red;
-            }
-        }
-
-        .control.correcto{
-            input[type="text"], input[type="email"]{
-                border-color: green;
-                box-shadow: inset 0 0 0.5em 0 green, 0 0 0.5em 0 green;
-            }
-
-            input[type="text"]:hover, input[type="email"]:hover{
-                box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
-                border-color: var(--color-neon);
-            }
-        }
-    }
-
-    .formulario input{
-        border-radius: 0.3rem;
-        margin-left: 1%;
-        padding: 0.7vh;
-        border: none;
-    }
-
-    button{
-        display: block;
-        margin: auto;
-        margin-top: 2.6vh;
-        padding: 1.3vh 3%;
-        border: none;
-        border-radius: 0.3rem;
-        background-color: var(--clr-neon2);
-        color: var(--fondo-oscuro);
-        font-size: 1rem; /* 16px */
-        font-weight: 600;
-        cursor: pointer;
-    }
-
-    /* SALAS */
-
-    #salastitulo{
-        text-align: center;
-        font-size: 1.5rem; /* 24px aprox */
-        font-weight: 600;
-        margin-top: 2.6vh;
-        color: var(--clr-blanco);
-    }
-
-    #salas{
-        display: flex;
-        flex-wrap: wrap;
-        width: 51.2%;
-        justify-content: center;
-        align-items: center;
-        gap: 2%;
-        margin: 4vh auto;
-        flex-basis: auto; 
-    }
-
-    /* 150px → 11% */
-    #salas .sala{
-        background-color: var(--gris-transparente);
-        color: var(--clr-blanco);
-        padding: 2vh 3%;
-        border-radius: 0.6rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        text-align: center;
-        width: 11%;
-        cursor: pointer;
-    }
-
-    #salas a{
-        text-decoration: none;
-        color: inherit;
-    }
-
-    #cajaCodigo{
-        text-align: center;
-        margin-top: 5%;
-        
-        #codigo{
-            text-align: center;
-        }
-    }
-
-    .ranking-grid{
-        width: 60%;
-        margin: 40px auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr; /* 3 columnas */
-        grid-template-rows: 1fr 1fr 1fr 1fr;   /* 4 filas contando la del título */
-        gap: 10px;
-        text-align: center;
-        padding: 20px;
-        border: 2px solid var(--color-neon);
-        border-radius: 20px;
-        box-shadow: inset 0 0 0.5em var(--color-neon), 0 0 0.5em var(--color-neon);
-    }
-
-    .ranking-grid{
-        .caja{
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.4);
-            color: var(--fondo-blanco);
-            border-radius: 10px;
-            font-weight: bold;
-        }
-    }
-
-    .ranking-grid .titulo{
-        background: var(--color-neon);
-        color: black;
-    }
-
-    /* 500px → 36.6% */
-    #CreaSala{
-        text-align: center;
-        margin-top: 4vh;
-        font-size: 1.125rem; /* 18px */
-        font-weight: 500;
-        width: 36.6%;
-    }
-
-    #CreaSala :hover{
-        background-color: var(--clr-neon2);
-        color: var(--fondo-oscuro);
-        transition: background-color 0.3s, color 0.3s;
-    }
-    }
-
-    #crear_salas{
-        background:var(--gradiente-juego);
+        background: var(--gradiente-juego);
         height: 100vh;
-        color: #fff;
-        
-        header{
-            width: 100%;
-            height: 10.42vh;
-            background-color: var(--verde-neon);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-        }
+        color: white;
 
-    /* 20px padding → 2.6vh */
     #titulo{
-        text-align: center;
-        padding-top: 2.6vh;
-        font-size: 1.75rem; /* 28px */
-        font-weight: 600;
-        color: var(--fondo-oscuro);
+    text-align: center;
+    padding-top: 2.6vh;
+    font-size: 1.75rem; /* 28px */
+    font-weight: 600;
+    color: var(--fondo-oscuro);
+}
+
+/* 700px → 51.2% */
+/* 200px min-height → 26vh */
+#contenido{
+    width: 51.2%;
+    min-height: 26vh;
+    margin: 5.2vh auto 0 auto;
+    background-color: rgba(8, 37, 28, 0.75);
+    color: var(--clr-blanco);
+    border-radius: 0.9rem; /* equivalente a 15px aprox */
+    padding: 2.6vh 3%;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+}
+
+/* 10px → 1.3vh */
+#subtitulo{
+    text-align: center;
+    padding-top: 1.3vh;
+    font-size: 1.375rem; /* 22px */
+    font-weight: 500;
+}
+
+.formulario{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3.25vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;    
+}
+
+.formulario input{
+    border-radius: 0.3rem;
+    margin-left: 1%;
+    padding: 0.7vh;
+    border: none;
+}
+
+button{
+    display: block;
+    margin: auto;
+    margin-top: 2.6vh;
+    padding: 1.3vh 3%;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: var(--clr-neon2);
+    color: var(--fondo-oscuro);
+    font-size: 1rem; /* 16px */
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* SALAS */
+
+#salastitulo{
+    text-align: center;
+    font-size: 1.5rem; /* 24px aprox */
+    font-weight: 600;
+    margin-top: 2.6vh;
+    color: var(--clr-blanco);
+}
+
+#salas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 51.2%;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    margin: 4vh auto;
+    flex-basis: auto; 
+}
+
+/* 150px → 11% */
+#salas .sala{
+    background-color: var(--gris-transparente);
+    color: var(--clr-blanco);
+    padding: 2vh 3%;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    text-align: center;
+    width: 11%;
+    cursor: pointer;
+}
+
+#salas a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 500px → 36.6% */
+#CreaSala{
+    text-align: center;
+    margin-top: 4vh;
+    font-size: 1.125rem; /* 18px */
+    font-weight: 500;
+    width: 36.6%;
+}
+
+#CreaSala :hover{
+    background-color: var(--clr-neon2);
+    color: var(--fondo-oscuro);
+    transition: background-color 0.3s, color 0.3s;
+}
+}
+
+#crear_salas{
+    background:var(--gradiente-juego);
+    height: 100vh;
+    color: #fff;
+    
+    header{
+        width: 100%;
+        height: 10.42vh;
+        background-color: var(--verde-neon);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
 
-    /* 700px → 51.2% */
-    /* 200px min-height → 26vh */
-    #contenido{
-        width: 51.2%;
-        min-height: 26vh;
-        margin: 5.2vh auto 0 auto;
-        background-color: rgba(8, 37, 28, 0.75);
-        color: var(--clr-blanco);
-        border-radius: 0.9rem; /* equivalente a 15px aprox */
-        padding: 2.6vh 3%;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.35);
-    }
+/* 20px padding → 2.6vh */
+#titulo{
+    text-align: center;
+    padding-top: 2.6vh;
+    font-size: 1.75rem; /* 28px */
+    font-weight: 600;
+    color: var(--fondo-oscuro);
+}
 
-    /* 10px → 1.3vh */
-    #subtitulo{
-        text-align: center;
-        padding-top: 1.3vh;
-        font-size: 1.375rem; /* 22px */
-        font-weight: 500;
-    }
+/* 700px → 51.2% */
+/* 200px min-height → 26vh */
+#contenido{
+    width: 51.2%;
+    min-height: 26vh;
+    margin: 5.2vh auto 0 auto;
+    background-color: rgba(8, 37, 28, 0.75);
+    color: var(--clr-blanco);
+    border-radius: 0.9rem; /* equivalente a 15px aprox */
+    padding: 2.6vh 3%;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+}
 
-    .formulario{
-        width: 80%;
-        margin: 0 auto;
-        margin-top: 3.25vh;
+/* 10px → 1.3vh */
+#subtitulo{
+    text-align: center;
+    padding-top: 1.3vh;
+    font-size: 1.375rem; /* 22px */
+    font-weight: 500;
+}
 
-        .control{
-            text-align: center;
-        }
+.formulario{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3.25vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;    
+}
 
-        /*JAVA SCRIPT*/
-        .control.error{
-            input[type="text"]{
-                border-color: red;
-                margin-bottom: 0px;
-            }
+.formulario input{
+    border-radius: 0.3rem;
+    margin-left: 1%;
+    padding: 0.7vh;
+    border: none;
+}
 
-            input[type="text"]:hover{
-                box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
-                border-color: var(--color-neon);
-            }
-            
-            p{
-                font-size: 0.8rem;
-                font-weight: bold;
-                margin: 0.8333% 0px 0.8333% 0px;
-                padding-left: 11.6279%;
-                color: red;
-            }
-        }
+button{
+    display: block;
+    margin: auto;
+    margin-top: 2.6vh;
+    padding: 1.3vh 3%;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: var(--clr-neon2);
+    color: var(--fondo-oscuro);
+    font-size: 1rem; /* 16px */
+    font-weight: 600;
+    cursor: pointer;
+}
 
-        .control.correcto{
-            input[type="text"]{
-                border-color: green;
-                box-shadow: inset 0 0 0.5em 0 green, 0 0 0.5em 0 green;
-            }
+/* SALAS */
 
-            input[type="text"]:hover{
-                box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon);
-                border-color: var(--color-neon);
-            }
-        }
-    }
+#salastitulo{
+    text-align: center;
+    font-size: 1.5rem; /* 24px aprox */
+    font-weight: 600;
+    margin-top: 2.6vh;
+    color: var(--clr-blanco);
+}
 
-    .formulario input{
-        border-radius: 0.3rem;
-        margin-left: 1%;
-        padding: 0.7vh;
-        border: none;
-    }
+#salas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 51.2%;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    margin: 4vh auto;
+    flex-basis: auto; 
+}
 
-    button{
-        display: block;
-        margin: auto;
-        margin-top: 2.6vh;
-        padding: 1.3vh 3%;
-        border: none;
-        border-radius: 0.3rem;
-        background-color: var(--clr-neon2);
-        color: var(--fondo-oscuro);
-        font-size: 1rem; /* 16px */
-        font-weight: 600;
-        cursor: pointer;
-    }
+/* 150px → 11% */
+#salas .sala{
+    background-color: var(--gris-transparente);
+    color: var(--clr-blanco);
+    padding: 2vh 3%;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    text-align: center;
+    width: 11%;
+    cursor: pointer;
+}
 
-    /* SALAS */
+#salas a{
+    text-decoration: none;
+    color: inherit;
+}
 
-    #salastitulo{
-        text-align: center;
-        font-size: 1.5rem; /* 24px aprox */
-        font-weight: 600;
-        margin-top: 2.6vh;
-        color: var(--clr-blanco);
-    }
+/* 500px → 36.6% */
+#CreaSala{
+    text-align: center;
+    margin-top: 4vh;
+    font-size: 1.125rem; /* 18px */
+    font-weight: 500;
+    width: 36.6%;
+}
 
-    #salas{
-        display: flex;
-        flex-wrap: wrap;
-        width: 51.2%;
-        justify-content: center;
-        align-items: center;
-        gap: 2%;
-        margin: 4vh auto;
-        flex-basis: auto; 
-    }
-
-    /* 150px → 11% */
-    #salas .sala{
-        background-color: var(--gris-transparente);
-        color: var(--clr-blanco);
-        padding: 2vh 3%;
-        border-radius: 0.6rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        text-align: center;
-        width: 11%;
-        cursor: pointer;
-    }
-
-    #salas a{
-        text-decoration: none;
-        color: inherit;
-    }
-
-    /* 500px → 36.6% */
-    #CreaSala{
-        text-align: center;
-        margin-top: 4vh;
-        font-size: 1.125rem; /* 18px */
-        font-weight: 500;
-        width: 36.6%;
-    }
-
-    #CreaSala :hover{
-        background-color: var(--clr-neon2);
-        color: var(--fondo-oscuro);
-        transition: background-color 0.3s, color 0.3s;
-    }
+#CreaSala :hover{
+    background-color: var(--clr-neon2);
+    color: var(--fondo-oscuro);
+    transition: background-color 0.3s, color 0.3s;
+}
 }

@@ -3,7 +3,6 @@ export class vistaUnirSala{
     constructor(){
         this.form=document.querySelector("form");
         this.codigo=document.getElementById("codigo");
-        this.btnBuscarSala=document.getElementById("btnUnirse");
         this.buscar();
         this.revisarInputs();
     }
@@ -75,12 +74,14 @@ export class vistaUnirSala{
         y la función Math.floor redondea el resultado a un número entero, (0.14=0)*/
         let modoAleatorio=modos[Math.floor(Math.random()*modos.length)];
 
+        console.log(modoAleatorio);
+
         if(modoAleatorio=="modo1"){
-            window.location.href="../../../src/html/vista-juegos/preguntasRespuestas.html";
+            this.form.action="preguntasRespuestas.html";
         }else if(modoAleatorio=="modo2"){
-            window.location.href="../../../src/html/vista-juegos/situaciones.html";
+            this.form.action="situaciones.html";
         }else{
-            window.location.href="../../../src/html/vista-juegos/fotos.html";
+            this.form.action="fotos.html";
         }
     }
 }

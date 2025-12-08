@@ -12,14 +12,14 @@ export class vistaInicio{
     iniciarSesion(){
         //Evento cuando pulsamos iniciar sesión
         this.btnIniciarSesión.addEventListener("click", () => {
-            window.location.href="../../../src/html/vista-juegos/login.html"; //Para enlazar mediante ruta
+            window.location.href="../../../src/html/juego/login.html"; //Para enlazar mediante ruta
         });
     }
 
     registrarse(){
         //Evento cuando pulsamos registrarse
         this.btnRegistrarse.addEventListener("click", () => {
-            window.location.href="../../../src/html/vista-juegos/registro.html";
+            window.location.href="../../../src/html/juego/registro.html";
         });
     }
 
@@ -34,11 +34,11 @@ export class vistaInicio{
             let modoAleatorio=modos[Math.floor(Math.random()*modos.length)];
 
             if(modoAleatorio=="modo1"){
-                window.location.href="../../../src/html/vista-juegos/preguntasRespuestas.html";
+                window.location.href="../../../src/html/juego/preguntasRespuestas.html";
             }else if(modoAleatorio=="modo2"){
-                window.location.href="../../../src/html/vista-juegos/situaciones.html";
+                window.location.href="../../../src/html/juego/situaciones.html";
             }else{
-                window.location.href="../../../src/html/vista-juegos/fotos.html";
+                window.location.href="../../../src/html/juego/fotos.html";
             }
         });
     }

@@ -25,7 +25,7 @@ export class vistaSala{
 
             localStorage.setItem("salas", JSON.stringify(salasModificada));
 
-            window.location.href="../../../src/html/vista-juegos/salas.html"; //Para enlazar mediante ruta
+            window.location.href="../../../src/html/juego/salas.html"; //Para enlazar mediante ruta
         });
     }
 }

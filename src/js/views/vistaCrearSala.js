@@ -23,7 +23,6 @@ export class vistaCrearSala{
     guardarSala(nombre){
         let nombreValor=nombre.value.trim();
         let codigo=this.generarCodigo();
-        console.log(codigo);
         // Recuperar salas existentes
         let salas=JSON.parse(localStorage.getItem("salas")) || [];
         salas.push({nombre: nombreValor, code: codigo});
