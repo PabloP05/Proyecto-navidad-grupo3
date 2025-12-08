@@ -36,7 +36,7 @@ export class vistaFotos{
     }
 
     finDelJuego(){
-        alert("¡Juego terminado! Has completado 10 rondas y tienes "+this.puntos+" puntos.");
+        alert("¡Juego terminado! Has completado "+(this.ronda+1)+" rondas y tienes "+this.puntos+" puntos.");
     }
 
     //Genera las fotos en HTML y activa selección

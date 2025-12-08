@@ -35,7 +35,7 @@ export class vistaSituaciones{
     }
 
     finDelJuego(){
-        alert("¡Juego terminado! Has completado "+this.ronda+" rondas y tienes "+this.puntos+" puntos.");
+        alert("¡Juego terminado! Has completado "+(this.ronda+1)+" rondas y tienes "+this.puntos+" puntos.");
     }
 
     //Genera las preguntas en HTML y activa selección
