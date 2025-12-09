@@ -37,11 +37,6 @@
                         <input type="text" name="respuestas['.$respuesta['idRespuestaSituacion'].']" 
                                value="'.$respuesta['respuestaSituacion'].'">       
                        </div>';
-                        /* echo '<div class="elementos">
-                        <input type="text" name="respuestas['.$respuesta['idRespuestaSituacion'].']" 
-                               value="'.$respuesta['respuestaSituacion'].'">
-                        <a href="./indexAdmin.php?c=C_modificarSituacion&m=borrarRespuesta&id='.$situacion['idSituacion'].'&idRespuesta='.$respuesta['idRespuestaSituacion'].'">Eliminar</a>
-                        </div>'; */
                     }
                 }
              else {
@@ -49,7 +44,7 @@
             }
             ?>
 
-            <input type="submit" value="Modificar datos">
+            <input type="submit" onclick="alert('Modificado')" value="Modificar datos">
         </form>
     </main>
     <footer>

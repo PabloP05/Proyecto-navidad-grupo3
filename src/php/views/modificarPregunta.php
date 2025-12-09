@@ -51,7 +51,7 @@
             }
             ?>
 
-            <input type="submit" value="Modificar datos">
+            <input type="submit" onclick="alert('Modificado')" value="Modificar datos">
         </form>
     </main>
     <footer>
