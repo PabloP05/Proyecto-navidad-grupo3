@@ -8,7 +8,7 @@ export class controladorPreguntasRespuestas{
 
     async inicializarDatos(){
         //Trae las preguntas desde PHP/JSON
-        const preguntas=await this.modelo.obtenerPreguntasJSON();
+        const preguntas=await this.modelo.obtenerPreguntas();
 
         //Pasa las preguntas a la vista para renderizar
         this.vista.mostrarPreguntas(preguntas);
