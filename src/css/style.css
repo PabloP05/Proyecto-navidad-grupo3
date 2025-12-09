@@ -930,6 +930,7 @@
 /*--SITUACIONES--*/
 #situaciones{
     background: var(--gradiente-juego);
+    height: 100vh;
     header{
         background-color: black;      
         color: var(--fondo-blanco);    
@@ -962,6 +963,7 @@
     }
 
     main{
+        height: 100vh;
         background-color: rgba(155, 201, 111);   /*Color del fondo del main*/
         padding: 3.6603% 0px;                  /*Espacio interno del main*/
 
@@ -1003,7 +1005,6 @@
                 }
 
                 p{
-                    width: 80%;
                     display: inline-block; 
                     margin-left: 2.8571%;  
                 }
