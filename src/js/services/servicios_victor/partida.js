@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Botón unir sala
     if (btn) {
-        btn.addEventListener("click", function(event) {
+        btn.addEventListener("click", function (event) {
             event.preventDefault(); // no hace el f5
 
             const codigo = document.getElementById("codigo").value.trim();
@@ -49,15 +49,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const modo = modos[Math.floor(Math.random() * modos.length)];
 
         //selecciona el modo
-        switch(modo) {
+        switch (modo) {
             case "preguntasRespuestas":
-                window.location.href = "/src/html/juego/preguntasRespuestas.html";
+                window.location.href = "preguntasRespuestas.html";
                 break;
             case "situaciones":
-                window.location.href = "/src/html/juego/situaciones.html";
+                window.location.href = "situaciones.html";
                 break;
             case "fotos":
-                window.location.href = "/src/html/juego/fotos.html";
+                window.location.href = "fotos.html";
                 break;
         }
     }
