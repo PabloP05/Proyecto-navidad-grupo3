@@ -12,14 +12,14 @@ export class vistaInicio{
     iniciarSesion(){
         //Evento cuando pulsamos iniciar sesión
         this.btnIniciarSesión.addEventListener("click", () => {
-            window.location.href="../../../src/html/vista-juegos/login.html"; //Para enlazar mediante ruta
+            window.location.href="../../../src/html/juego/login.html"; //Para enlazar mediante ruta
         });
     }
 
     registrarse(){
         //Evento cuando pulsamos registrarse
         this.btnRegistrarse.addEventListener("click", () => {
-            window.location.href="../../../src/html/vista-juegos/registro.html";
+            window.location.href="../../../src/html/juego/registro.html";
         });
     }
 

@@ -1,12 +1,12 @@
-export class vistaFotos{
+export class vistaPreguntasRespuestas{
 
     constructor(){
         //Si existe una ronda guardada, la usamos, si no, empezamos en 0
         this.ronda=parseInt(localStorage.getItem("rondaActual")) || 0;
         this.puntos=parseInt(localStorage.getItem("puntosActuales")) || 0;
 
-        this.cajaPreguntas=document.getElementById("opcionesFoto");
-        this.clickDiv=document.querySelectorAll(".contenedor-foto");
+        this.cajaPreguntas=document.getElementById("opcionesPregunta");
+        this.clickDiv=document.querySelectorAll(".contenedor-pregunta");
         this.tituloPregunta=document.getElementById("tituloPregunta");
         this.btnEnviar=document.getElementById("btnEnviar");
         this.btnPasar=document.getElementById("btnPasar");
@@ -18,7 +18,6 @@ export class vistaFotos{
     }
 
     iniciarJuego(){
-        this.seleccionarRespuesta();
         this.contadorTiempo();
         this.mostrarSaltar();
         this.botonEnviar();
@@ -39,15 +38,17 @@ export class vistaFotos{
         alert("¡Juego terminado! Has completado "+(this.ronda+1)+" rondas y tienes "+this.puntos+" puntos.");
     }
 
-    //Genera las fotos en HTML y activa selección
-    mostrarFotos(fotos){
-        this.preguntaRandom=fotos[Math.floor(Math.random()*fotos.length)];
+    //Genera las preguntas en HTML y activa selección
+    mostrarPreguntas(preguntas){
+        this.cajaPreguntas.innerHTML="";
+
+        this.preguntaRandom=preguntas[Math.floor(Math.random()*preguntas.length)];
 
         this.tituloPregunta.innerText=this.preguntaRandom.pregunta;
 
-        for(let i=0;i<2;i++){
+        for(let i=0;i<3;i++){
             let divPregunta=document.createElement("div");
-            divPregunta.classList.add("contenedor-foto");
+            divPregunta.classList.add("contenedor-pregunta");
             let inputRespuesta=document.createElement("input");
             inputRespuesta.type="radio";
             inputRespuesta.name="pregunta";
@@ -60,7 +61,7 @@ export class vistaFotos{
 
             this.cajaPreguntas.appendChild(divPregunta);
         }
-        this.clickDiv=document.querySelectorAll(".contenedor-foto");
+        this.clickDiv=document.querySelectorAll(".contenedor-pregunta");
         this.seleccionarRespuesta();
     }
 
@@ -101,8 +102,10 @@ export class vistaFotos{
                     let i=0;
                     if(respuestaSeleccionada.classList.value=="respuesta1"){
                         i=0;
-                    }else{
+                    }else if(respuestaSeleccionada.classList.value=="respuesta2"){
                         i=1;
+                    }else{
+                        i=2;
                     }
 
                     if(this.preguntaRandom.respuestas[i].correcta==true){
@@ -156,7 +159,7 @@ export class vistaFotos{
 
     mostrarEnviar(){
         //Función para mostrar el botón
-        btnEnviar.style.display="block";
+        this.btnEnviar.style.display="block";
     }
 
     mostrarSaltar(){
@@ -176,8 +179,10 @@ export class vistaFotos{
             let i=0;
             if(respuestaSeleccionada.classList.value=="respuesta1"){
                 i=0;
-            }else{
+            }else if(respuestaSeleccionada.classList.value=="respuesta2"){
                 i=1;
+            }else{
+                i=2;
             }
 
             let respuesta="incorrecta";

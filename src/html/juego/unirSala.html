@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/juego_mobil.css">
 </head>
-<body class="salas">
+<body class="salas" id="unirSala">
     <header id="cabecera">
         <h1 id="titulo">
             STOP BULLYING CHALLENGE
@@ -16,15 +16,17 @@
     <main>
         <div id="contenido">
             <h2 id="subtitulo">Únete a una sala</h2>
-            <form class="formulario" action="">
-                <label for="codigo">Codigo:</label>
-                <input type="text" id="codigo" placeholder="Codigo sala">
+            <form class="formulario">
+                <div class="form">
+                    <label for="codigo">Codigo:</label>
+                    <input type="text" id="codigo" placeholder="Codigo sala" maxlength="6">
+                    <p></p>
+                </div>
+                <button>Unirse</button>
             </form>
-            <button type="button" id="btnBuscarSala">Unirse</button>
         </div>
     </main>
     <a href="menuPrincipal.html"><img src="../../css/icon/vueltaAtras.png" alt="" id="volverSalas" class="volver_atras"></a>
-    <script type="module" src="../../js/services/servicios_victor/partida.js"></script>
     <script type="module" src="../../js/app.js"></script>
 </body>
 </html>

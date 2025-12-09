@@ -1,6 +1,9 @@
 export class vistaMenuPrincipal{
 
     constructor(){
+        localStorage.removeItem("rondaActual");
+        localStorage.removeItem("puntosActuales");
+
         this.btnIniciarPartida=document.getElementById("btnIniciarPartida");
         this.btnSala=document.getElementById("btnCrearSala");
         this.btnPartidaPublica=document.getElementById("btnPartidaPublica");

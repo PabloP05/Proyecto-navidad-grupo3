@@ -38,6 +38,14 @@ import { modeloRanking } from "./model/modeloRanking.js";
 import { vistaRanking } from "./views/vistaRanking.js";
 import { controladorRanking } from "./services/servicios_adrian/controladorRanking.js";
 
+import { modeloPreguntasRespuestas } from "./model/modeloPreguntasRespuestas.js";
+import { vistaPreguntasRespuestas } from "./views/vistaPreguntasRespuestas.js";
+import { controladorPreguntasRespuestas } from "./services/servicios_adrian/controladorPreguntasRespuestas.js";
+
+import { modeloSituaciones } from "./model/modeloSituaciones.js";
+import { vistaSituaciones } from "./views/vistaSituaciones.js";
+import { controladorSituaciones } from "./services/servicios_adrian/controladorSituaciones.js";
+
 
 let page=document.body.id;
 switch(page){
@@ -100,5 +108,17 @@ switch(page){
         const objModeloRanking=new modeloRanking();
         const objVistaRanking=new vistaRanking();
         const objControladorRanking=new controladorRanking(objModeloRanking,objVistaRanking);
+        break;
+    case "preguntasRespuestas":
+        //Inicializando el modo de juego preguntasRespuestas
+        const objModeloPreguntasRespuestas=new modeloPreguntasRespuestas();
+        const objVistaPreguntasRespuestas=new vistaPreguntasRespuestas();
+        const objControladorPreguntasRespuestas=new controladorPreguntasRespuestas(objModeloPreguntasRespuestas,objVistaPreguntasRespuestas);
+        break;
+    case "situaciones":
+        //Inicializando el modo de juego situaciones
+        const objModeloSituaciones=new modeloSituaciones();
+        const objVistaSituaciones=new vistaSituaciones();
+        const objControladorSituaciones=new controladorSituaciones(objModeloSituaciones,objVistaSituaciones);
         break;
 }

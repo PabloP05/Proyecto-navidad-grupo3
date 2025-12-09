@@ -10,7 +10,7 @@ export class vistaSalas{
     crearSalas(){
         //Evento cuando pulsamos iniciar partida
         this.btnCrearSala.addEventListener("click", () => {
-            window.location.href="../../../src/html/vista-juegos/crear-sala.html"; //Para enlazar mediante ruta
+            window.location.href="../../../src/html/juego/crearSala.html"; //Para enlazar mediante ruta
         });
     }
 

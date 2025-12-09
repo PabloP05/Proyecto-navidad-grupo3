@@ -1,4 +1,4 @@
-export class controladorFotos{
+export class controladorPreguntasRespuestas{
 
     constructor(modelo,vista){
         this.modelo=modelo;
@@ -8,9 +8,9 @@ export class controladorFotos{
 
     async inicializarDatos(){
         //Trae las preguntas desde PHP/JSON
-        const fotos=await this.modelo.obtenerFotosJSON();
+        const preguntas=await this.modelo.obtenerPreguntas();
 
         //Pasa las preguntas a la vista para renderizar
-        this.vista.mostrarFotos(fotos);
+        this.vista.mostrarPreguntas(preguntas);
     }
 }
