@@ -930,7 +930,6 @@
 /*--SITUACIONES--*/
 #situaciones{
     background: var(--gradiente-juego);
-    height: 100vh;
     header{
         background-color: black;      
         color: var(--fondo-blanco);    
@@ -963,7 +962,6 @@
     }
 
     main{
-        height: 100vh;
         background-color: rgba(155, 201, 111);   /*Color del fondo del main*/
         padding: 3.6603% 0px;                  /*Espacio interno del main*/
 
@@ -1005,6 +1003,7 @@
                 }
 
                 p{
+                    width: 80%;
                     display: inline-block; 
                     margin-left: 2.8571%;  
                 }
@@ -1456,17 +1455,17 @@
     }
     }
 
-    #crear_salas{
-        background:var(--gradiente-juego);
-        height: 100vh;
-        color: #fff;
-        
-        header{
-            width: 100%;
-            height: 10.42vh;
-            background-color: var(--verde-neon);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-        }
+#crear_salas{
+    background:var(--gradiente-juego);
+    height: 100vh;
+    color: #fff;
+    
+    header{
+        width: 100%;
+        height: 10.42vh;
+        background-color: var(--verde-neon);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
 
     /* 20px padding → 2.6vh */
     #titulo{
