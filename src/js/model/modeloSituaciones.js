@@ -1,18 +1,16 @@
 export class modeloSituaciones{
-    
-    constructor() {
-        //this.urlPreguntas="https://22.daw.esvirgua.com/cargadorCliente/php/index.php?c=C_sacarPreguntasRespuestas&m=obtenerPreguntasRespuestas";
-    }
+
 
     //Función para traer las preguntas desde PHP
-    /*async obtenerPreguntas(){
-        const resultadoPreguntas=await fetch(this.urlPreguntas);
+     async  obtenerPreguntas(){
+        const resultadoPreguntas=await fetch('https://22.daw.esvirgua.com/cargadorCliente/php/index.php?c=C_sacarPreguntasRespuestas&m=obtenerPreguntasRespuestas');
         console.log(resultadoPreguntas);
         const datosPreguntas=await resultadoPreguntas.json();
 
-        return datosPreguntas;
-    }*/
-
+        console.log(datosPreguntas)
+       /*  return datosPreguntas; */
+    }
+   
     async obtenerSituacionesJSON(){
         return [
             {
@@ -80,5 +78,12 @@ export class modeloSituaciones{
                 ]
             }
         ];
-    }
+    } 
 }
+
+
+
+
+
+
+
