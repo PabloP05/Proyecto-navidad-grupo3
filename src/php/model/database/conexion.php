@@ -1,5 +1,5 @@
 <?php
-//require_once __DIR__.'/../../config/configDB.php';
+require_once __DIR__.'/../../config/configDB.php';
 
 class Conectar {
     public static $conexion;
@@ -8,7 +8,7 @@ class Conectar {
         try {
             self::$conexion = new PDO(
                 'mysql:host='.SERVIDOR.';dbname='.BBDD,
-                daw_userbd22,
+                USUARIO,
                 CLAVE,
                 array(
                     PDO::ATTR_PERSISTENT => true,
