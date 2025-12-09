@@ -9,9 +9,10 @@ class M_sacarSituacionesRespuestas extends Conectar {
         $sql = "
             SELECT s.idSituacion,
                    s.situacion,
-                   r.respuestaSituacion
-            FROM situaciones s
-            INNER JOIN respuestasSituaciones r 
+                   r.respuestaSituacion,
+                   r.correcta
+            FROM situaciones as s
+            INNER JOIN respuestasSituaciones as r 
             ON r.idSituacion = s.idSituacion
             ORDER BY s.idSituacion
         ";
@@ -24,16 +25,20 @@ class M_sacarSituacionesRespuestas extends Conectar {
         $situaciones = [];
         foreach ($rows as $row) {
             $id = $row['idSituacion'];
-
+            //verifico que el id de la situacion no exista (eso es que no está en el array )
             if (!isset($situaciones[$id])) {
+                //lo genero como parte del array 
                 $situaciones[$id] = [
                     'idSituacion' => $id,
-                    'situacion'   => $row['situacion'],
-                    'respuestas'  => []
+                    'situacion' => $row['situacion'],
+                    'respuestas' => []
                 ];
             }
-
-            $situaciones[$id]['respuestas'][] = $row['respuestaSituacion'];
+            //cargo sus respuestas con el estado (correcto o no)
+            $situaciones[$id]['respuestas'][] = [
+                'respuestaSituacion' => $row['respuestaSituacion'],
+                'correcta' => (bool)$row['correcta'] // hago un casteo a tipo boleano para forzar el dato 
+            ];
         }
 
         // Reindexar para que sea un array numérico limpio

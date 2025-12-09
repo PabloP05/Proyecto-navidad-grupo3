@@ -9,9 +9,10 @@ class M_sacarPreguntasRespuestas extends Conectar {
        $sql = "
         SELECT p.idPregunta,
                p.pregunta,
-               r.respuesta
-        FROM preguntas p
-        INNER JOIN respuestasPreguntas r 
+               r.respuesta,
+               r.correcta
+        FROM preguntas as p
+        INNER JOIN respuestasPreguntas as r 
         ON r.idPregunta = p.idPregunta
         ORDER BY p.idPregunta
     ";
@@ -24,17 +25,18 @@ class M_sacarPreguntasRespuestas extends Conectar {
     $preguntas = [];
     foreach ($rows as $row) {
         $id = $row['idPregunta'];
-
         if (!isset($preguntas[$id])) {
             $preguntas[$id] = [
                 'idPregunta' => $id,
-                'pregunta'   => $row['pregunta'],
+                'pregunta' => $row['pregunta'],
                 'respuestas' => []
             ];
         }
-
-        $preguntas[$id]['respuestas'][] = $row['respuesta'];
-    }
+        $preguntas[$id]['respuestas'][] = [
+            'respuesta' => $row['respuesta'],
+            'correcta' => (bool)$row['correcta']// hago un casteo a tipo boleano para forzar el dato
+        ];
+    }   
 
     // Reindexar para que sea un array numérico
     return ['preguntas' => array_values($preguntas)];
