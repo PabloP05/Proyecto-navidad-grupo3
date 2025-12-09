@@ -7,12 +7,9 @@ class Conectar {
     public function __construct() {
         try {
             self::$conexion = new PDO(
-                //'mysql:host='.SERVIDOR.';dbname='.BBDD,
-                'mysql:host=22.daw.esvirgua.com;dbname=daw_22_BD1',
-                //daw_userbd22,
-                'daw_userbd22',
-                //CLAVE,
-                'jvgnTR!%EJiH[}vi',
+                'mysql:host='.SERVIDOR.';dbname='.BBDD,
+                daw_userbd22,
+                CLAVE,
                 array(
                     PDO::ATTR_PERSISTENT => true,
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
