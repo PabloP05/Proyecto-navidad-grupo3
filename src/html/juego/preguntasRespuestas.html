@@ -16,9 +16,9 @@
         <p id="tiempo">Tiempo: 00:</p>
     </header>
     <main>
-        <h2 id="tituloPregunta">¿Pregunta X?</h2>
+        <h2>¿Pregunta X?</h2>
         <section id="opcionesPregunta">
-            <div class="contenedor-pregunta">
+            <div class="contenedor-pregunta"> <!--Lo meto en un contenedor para que un input junto al p sea una caja-->
                 <input type="radio" name="preguntaX">
                 <p>Respuesta 1</p>
             </div>
@@ -26,17 +26,8 @@
                 <input type="radio" name="preguntaX">
                 <p>Respuesta 2</p>
             </div>
-            <div class="contenedor-pregunta">
-                <input type="radio" name="preguntaX">
-                <p>Respuesta 3</p>
-            </div>
-        </section>
-        <button id="btnEnviar" style="display: none;">ENVIAR</button>
-        <button id="btnPasar" style="display: none;">PASAR</button>
-    </main>
-    <div id="popUp"></div>
-    <div id="overlay"></div>
-    <script type="module" src="../../js/app.js"></script>
-</body>
-
-</html>
+                <!-- <script src="../../js/services/servicios_victor/tiempo.js"></script> -->
+            <script src="../../js/services/servicios_victor/partida.js"></script>
+            <script src="../../js/services/servicios_victor/c_preguntas.js" type="module"></script>
+            <script src="../../js/services/servicios_victor/tiempo.js"></script>
+            </html>

@@ -1,26 +1,18 @@
+import {PreguntasRespuestas} from '../../model/m_preguntasRespuestas.js';
+
+//desde aqui solicito solo en un aocasion los datos de la base de datos para no sobrecargar la app.
+const modelo = new PreguntasRespuestas();
+const datos = modelo.cargarDatos();
+
+
 document.addEventListener("DOMContentLoaded", async function () {
     try {
-        // Realizar el fetch para obtener las preguntas desde el servidor
-        const resultadoPreguntas = await fetch("https://22.daw.esvirgua.com/cargadorCliente/php/index.php?c=C_sacarPreguntasRespuestas&m=obtenerPreguntasRespuestas");
-        const datosPreguntas = await resultadoPreguntas.json();
-
-        // Log para verificar los datos obtenidos
-        console.log("Datos obtenidos del servidor:", datosPreguntas);
-
-        // Transformar los datos obtenidos en el formato esperado
-        const preguntas = datosPreguntas.preguntas.map(pregunta => ({
-            pregunta: pregunta.pregunta,
-            opciones: pregunta.respuestas.map((respuesta) => ({
-                texto: respuesta.respuesta,
-                correcta: respuesta.correcta
-            }))
-        }));
-
         let ultimaSeleccion = null;
         let temporizadorInterval = null;
 
         function mostrarPreguntaAleatoria() {
-            const pregunta = preguntas[Math.floor(Math.random() * preguntas.length)];
+            
+            const pregunta = datos[Math.floor(Math.random() * datos.length)];
             document.querySelector("main h2").textContent = pregunta.pregunta;
 
             const opcionesPregunta = document.getElementById("opcionesPregunta");
@@ -50,6 +42,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             iniciarTemporizador(30, document.getElementById("tiempo"), tiempoAgotado);
         }
 
+        
         function seleccionarRespuesta(input) {
             ultimaSeleccion = input;
 
