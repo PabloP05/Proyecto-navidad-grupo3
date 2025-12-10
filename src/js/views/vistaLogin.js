@@ -1,3 +1,4 @@
+import {Usuarios} from '../services/servicios_pablo/usuario.js';
 export class vistaLogin{
 
     constructor(){
@@ -15,8 +16,10 @@ export class vistaLogin{
             let sw=this.validar();                                    //Si le da a subir y falta algún campo se validarán todos los campos
             
             if(sw==0){
-                //Si la validación es correcta, redirigir a menuPrincipal.html
-                window.location.href="menuPrincipal.html";
+                //PARTE DEL SPRINT 3 (PABLO) VALIDACION DEL USUARIO DENTRO DE LA BASE DE DATOS
+                const validar = new Usuarios(this.form);
+                
+                
             }
         });
     }

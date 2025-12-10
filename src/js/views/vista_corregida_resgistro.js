@@ -23,18 +23,23 @@ export class RegistrarUsuario{
         this.#validarCampo(this.#nick) &&
         this.#validarClave()){
 
-            const dato = new FormData(this.#formulario);
+/*          no lo necesito en este caso      
+
+         const dato = new FormData(this.#formulario);
 
             fetch('rutaServer', {
             method: 'POST', //al ser un envio lo tengo que mandar por post
             body: dato
-        })
+        }); */
         }
     }
 
     //la primera validacion conprovará que esté comleto el dato
     #validarDatos(){
-        this.#formulario.addEventListener('submit',(e)=>{
+
+    
+
+        this.#formulario.addEventListener('submit',async (e)=>{
             if(this.#nombreUsuario.value.trim() === "" ||
                 this.#clave.value.trim() === "" ||
                 this.#gmail.value.trim() === "" ||
@@ -58,7 +63,6 @@ export class RegistrarUsuario{
                         ? this.#nick.style.border = "2px solid red" 
                         : this.#nick.style.border = "2px solid green";
             }
-
             
         });
     }

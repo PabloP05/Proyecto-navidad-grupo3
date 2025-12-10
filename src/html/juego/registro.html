@@ -12,16 +12,16 @@
             <h1>REGISTRO DE USUARIO</h1>
         </header>
         <main>
-            <form action="registrarUsuario.php" method="POST" id="formularioLoguin">
+            <form action="../../../test/registrarDatos.php" method="POST" id="formularioLoguin">
                 <p id="aviso"></p>
                 <label>Nombre de Usuario:</label>
-                <input type="text" id="nombreUsuario" placeholder="Nombre de Usuario">
+                <input type="text" id="nombreUsuario" name="nombre" placeholder="Nombre de Usuario">
                 <label>Correo:</label>
-                <input type="email" id="email" placeholder="usuario@gmail.com">
+                <input type="email" id="email" name="mail" placeholder="usuario@gmail.com">
                 <label>Nick:</label>
-                <input type="text" id="nick" placeholder="Nick">
+                <input type="text" id="nick" placeholder="Nick" name="nick">
                 <label>clave:</label>
-                <input type="text" id="clave" placeholder="Clave de usuario ">
+                <input type="text" id="clave" placeholder="Clave de usuario " name="clave">
                 <button id="btnEnviar" class="botones_juego">ENVIAR</button>
             </form>
         </main>
