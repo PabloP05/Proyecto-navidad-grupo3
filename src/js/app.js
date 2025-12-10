@@ -1,7 +1,7 @@
 import { vistaInicio } from "./views/vistaInicio.js";
 import { vistaLogin } from "./views/vistaLogin.js";
 import { vistaMenuPrincipal } from "./views/vistaMenuPrincipal.js";
-import { vistaRegistro } from "./views/vistaRegistro.js";
+import { RegistrarUsuario } from "./views/vista_corregida_resgistro.js";
 import { vistaUnirSala } from "./views/vistaUnirSala.js";
 import { vistaFotos } from "./views/vistaFotos.js";
 import { vistaSalas } from "./views/vistaSalas.js";
@@ -28,7 +28,7 @@ switch(page){
         break;
     case "registro":
         //Inicializando el registro
-        const objVistaRegistro=new vistaRegistro();
+        const vregistro=new RegistrarUsuario(); 
         break;
     case "unirSala":
         //Inicializando el unir a salas
