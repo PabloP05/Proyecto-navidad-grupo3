@@ -12,7 +12,6 @@ import { vistaPreguntasRespuestas } from "./views/vistaPreguntasRespuestas.js";
 import { vistaSituaciones } from "./views/vistaSituaciones.js";
 
 
-
 let page=document.body.id;
 switch(page){
     case "inicioSesion":

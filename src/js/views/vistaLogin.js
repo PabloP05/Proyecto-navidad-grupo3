@@ -95,11 +95,3 @@ export class vistaLogin{
         controlForm.className="control correcto";                       //Creamos la clase correcto
     }
 }
-
-/* CONTINUACIÓN DEL SPRINT 3 (PABLO) */
-
-/* hacer un fetch() hacia la base de datos (tabla usuario para comprobar la validez 
-del usuario) y en funcion a eso hacer una cosa u otra
- */
-
-

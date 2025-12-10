@@ -1,19 +1,29 @@
-import {SituacionesRespuestas} from '../../model/m_situacionesRespuestas.js';
-
-const modelo = new SituacionesRespuestas();
-const datos = await modelo.cargarDatos(); // lo tngo que llamar pot un await porque lo retornado es una promesa 
+// =======================================
+// situaciones.js
+// =======================================
 
 document.addEventListener("DOMContentLoaded", async function () {
 
     let ultimaSeleccion = [];
 
     try {
-        
+        const resultadoSituaciones = await fetch("https://22.daw.esvirgua.com/cargadorCliente/php/index.php?c=C_sacarSituacionesRespuestas&m=obtenerSituacionesRespuestas");
+        const datosSituaciones = await resultadoSituaciones.json();
+        console.log("Datos situaciones:", datosSituaciones);
+
+        // Transformar los datos obtenidos en el formato esperado
+        const situaciones = datosSituaciones.situaciones.map(situacion => ({
+            situacion: situacion.situacion,
+            opciones: situacion.respuestas.map(respuesta => ({
+                texto: respuesta.respuestaSituacion,
+                correcta: respuesta.correcta
+            }))
+        }));
 
         const seccion = document.getElementById("opcionesSituacion");
         const h2 = document.querySelector("main h2");
 
-        const situacion = datos[Math.floor(Math.random() * datos.length)];
+        const situacion = situaciones[Math.floor(Math.random() * situaciones.length)];
         h2.textContent = situacion.situacion;
 
         seccion.innerHTML = "";
