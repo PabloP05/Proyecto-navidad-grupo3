@@ -1,7 +1,8 @@
 export class PreguntasRespuestas{
 
     async cargarDatos(){
-        const resultadoPreguntas = await fetch("https://22.daw.esvirgua.com/cargadorCliente/php/index.php?c=C_sacarPreguntasRespuestas&m=obtenerPreguntasRespuestas");
+        const resultadoPreguntas = await fetch("http://22.daw.esvirgua.com/cargadorCliente/php/index.php?c=C_sacarPreguntasRespuestas&m=obtenerPreguntasRespuestas");
+
         const datosPreguntas = await resultadoPreguntas.json();
 
         // Log para verificar los datos obtenidos

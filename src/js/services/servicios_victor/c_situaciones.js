@@ -1,7 +1,7 @@
 import {SituacionesRespuestas} from '../../model/m_situacionesRespuestas.js';
 
 const modelo = new SituacionesRespuestas();
-const datos = modelo.cargarDatos();
+const datos = await modelo.cargarDatos(); // lo tngo que llamar pot un await porque lo retornado es una promesa 
 
 document.addEventListener("DOMContentLoaded", async function () {
 

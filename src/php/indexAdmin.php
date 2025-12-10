@@ -15,7 +15,7 @@ require_once __DIR__ .'/config/indexConfig.php';
         $_GET['m'] = M_DEFECTO;
     }
 
-    // Resolve controller path explicitly to avoid include path surprises
+
     $controladorPath = __DIR__ . '/' . RUTA_CONTROLADOR . $_GET['c'] . '.php';
     if (!file_exists($controladorPath)) {
         http_response_code(500);

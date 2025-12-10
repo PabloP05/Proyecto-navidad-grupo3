@@ -1,12 +1,11 @@
 import {PreguntasRespuestas} from '../../model/m_preguntasRespuestas.js';
 
-//desde aqui solicito solo en un aocasion los datos de la base de datos para no sobrecargar la app.
-const modelo = new PreguntasRespuestas();
-const datos = modelo.cargarDatos();
-
-
 document.addEventListener("DOMContentLoaded", async function () {
     try {
+        //desde aqui solicito solo en una ocasion los datos de la base de datos para no sobrecargar la app.
+        const modelo = new PreguntasRespuestas();
+        const datos = await modelo.cargarDatos();
+        
         let ultimaSeleccion = null;
         let temporizadorInterval = null;
 
