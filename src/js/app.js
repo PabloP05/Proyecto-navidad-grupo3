@@ -32,7 +32,7 @@ switch(page){
         break;
     case "unirSala":
         //Inicializando el unir a salas
-        const objVistaUnirSala=new vistaUnirSala();
+       // const objVistaUnirSala=new vistaUnirSala();
         break;
     case "fotos":
         //Inicializando el modo de juego fotos

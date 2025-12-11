@@ -9,8 +9,8 @@ export class vistaMenuPrincipal{
         this.btnPartidaPublica=document.getElementById("btnPartidaPublica");
         this.btnRanking=document.getElementById("btnRanking");
         this.btnCerrarSesion=document.getElementById("btnCerrarSesion");
-        this.iniciarPartida();
-        this.verSalas();
+            //this.iniciarPartida();
+            //this.verSalas();
         this.partidasAleatorias();
         this.ranking();
         this.cerrarSesion();

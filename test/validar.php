@@ -15,7 +15,7 @@ try {
 
     while($fila = $resultado->fetch_assoc()){
         if (password_verify($_POST['pw'], $fila['clave'])) {
-            echo json_encode(['status' => 'ok', 'nick' => $fila['nick']]);
+            echo json_encode(['status' => 'ok', 'nick' => $fila['nick'],'id'=> $fila['idusuario']]);
             exit;
         }
     }

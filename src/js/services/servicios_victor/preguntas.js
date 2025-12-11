@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             contenedores.forEach(div => div.classList.remove("selected"));
             input.parentElement.classList.add("selected");
 
-            // Crear botón Siguiente si no existe
+            // Crear botÃ³n Siguiente si no existe
             if (!document.getElementById("btnSiguiente")) {
                 const btn = document.createElement("button");
                 btn.id = "btnSiguiente";
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
 
             const popup = document.createElement("div");
-            popup.textContent = correcta ? "¡Correcto!" : "¡Incorrecto!";
+            popup.textContent = correcta ? "Â¡Correcto!" : "Â¡Incorrecto!";
             popup.style.position = "fixed";
             popup.style.top = "50%";
             popup.style.left = "50%";

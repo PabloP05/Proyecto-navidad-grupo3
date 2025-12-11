@@ -3,6 +3,8 @@
 // =======================================
 
 
+let resultado = new FormData();
+
 // Esto es para entrar a la partida, cuando haya serviddor se comprobar que la sala existe
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -35,13 +37,28 @@ document.addEventListener("DOMContentLoaded", () => {
         irARonda();
     }
 
-    function irARonda() {
+    async function irARonda() {
         let ronda = parseInt(localStorage.getItem("rondaActual") || 0) + 1;
         localStorage.setItem("rondaActual", ronda); //guarda la ronda
 
         if (ronda > TOTAL_RONDAS) {
             alert("¡Partida terminada! Puntos totales: " + (localStorage.getItem("puntos") || 0));
             return;
+
+//agregado para el sprint 3 por Pablo 
+            resultado.append('id',localStorage.getItem('idUsuario'));
+            resultado.append('puntos',localStorage.getItem("puntos"));
+            resultado.append('idSala','1000001');
+
+            const result = await fetch('http://localhost:81/registroJS/test/guardarPartidas.php', {
+                method: 'POST',
+                body: resultado
+            });
+
+            const verificar = await result.json();
+
+            console.log(verificar);
+
         }
 
         //para el random de modos

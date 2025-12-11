@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             });
         });
 
-        // Función para mostrar popup y registrar puntos
+        // FunciÃ³n para mostrar popup y registrar puntos
         function mostrarPopup() {
             if (!ultimaSeleccion.length) return;
 
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             // POPUP VISUAL
             // ========================
             const popup = document.createElement("div");
-            popup.textContent = todasCorrectas ? "¡Correcto!" : "¡Incorrecto!";
+            popup.textContent = todasCorrectas ? "Â¡Correcto!" : "Â¡Incorrecto!";
             popup.style.position = "fixed";
             popup.style.top = "50%";
             popup.style.left = "50%";
