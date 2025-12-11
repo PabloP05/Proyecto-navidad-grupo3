@@ -27,5 +27,6 @@ export class vistaSala{
 
             window.location.href="salas.html"; //Para enlazar mediante ruta
         });
+    
     }
 }

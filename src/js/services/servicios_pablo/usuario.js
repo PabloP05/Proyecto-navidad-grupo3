@@ -18,7 +18,7 @@ export class Usuarios{
         }
         else{
             alert('Error en la validación: ');
-            //window.location.href = '../../html/login.html'; // Redirige de nuevo a la página de login
+            window.location.href = '../../html/juego/login.html'; // Redirige de nuevo a la página de login
         } 
     }
 
