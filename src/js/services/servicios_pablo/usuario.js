@@ -4,17 +4,14 @@ export class Usuarios{
     #modelo;
 
     constructor(formulario){
-        this.#validar(formulario);
-    }
-
-    async #validar(formulario){
         this.#modelo = new M_usuario;
-        const resultado = await this.#modelo.validar(formulario);
+        const resultado = this.#modelo.validar(formulario);
 
         console.log(resultado);
 
-        if(resultado.status == "ok"){
-            window.location.href = '../../html/juego/menuPrincipal.html'; // Redirige a la página principal
+        if(resultado.status === "ok"){
+            alert('Usuario validado correctamente');
+            window.location.href = '../../html/menuPrincipal.html'; // Redirige a la página principal
         }
         else{
             alert('Error en la validación: ');
