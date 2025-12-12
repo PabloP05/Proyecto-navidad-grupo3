@@ -2,70 +2,60 @@
 // partida.js
 // =======================================
 
-
-let resultado = new FormData();
-
-// Esto es para entrar a la partida, cuando haya serviddor se comprobar que la sala existe
 document.addEventListener("DOMContentLoaded", () => {
-
     const btn = document.getElementById("btnBuscarSala");
-
-    // Total de rondas
     const TOTAL_RONDAS = 10;
 
-    // Botón unir sala
     if (btn) {
         btn.addEventListener("click", function (event) {
-            event.preventDefault(); // no hace el f5
-
+            event.preventDefault();
             const codigo = document.getElementById("codigo").value.trim();
             if (!codigo) {
                 alert("Introduce un código de sala");
                 return;
             }
-
             iniciarPartida();
         });
     }
 
     function iniciarPartida() {
-        // Reset de partida
         localStorage.setItem("puntos", 0);
         localStorage.setItem("rondaActual", 0);
-
-        // Pasar a la primera ronda
         irARonda();
     }
 
     async function irARonda() {
         let ronda = parseInt(localStorage.getItem("rondaActual") || 0) + 1;
-        localStorage.setItem("rondaActual", ronda); //guarda la ronda
+        localStorage.setItem("rondaActual", ronda);
 
-        if (ronda > TOTAL_RONDAS) {
+        if (ronda == TOTAL_RONDAS) {
             alert("¡Partida terminada! Puntos totales: " + (localStorage.getItem("puntos") || 0));
-            return;
 
-//agregado para el sprint 3 por Pablo 
-            resultado.append('id',localStorage.getItem('idUsuario'));
-            resultado.append('puntos',localStorage.getItem("puntos"));
-            resultado.append('idSala','1000001');
+            // Crear FormData nuevo desde el sprint 3  Pablo
+            const resultado = new FormData();
+            resultado.append('idUsuario', localStorage.getItem('idusuario')); // usa la misma clave que guardaste en login
+            resultado.append('puntos', localStorage.getItem("puntos"));
+            resultado.append('idSala', '1000001');
 
-            const result = await fetch('http://localhost:81/registroJS/test/guardarPartidas.php', {
-                method: 'POST',
-                body: resultado
-            });
+            try {
+                const res = await fetch('https://22.daw.esvirgua.com/registroJs/test/guardarPartidas.php', {
+                    method: 'POST',
+                    body: resultado
+                });
 
-            const verificar = await result.json();
-
-            console.log(verificar);
-
+                const texto = await res.text(); // usa text en vez de json
+                console.log(texto);
+                } catch (err) {
+                    console.error("Error al guardar partida:", err);
+                }
+                // redirigir siempre, aunque falle el guardado
+                window.location.href = "menuPrincipal.html";
+                return;
         }
 
-        //para el random de modos
         const modos = ["preguntasRespuestas", "situaciones", "fotos"];
         const modo = modos[Math.floor(Math.random() * modos.length)];
 
-        //selecciona el modo
         switch (modo) {
             case "preguntasRespuestas":
                 window.location.href = "preguntasRespuestas.html";
@@ -79,7 +69,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Exponer globalmente para los scripts de cada modo
     window.terminarRonda = irARonda;
-
 });
