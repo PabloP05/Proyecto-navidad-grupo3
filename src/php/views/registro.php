@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/juego_mobil.css">
+        <link rel="stylesheet" href="views/css/style.css">
+        <link rel="stylesheet" href="views/css/juego_mobil.css">
         <title>Registro</title>
     </head>
     <body id="registro">
@@ -12,7 +12,7 @@
             <h1>REGISTRO DE USUARIO</h1>
         </header>
         <main>
-            <form action="../indexVictor.php?c=gestionUsuario&m=insertarUsuario" method="POST">
+            <form action="indexVictor.php?c=gestionUsuario&m=insertarUsuario" method="POST">
                 <label>Nombre de Usuario:</label>
                 <input type="text" id="nombreUsuario" name="nombreUsuario" placeholder="Nombre de Usuario" required>
                 <label>Correo:</label>

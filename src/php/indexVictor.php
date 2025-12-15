@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 if(!isset($_GET['c'])) {
-    $_GET['c'] = 'gestionUsuario';
+    $_GET['c'] = 'gestionAdmin';
 }
 if(!isset($_GET['m'])) {
     $_GET['m'] = 'mostrarLogin';

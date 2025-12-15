@@ -3,13 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/style.css">
-         <link rel="stylesheet" href="../css/juego_mobil.css">
+        <link rel="stylesheet" href="views/css/style.css">
+         <link rel="stylesheet" href="views/css/juego_mobil.css">
         <title>Menú</title>
     </head>
     <body id="menuPrincipal">
         <header>
-            <img id="logo" src="../css/icon/logo.png" alt="logo">
+            <img id="logo" src="../img/logo.png" alt="logo">
             <h1>STOP BULLYING CHALLENGE</h1>
             <button id="btnCerrarSesion">CERRAR SESIÓN</button>
         </header>
