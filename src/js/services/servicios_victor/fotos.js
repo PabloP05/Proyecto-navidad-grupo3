@@ -1,22 +1,27 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", async function() {
 
-    //respuestas de prueba, esto viene de servidor (lo he hecho para que cuando venga de servidor es el mismo formato de datos)
-    const fotos = [
-        {
-            src: "../../css/icon/pregunta.png",
-            opciones: [
-                { texto: "Respuesta A", correcta: true },
-                { texto: "Respuesta B", correcta: false }
-            ]
-        },
-        {
-            src: "../../css/icon/pregunta.png",
-            opciones: [
-                { texto: "Respuesta A", correcta: false },
-                { texto: "Respuesta B", correcta: true }
-            ]
+    const resultadoPreguntas = await fetch("https://22.daw.esvirgua.com/app/html/Adrian/src/src/php/indexAdrian.php?c=C_ListarFotos&m=mostrarFotos");
+    const datosPreguntas = await resultadoPreguntas.json();
+
+    console.log("Datos desde PHP:", datosPreguntas);
+
+    const baseURL = "https://22.daw.esvirgua.com/";
+
+    const fotosData = Array.isArray(datosPreguntas.fotos) ? datosPreguntas.fotos : Object.values(datosPreguntas.fotos);
+
+    const fotos = [];
+    fotosData.forEach(item => {
+        const fotoURL = baseURL + item.foto;
+        let fotoExistente = fotos.find(f => f.src === fotoURL);
+        if (!fotoExistente) {
+            fotoExistente = { src: fotoURL, respuestas: [] };
+            fotos.push(fotoExistente);
         }
-    ];
+        fotoExistente.respuestas.push({
+            texto: item.respuestaFoto,
+            correcta: item.correcta === "1"
+        });
+    });
 
 
     const seccion = document.getElementById("opcionesFoto");
@@ -31,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
     imagen.src = foto.src;
     h2.textContent = "¿Qué opción es correcta?";
 
-    foto.opciones.forEach((opcion, i) => {
+    foto.respuestas.forEach((opcion, i) => {
         const div = document.getElementById("pregunta" + (i + 1));
         const input = div.querySelector("input");
         const p = div.querySelector("p");
@@ -42,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function() {
         input.addEventListener("change", function() {
             ultimaSeleccion = input;
             btnEnviar.style.display = "inline-block";
-        });
     });
+});
 
     btnEnviar.addEventListener("click", function() {
         if (!ultimaSeleccion) return;
@@ -74,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
             popup.remove();
             if (typeof window.terminarRonda === "function") {
-                window.terminarRonda();
+                //window.terminarRonda();
             }
         }, 1500);
 
