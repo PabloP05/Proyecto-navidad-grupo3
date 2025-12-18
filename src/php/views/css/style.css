@@ -252,12 +252,53 @@
         }
       }
 
+<<<<<<< HEAD
       .botones-accion {
         position: absolute;
         bottom: 3%;
         right: 3%;
         display: flex;
         gap: 10px;
+=======
+             /* PREGUNTAS Y RESPUESTAS : AJUSTES */
+             .datos_de_contenido{
+                 font-size: 0.8em;
+                margin-top: 5%;
+                height: 9vh;
+                background-color: var(--transparencia-formularios);
+                border-radius: 10px;
+                display: flex;
+                gap: 20px;
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-direction: row;
+                flex-basis: 80%;
+                justify-content: center;
+                align-items: center;
+            }
+           
+            .div_foto{
+                height: 25vh;
+
+                img{
+                    width: 20%;
+                }
+            }
+            button{
+                border: none;
+                border-radius: 10px;
+                img{
+                    width: 50px;
+                }
+                
+            }
+            .borrar{
+                background-color: #ff3737; 
+            }
+            .configurar{
+                background-color: #ffbc37;
+            }
+>>>>>>> ac2a106b5c56d30bb48fee4473654516ea143c7e
 
         button {
           position: static !important; /* Force override of #contenido button absolute positioning */
@@ -506,6 +547,128 @@
             width: 60%;
             background-color: var(--transparencia-formularios);
             border-radius: 10px;
+<<<<<<< HEAD
+            padding: 30px;
+            text-align: center;
+        }
+=======
+            justify-items: center;
+            text-align: center;
+            position: relative;
+>>>>>>> ac2a106b5c56d30bb48fee4473654516ea143c7e
+
+        .div_foto {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+
+            img {
+                max-width: 300px;
+                max-height: 300px;
+                object-fit: contain;
+                border-radius: 10px;
+                padding: 10px;
+            }
+
+            form {
+                padding: 2% 0px;
+                background-color: var(--transparencia-formularios);
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+
+                input[type="file"] {
+                    color: white;
+                }
+
+                input::placeholder{
+                    color: #d8d2d2;
+                }
+
+                #url{
+                    width: 60%;
+                    padding-left: 2%;
+                    background-color: white;
+                    color: black;
+                }
+
+                #correcta{
+                    width: 60%;
+                    padding-left: 2%;
+                    background: green;
+                    color: white;
+                }
+
+                #incorrecta{
+                    width: 60%;
+                    padding-left: 2%;
+                    background: red;
+                    color: white;
+                }
+
+                input[type="submit"] {
+                    width: 60%;
+                    height: 5vh;
+                    border-radius: 20px;
+                    border: 1px solid white;
+                    background-color: transparent;
+                    color: white;
+                    font-size: 1.2em;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
+
+                input[type="submit"]:hover {
+                    background-color: var(--verdeSuave);
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+/* VISTA MODIFICAR IMAGEN */
+#modificacionFotos {
+    background-color: var(--gris-menu);
+
+    header {
+        width: 100%;
+        height: 10vh;
+        background-color: var(--rojo-navegador);
+        position: relative;
+        text-align: center;
+
+        h1{
+            padding-top: 1%;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        img {
+            width: 40px;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    main {
+        width: 100%;
+
+        h2 {
+            text-align: center;
+            color: white;
+            margin: 3% 0px;
+        }
+
+        .contenedor-fotos {
+            width: 60%;
+            background-color: var(--transparencia-formularios);
+            border-radius: 10px;
             padding: 30px;
             text-align: center;
         }
@@ -583,6 +746,7 @@
     }
 }
 
+
 /* **************************ZONA DE LAS SALAS DEL CSS DE SALAS ADMIN ****************************** */
 
 #gestionsalas {
@@ -627,6 +791,8 @@
     background-color: #ffbc37;
   }
 }
+
+
 
 /* ***************************************** ESTILOS DEL JUEGO Y AREAS DEL JUGADOR ********************* */
 

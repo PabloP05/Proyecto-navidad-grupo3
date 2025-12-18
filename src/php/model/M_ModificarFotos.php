@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
     require_once __DIR__ . '/database/conexion.php';
+=======
+    require_once __DIR__.'/database/conectarPDO.php';
+>>>>>>> ac2a106b5c56d30bb48fee4473654516ea143c7e
 
     class M_ModificarFotos extends Conectar{
         public function obtenerFotoPorId($idFoto){
@@ -29,15 +33,24 @@
                 $stmtFoto->execute();
                 $rutaFoto=$stmtFoto->fetch(PDO::FETCH_ASSOC);
 
+<<<<<<< HEAD
                 $rutaImagenActual=__DIR__."/../../proyecto/".$rutaFoto['foto'];
+=======
+                $rutaImagenActual=__DIR__."/../../../".$rutaFoto['foto'];
+>>>>>>> ac2a106b5c56d30bb48fee4473654516ea143c7e
 
                 //Eliminar la imagen anterior si existe
                 if(file_exists($rutaImagenActual)){
                     unlink($rutaImagenActual);
                 }
+<<<<<<< HEAD
 
                 //Carpeta
                 $carpeta=__DIR__."/../../proyecto/assets/img/";
+=======
+                //Carpeta de prueba en localhost
+                $carpeta=__DIR__."/../../../img/";
+>>>>>>> ac2a106b5c56d30bb48fee4473654516ea143c7e
 
                 //Nombre de la foto desde el input de texto
                 $nombreFotoBD=$_POST['pregunta'];

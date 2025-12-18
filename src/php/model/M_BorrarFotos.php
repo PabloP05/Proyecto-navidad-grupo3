@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
     require_once 'database/conexion.php';
+=======
+    require_once __DIR__.'/database/conectarPDO.php';
+>>>>>>> ac2a106b5c56d30bb48fee4473654516ea143c7e
 
     class M_BorrarFotos extends Conectar{
         public function borrarFoto($idFoto){
@@ -11,10 +15,17 @@
             $stmtFoto->execute();
             $foto=$stmtFoto->fetch(PDO::FETCH_ASSOC);
 
+<<<<<<< HEAD
             $rutaImg=__DIR__."/../../proyecto/".$foto['foto'];
 
             if(file_exists($rutaImg)){
                 unlink(__DIR__."/../../proyecto/".$foto['foto']); //Borra el archivo del disco
+=======
+            $rutaImg=__DIR__.'/../'.$foto['foto'];
+
+            if(file_exists($rutaImg)){
+                unlink(__DIR__.'/../'.$foto['foto']); //Borra el archivo del disco
+>>>>>>> ac2a106b5c56d30bb48fee4473654516ea143c7e
             }
 
             //Borrar respuestas asociadas a la foto

@@ -4,7 +4,11 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     //Mostrar nombre del archivo cuando se selecciona
     inputFile.addEventListener('change', () => {
+<<<<<<< HEAD
         nombreArchivo.value="assets/img/"+inputFile.files[0].name;
+=======
+        nombreArchivo.value="img/"+inputFile.files[0].name;
+>>>>>>> ac2a106b5c56d30bb48fee4473654516ea143c7e
     });
 
     //Validar el tipo de archivo

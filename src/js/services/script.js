@@ -51,24 +51,37 @@ selector.addEventListener('change',()=>{
 
         case '3':   
             document.getElementById('contenido').innerHTML = `
-            <input type="text" name="pregunta" placeholder="introduce pregunta contenido o url " required>
-            <input type="text" class="opciones " placeholder="Respuesta correcta" name="respuestasCorrectas[]">
-            <input type="text" class="opciones " placeholder="Respuesta incorrecta" name="respuestasIncorrectas[]">
-            <input type="file" name="imagen" accept="image/png, image/jpeg" required>
-            
-            
+            <input type="file" name="imagen" accept=".png, .jpeg, .jpg, .webp" required>
+            <input type="text" class="opciones " placeholder="Respuesta correcta" name="respuestasCorrectas[]" required>
+            <input type="text" class="opciones " placeholder="Respuesta incorrecta" name="respuestasIncorrectas[]" required>
+            <input type="text" id="nombreArchivo" name="pregunta" readonly>
             `;
-break;
+
+            const inputFile=document.querySelector('input[type="file"]');
+            const nombreArchivo=document.getElementById('nombreArchivo');
+
+            //Mostrar nombre del archivo cuando se selecciona
+            inputFile.addEventListener('change', () => {
+                nombreArchivo.value=inputFile.files[0].name;
+            });
+
+            //Validar el tipo de archivo
+            document.querySelector('form').addEventListener('submit', (e) => {
+                if(inputFile){
+                    const file=inputFile.files[0];
+                    const tiposPermitidos=['image/png', 'image/jpeg', 'image/jpg', 'image/webp'];
+
+                    if(!tiposPermitidos.includes(file.type)){
+                        e.preventDefault();
+                        alert('Solo se permiten imágenes (PNG, JPEG, JPG, WEBP)');
+                        inputFile.value=''; //Limpia el input
+                    }
+                }
+            });
+            break;
     
         default:
             break;
     }
 });
-})
-
-        
-
-
-    
-
-    
+});
