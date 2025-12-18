@@ -8,21 +8,22 @@
 </head>
 <body class="Cpanel_body">
      <nav>
-        <img src="../img/logo.png" alt="Se describe un logotipo en el que pone Stop bullying challenge en letras naranja con bordes azulados"> <!-- lo indico así por accesibilidad -->
+        <img src="../proyecto/app/img/logo.png" alt="Se describe un logotipo en el que pone Stop bullying challenge en letras naranja con bordes azulados"> <!-- lo indico así por accesibilidad -->
         <h1>Stop bullying challange</h1>
         <h3>Panel de administración de contenidos</h3>
     </nav>
     <aside>
         <ul>
-            <li><a href="./indexAdmin.php">Agregar contenidos</a></li>
-            <li><a href="./indexAdmin.php?c=C_listarContenido&m=listarContenido">Lista de contenido</a></li>
-            <li><a href="#">Gestión de usuarios</a></li>
+            <li><a href="./index.php?c=gestionAdmin&m=mostrarPanel">Agregar contenidos</a></li>
+            <li><a href="./index.php?c=listarContenido&m=listarContenido">Lista de contenido</a></li>
+            <li><a href="./index.php?c=ListarUsuarios&m=mostrarUsuarios">Gestión de usuarios</a></li>
+            <li><a href="./index.php?c=ListarPuntuaciones&m=mostrarPuntuaciones">Gestión de puntos</a></li>
            <li><a href="#">Gestión de salas</a></li>
         </ul>
-        <button>Cerrar sesión</button>
+        <a href="index.php?c=gestionAdmin&m=cerrarSesion"><button>Cerrar sesión</button></a>
     </aside>
     <main>
-        <form action="./indexAdmin.php?c=C_agregarContenido&m=agregarContenido" method="post">
+        <form action="./index.php?c=agregarContenido&m=agregarContenido" method="post" enctype="multipart/form-data">
             <h2>Agregado de contenidos</h2>
             <div class="campo">
                 <p>Selecciona el modo </p>
@@ -45,7 +46,7 @@
         </form>
     </main>
     
-    <script src="../js/services/script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>

@@ -551,13 +551,12 @@
     }
 }
 
-/*--REGISTRO--*/
 #registro{
     background: var(--gradiente-juego);
-    height: 100vh;
+
     header{
         text-align: center;              
-        padding-top: 5.4904%;          
+        padding-top: 1%;          
     }
 
     form{
@@ -575,14 +574,46 @@
             margin-left: 50px;             
         }
 
-        input[type="text"], input[type="email"]{
+        input[type="text"], input[type="password"], input[type="email"]{
             margin: 3.3333% 0px 5% 8.3333%;
             display: block;                
         }
 
+        .control{
+            label{
+                color: var(--fondo-blanco);    
+                font-weight: bold;             
+                margin-left: 50px;
+                display: block;
+            }
+
+            input[type="text"], input[type="password"], input[type="email"]{
+                margin: 3.3333% 0px 0% 8.3333%;
+                display: block;
+                width: 75%;
+                padding: 10px;
+                border-radius: 10px;
+                border: 1px solid var(--color-neon);
+                background-color: rgba(0, 0, 0, 0.3);
+                color: var(--fondo-blanco);
+                font-size: 1rem;
+            }
+
+            input::placeholder{
+                color: rgba(255, 255, 255, 0.6);
+            }
+
+            p{
+                color: #ff3737;
+                margin-left: 50px;
+                font-size: 0.9rem;
+                min-height: 20px;
+            }
+        }
+
         #btnEnviar{
             width: 41.6666%;              
-            margin: 10% auto 0 auto;       
+            margin: 5% auto 0 auto;       
             font-size: 1.3rem;             
             padding: 1.6666% 0px;          
             cursor: pointer;               

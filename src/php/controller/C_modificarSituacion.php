@@ -27,7 +27,7 @@
             if ($idRespuesta) {
                 $this->modelo->borrarRespuesta($idRespuesta);
             }
-            header("Location: indexAdmin.php?c=C_modificarSituacion&m=modificar&id=$idSituacion");
+            header("Location: index.php?c=modificarSituacion&m=modificar&id=$idSituacion");
             exit;
         }
 
@@ -36,7 +36,7 @@
             if ($idSituacion) {
                 $this->modelo->modificarSituacion($idSituacion);
             }
-            header("Location: indexAdmin.php?c=C_modificarSituacion&m=modificar&id=$idSituacion");
+            header("Location: index.php?c=modificarSituacion&m=modificar&id=$idSituacion");
             exit;
         }
     }

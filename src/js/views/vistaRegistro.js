@@ -75,7 +75,7 @@ export class vistaRegistro{
         let nombreUsuarioValor=this.nombreUsuario.value.trim();                                    //La función trim() quita los espacios extra
 
         if(nombreUsuarioValor===""){
-            this.validarError(this.nombreUsuario, "Contraseña Inválida");
+            this.validarError(this.nombreUsuario, "Nombre Usuario Inválido");
             return 1;
         }else{
             this.validarOk(this.nombreUsuario);
@@ -88,7 +88,7 @@ export class vistaRegistro{
         let emailValor=this.email.value.trim();                                    //La función trim() quita los espacios extra
 
         if(emailValor==="" || !this.email.checkValidity()){
-            this.validarError(this.email, "Contraseña Inválida");
+            this.validarError(this.email, "Email Inválido");
             return 1;
         }else{
             this.validarOk(this.email);

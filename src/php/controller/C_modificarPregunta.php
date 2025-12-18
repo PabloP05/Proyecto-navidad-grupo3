@@ -25,7 +25,7 @@
             $idPregunta = $_GET['id'] ?? null;
             $this->modelo->borrarRespuesta($_GET['idRespuesta']);
 
-            header("Location: indexAdmin.php?c=C_modificarPregunta&m=modificar&id=$idPregunta");
+            header("Location: index.php?c=modificarPregunta&m=modificar&id=$idPregunta");
             exit;
         }
 
@@ -35,7 +35,7 @@
             $idPregunta = $_GET['id'] ?? null;
             $modelo = $this->modelo;
             $modelo->modificarPreguntaYrespuesta($idPregunta);
-                header("Location: indexAdmin.php?c=C_modificarPregunta&m=modificar&id=$idPregunta");
+                header("Location: index.php?c=modificarPregunta&m=modificar&id=$idPregunta");
                 exit;
             }
         }  

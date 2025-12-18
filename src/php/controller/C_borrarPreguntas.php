@@ -10,7 +10,7 @@
         public function borrar() {
             $idPregunta = $_GET['id'] ?? null;
             $this->modelo->borrarPregunta($idPregunta);
-            header("Location: ./indexAdmin.php?c=C_listarContenido&m=listarContenido");
+            header("Location: ./index.php?c=listarContenido&m=listarContenido");
             exit;
         }
     }

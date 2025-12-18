@@ -8,7 +8,7 @@
             $this->vista = 'CpanelPantallaDeInicio';
             $controlador = new M_contenido();
 
-            if(!empty($_POST['pregunta'])) {
+            if($_POST['modo'] === '3' || !empty($_POST['pregunta'])) {
             
                 if(isset($_POST['respuestasCorrectas']) && isset($_POST['respuestasIncorrectas'])) {
                 

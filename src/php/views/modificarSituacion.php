@@ -8,12 +8,12 @@
 </head>
 <body id="modificacion">
     <header>
-        <a href="./indexAdmin.php?c=C_listarContenido&m=listarContenido"><img src="views/css/icon/vueltaAtras.png" alt=""></a>
+        <a href="./index.php?c=listarContenido&m=listarContenido"><img src="views/css/icon/vueltaAtras.png" alt=""></a>
         <h1>Stop bullying challenge</h1>
     </header>
     <main>
         <!-- Acción apunta al controlador de situaciones -->
-        <form action="./indexAdmin.php?c=C_modificarSituacion&m=modificarDatos&id=<?= $situacion['idSituacion'] ?>" method="post">
+        <form action="./index.php?c=modificarSituacion&m=modificarDatos&id=<?= $situacion['idSituacion'] ?>" method="post">
 
             <h2>Datos</h2>
             <div>

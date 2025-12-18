@@ -8,11 +8,11 @@
 </head>
 <body id="modificacion">
     <header>
-        <a href="./indexAdmin.php?c=C_listarContenido&m=listarContenido"><img src="views/css/icon/vueltaAtras.png" alt=""></a>
+        <a href="./index.php?c=listarContenido&m=listarContenido"><img src="views/css/icon/vueltaAtras.png" alt=""></a>
         <h1>Stop bullying challenge</h1>
     </header>
     <main>
-        <form action="./indexAdmin.php?c=C_modificarPregunta&m=modificarDatos&id=<?= $pregunta['idPregunta'] ?>" method="post">
+        <form action="./index.php?c=modificarPregunta&m=modificarDatos&id=<?= $pregunta['idPregunta'] ?>" method="post">
 
             <h2>datos</h2>
             <div>
@@ -41,7 +41,7 @@
                         echo '<div class="elementos">
                             <input type="text" name="respuestas['.$respuesta['idRespuestaPregunta'].']" 
                                 value="'.$respuesta['respuesta'].'">
-                            <a href="./indexAdmin.php?c=C_modificarPregunta&m=borrarRespuesta&id='.$pregunta['idPregunta'].'&idRespuesta='.$respuesta['idRespuestaPregunta'].'">eliminar</a>
+                            <a href="./index.php?c=modificarPregunta&m=borrarRespuesta&id='.$pregunta['idPregunta'].'&idRespuesta='.$respuesta['idRespuestaPregunta'].'">eliminar</a>
                         </div>';
                     }
                     

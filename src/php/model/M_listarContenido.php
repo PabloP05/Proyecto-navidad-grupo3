@@ -14,5 +14,12 @@
             $resultado->execute();
             return $resultado->fetchAll(PDO::FETCH_ASSOC);
         }
+
+        public function obtenerImagenes(){
+            $sql="SELECT * FROM fotos";
+            $resultado=Conectar::$conexion->prepare($sql);
+            $resultado->execute();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        }
     }   
 ?>
